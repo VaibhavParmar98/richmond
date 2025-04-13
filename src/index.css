@@ -1,0 +1,64 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Marcellus&display=swap');
+
+
+@import "tailwindcss";
+
+body {
+  overflow-x: hidden;
+}
+
+@theme {
+    --font-marcellus: "Marcellus", sans-serif;
+    --color-caramelGold: #DBA860;
+  --color-offWhite: #F2F2F2;
+  --color-deepMaroon: #2B0A0A;
+  --color-champagneBeige: #ECD3AF;
+  --color-vintageBronze: #A99C67;
+  --color-mossyOlive: #B8AA70;
+  --color-deepGold: #BD9800;
+  --color-mustardBrown: #8B7107;
+  --color-burntCopper: #AA7446;
+  --color-oldLavender: #6F5A7D;
+  --color-softCream: #F9F5EF;
+  
+}
+
+/* From Uiverse.io by Creatlydev */ 
+@layer components {
+  .button {
+    @apply inline-flex items-center gap-3 font-semibold text-white px-6 py-3 pl-5 rounded-full 
+      whitespace-nowrap overflow-hidden text-ellipsis cursor-pointer transition-colors duration-300 
+      leading-none no-underline border-0;
+    background-color: var(--clr);
+  }
+
+  .button__icon-wrapper {
+    @apply flex-shrink-0 w-[25px] h-[25px] relative bg-white rounded-full grid place-items-center 
+      overflow-hidden;
+    color: var(--clr);
+  }
+
+  .button:hover {
+    background-color: #000;
+  }
+
+  .button:hover .button__icon-wrapper {
+    color: #000;
+  }
+
+  .button__icon-svg--copy {
+    @apply absolute;
+    transform: translate(-150%, 150%);
+  }
+
+  .button:hover .button__icon-svg:first-child {
+    @apply transition-transform duration-300 ease-in-out;
+    transform: translate(150%, -150%);
+  }
+
+  .button:hover .button__icon-svg--copy {
+    @apply transition-transform duration-300 ease-in-out delay-100;
+    transform: translate(0);
+  }
+}
