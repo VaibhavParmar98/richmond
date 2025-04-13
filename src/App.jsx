@@ -17,14 +17,12 @@ const App = () => {
       setTotalHeaderHeight(headerRef.current.offsetHeight);
     }
 
-    // Disable body scroll when the menu is open
     if (isMenuOpen) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = '';
     }
 
-    // Cleanup: Re-enable scroll when component is unmounted or menu is closed
     return () => {
       document.body.style.overflow = '';
     };
