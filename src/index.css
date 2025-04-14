@@ -19,6 +19,13 @@ body {
   }
 }
 
+@media (max-width: 640px) {
+  .animate-scroll {
+    overflow: visible;
+    white-space: normal;
+  }
+}
+
 .overflow-hidden {
   overflow: hidden;
 }

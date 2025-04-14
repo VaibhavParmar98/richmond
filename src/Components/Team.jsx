@@ -85,36 +85,35 @@ const Team = () => {
             </p>
           </motion.div>
         </div>
-        
-        <div className=" p-3 overflow-hidden">
-          <div className="flex whitespace-nowrap animate-scroll">
-            <div className="flex min-w-max">
-              {[...items, ...items].map((itm, idx) => (
-                <div key={idx} className="flex flex-col gap-3 items-center justify-center mx-4">
-                  <img
-                    src={itm.img}
-                    alt={itm.name}
-                    className="w-full max-w-48 sm:max-w-56 md:w-64 object-cover"
-                  />
-                  <h1 className="mt-4 text-xl text-black">{itm.name}</h1>
-                  <p className="text-sm text-gray-500">{itm.position}</p>
-                  <div className="flex gap-2 items-center justify-center text-xl sm:text-lg md:text-xl">
-                    {itm.social.map((s, i) => (
-                      <motion.span
-                        key={i}
-                        className="social-icon"
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.5, delay: 0.4 + i * 0.1, ease: "backOut" }}
-                        layout
-                      >
-                        {s.icon}
-                      </motion.span>
-                    ))}
-                  </div>
+
+        {/* Updated section for small devices */}
+        <div className="p-3">
+          <div className="flex flex-wrap justify-center gap-4">
+            {items.map((itm, idx) => (
+              <div key={idx} className="flex flex-col gap-3 items-center justify-center mx-4">
+                <img
+                  src={itm.img}
+                  alt={itm.name}
+                  className="w-full max-w-48 sm:max-w-56 md:w-64 object-cover"
+                />
+                <h1 className="mt-4 text-xl text-black">{itm.name}</h1>
+                <p className="text-sm text-gray-500">{itm.position}</p>
+                <div className="flex gap-2 items-center justify-center text-xl sm:text-lg md:text-xl">
+                  {itm.social.map((s, i) => (
+                    <motion.span
+                      key={i}
+                      className="social-icon"
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.5, delay: 0.4 + i * 0.1, ease: "backOut" }}
+                      layout
+                    >
+                      {s.icon}
+                    </motion.span>
+                  ))}
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
