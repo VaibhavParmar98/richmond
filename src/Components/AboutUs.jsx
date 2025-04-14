@@ -28,7 +28,7 @@ const items = [
   {
     icon: <FaHandHoldingUsd className="text-2xl sm:text-3xl p-1.5 bg-burntCopper rounded-full text-white" />,
     title: "Sell and Earn",
-    desc: "Monetize your creativity by selling your artwork directly to art loversssssss.",
+    desc: "Monetize your creativity by selling your artwork directly to art lovers.",
   },
 ];
 
