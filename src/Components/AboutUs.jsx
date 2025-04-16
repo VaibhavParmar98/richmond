@@ -93,7 +93,7 @@ const AboutUs = () => {
             </div>
 
             <div className="flex gap-3 sm:gap-4 mt-6 sm:mt-8 text-base sm:text-base justify-center items-center sm:justify-start sm:items-start">
-            <button className="button text-base font-medium bg-deepMaroon hover:bg-burntCopper" style={{ "--clr": "#AA7446" }}>
+            <button className="button hover:border  text-base hover:text-deepMaroon font-medium bg-deepMaroon hover:bg-black" style={{ "--clr": "#AA7446" }}>
                 <span className="button__icon-wrapper hover:text-black text-deepMaroon">
                   <svg viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg" className="button__icon-svg" width="10">
                     <path d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z" fill="currentColor" />
@@ -105,7 +105,7 @@ const AboutUs = () => {
                 More Donation
               </button>
 
-              <button className="button text-base font-medium bg-burntCopper hover:bg-black" style={{ "--clr": "#AA7446" }}>
+              <button className="button text-base hover:border font-medium bg-burntCopper hover:bg-black" style={{ "--clr": "#AA7446" }}>
                 <span className="button__icon-wrapper">
                   <svg viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg" className="button__icon-svg" width="10">
                     <path d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z" fill="currentColor" />

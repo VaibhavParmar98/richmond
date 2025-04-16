@@ -49,7 +49,7 @@ const OurMinisters = () => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.8, ease: "easeOut", delay: idx * 0.2 }}
-      className="flex flex-col gap-3 sm:gap-4 border p-4 sm:py-8 w-full sm:w-56 md:w-60 h-auto min-h-56 sm:h-60 justify-center items-center" // Added justify-center & items-center for centering
+      className="flex flex-col gap-3 sm:gap-4 border p-4 sm:py-8 w-full sm:w-56 md:w-60 h-auto min-h-56 sm:h-60 justify-center md:justify-start md:items-start items-center" 
     >
       <motion.span
         initial={{ opacity: 0, scale: 0.8 }}
@@ -81,44 +81,24 @@ const OurMinisters = () => {
     </motion.div>
   ))}
 </div>
-
-
-        <motion.button
+<motion.button
           initial={{ opacity: 0, scale: 0.8 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, amount: 0.4 }}
-          transition={{ duration: 0.6, ease: [0.34, 1.56, 0.64, 1] }}
-          className="button font-medium bg-burntCopper hover:bg-white hover:text-burntCopper mt-10"
-          style={{ "--clr": "#AA7446" }}
-        >
-          <span className="button__icon-wrapper text-burntCopper border border-burntCopper">
-            <svg
-              viewBox="0 0 14 15"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              className="button__icon-svg"
-              width="10"
-            >
-              <path
-                d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
-                fill="currentColor"
-              ></path>
-            </svg>
-            <svg
-              viewBox="0 0 14 15"
-              fill="none"
-              width="10"
-              xmlns="http://www.w3.org/2000/svg"
-              className="button__icon-svg button__icon-svg--copy"
-            >
-              <path
-                d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
-                fill="currentColor"
-              ></path>
-            </svg>
-          </span>
-          Watch Video
-        </motion.button>
+          className="button text-base font-medium bg-burntCopper hover:bg-black mt-10"
+          transition={{ duration: 0.6, ease: [0.34, 1.56, 0.64, 1] }} style={{ "--clr": "#AA7446" }}>
+                <span className="button__icon-wrapper">
+                  <svg viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg" className="button__icon-svg" width="10">
+                    <path d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z" fill="currentColor" />
+                  </svg>
+                  <svg viewBox="0 0 14 15" fill="none" width="10" xmlns="http://www.w3.org/2000/svg" className="button__icon-svg button__icon-svg--copy">
+                    <path d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z" fill="currentColor" />
+                  </svg>
+                </span>
+                Contact Us
+              </motion.button>
+
+        
       </div>
     </div>
   );

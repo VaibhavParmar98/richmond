@@ -46,6 +46,7 @@ const Blogs = () => {
     dots: true,
     infinite: true,
     speed: 500,
+    dotsClass: "slick-dots custom-dots", 
     slidesToShow: 1,
     slidesToScroll: 1,
   };
@@ -70,7 +71,7 @@ const Blogs = () => {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={isButtonInView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 0.6, ease: [0.68, -0.55, 0.265, 1.55] }}
-            className="button bg-burntCopper hover:bg-black w-44"
+            className="button bg-burntCopper hover:bg-black w-44 font-medium hover:border"
             style={{ "--clr": "#AA7446" }}
           >
             <span className="button__icon-wrapper">

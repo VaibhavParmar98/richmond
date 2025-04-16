@@ -98,7 +98,7 @@ const SuppoertLocla = () => {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, ease: [0.34, 1.56, 0.64, 1] }}
-          className="button font-medium bg-burntCopper hover:bg-black mt-10"
+          className="button font-medium hover:border bg-burntCopper hover:bg-black mt-10"
           style={{ "--clr": "#AA7446" }}
         >
           <span className="button__icon-wrapper">

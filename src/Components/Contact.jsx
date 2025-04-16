@@ -17,7 +17,7 @@ const Contact = () => {
 
   return (
     <div ref={sectionRef} className="bg-deepMaroon flex items-center">
-      <div className="max-w-6xl font-marcellus mx-auto px-4 sm:px-6 md:px-4 flex flex-col md:flex-row gap-6 sm:gap-8 md:gap-10 items-center justify-center w-full py-12 sm:py-16 md:py-0">
+      <div className="max-w-6xl font-marcellus mx-auto px-4 sm:px-6 md:px-4 flex flex-col md:flex-row gap-6 sm:gap-8 md:gap-10 items-center justify-center w-full py-4 sm:py-16 md:py-0">
         <motion.div
           ref={imageRef}
           initial={{ opacity: 0, x: -100 }}
@@ -28,7 +28,7 @@ const Contact = () => {
           <img
             src={image14}
             alt=""
-            className="mx-auto md:w-auto w-60 h-60 sm:h-80 md:h-[500px] "
+            className="mx-auto md:w-auto w-40 h-40 sm:h-80 md:h-[500px] "
           />
         </motion.div>
 

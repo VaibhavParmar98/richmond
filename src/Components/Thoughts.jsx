@@ -63,7 +63,7 @@ const Thoughts = () => {
             viewport={{ once: false, amount: 0.5 }} 
             className="text-3xl sm:text-4xl mt-2"
           >
-            What are your thoughts and what <br />
+            What are your thoughts and what <br className="md:block hidden" />
             ideas do you have?
           </motion.h1>
         </div>

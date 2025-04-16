@@ -86,7 +86,7 @@ const Community = () => {
           <img
             src={image13}
             alt=""
-            className="w-full h-auto sm:h-96 md:h-[510px] md:w-[900px] object-cover"
+            className="w-full rounded-2xl h-auto sm:h-96 md:h-[510px] md:w-[900px] "
           />
         </motion.div>
       </div>

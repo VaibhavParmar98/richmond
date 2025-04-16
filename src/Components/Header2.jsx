@@ -4,7 +4,7 @@ import calender from "../assets/calendar.svg";
 
 const Header2 = ({ isMenuOpen, toggleMenu }) => {
   return (
-    <div className={`bg-champagneBeige p-3 relative sm:rounded-b-none ${isMenuOpen ? "rounded-b-2xl" : ""}`}>
+    <div className={`bg-champagneBeige p-3 relative sm:rounded-b-none ${isMenuOpen ? "rounded-b-3xl sm:rounded-b-3xl" : ""}`}>
       <div className="max-w-full sm:max-w-5xl md:max-w-6xl mx-auto px-4 sm:px-6 md:px-0 flex flex-col md:flex-row md:gap-48 md:items-center">
         <div className="flex justify-between items-center w-full md:w-auto">
           <div className="flex gap-1 items-center">
@@ -28,7 +28,7 @@ const Header2 = ({ isMenuOpen, toggleMenu }) => {
         </div>
 
         <div
-          className={`md:flex flex-col md:flex-row md:gap-16 md:items-center w-full md:w-auto mt-4 md:mt-0 bg-champagneBeige md:bg-transparent overflow-hidden transition-all duration-500 ease-in-out ${
+          className={`md:flex flex-col md:flex-row md:gap-16 md:items-center w-full md:w-auto mt-4 md:mt-0 bg-champagneBeige md:bg-transparent overflow-hidden transition-all duration-700 ease-in-out ${
             isMenuOpen
               ? "max-h-screen opacity-100"
               : "max-h-0 opacity-0 md:max-h-full md:opacity-100"

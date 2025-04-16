@@ -8,6 +8,15 @@ html,
 body {
   height: 100%;
   overflow-x: hidden;
+  background-color: transparent;
+}
+
+.custom-dots li {
+  margin: 0 1px !important; 
+}
+
+.custom-dots li button::before {
+  font-size: 10px; 
 }
 
 @keyframes scroll {
@@ -52,32 +61,43 @@ body {
   
 }
 
-/* From Uiverse.io by Creatlydev */ 
 @layer components {
   .button {
-    @apply inline-flex items-center gap-3 font-semibold text-white px-6 py-3 pl-5 rounded-full 
-      whitespace-nowrap overflow-hidden text-ellipsis cursor-pointer transition-colors duration-300 
-      leading-none no-underline border-0 relative;
+    @apply relative inline-flex items-center gap-3 font-semibold text-white px-6 py-3 pl-5 rounded-full 
+      whitespace-nowrap overflow-hidden cursor-pointer leading-none no-underline border-0 z-10;
+
     background-color: var(--clr);
+    transition: color 0.3s ease-in-out;
+  }
+
+  .button::before {
+    content: "";
+    @apply absolute inset-0 rounded-full;
+    background: linear-gradient(to right, white, white);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease-in-out;
+    z-index: -1;
+  }
+
+  .button:hover::before {
+    transform: scaleX(1);
+  }
+
+  .button:hover {
+    color: var(--clr);
   }
 
   .button__icon-wrapper {
     @apply flex-shrink-0 w-[25px] h-[25px] relative bg-white rounded-full grid place-items-center 
       overflow-hidden;
     color: var(--clr);
+    z-index: 10;
   }
 
   .button__icon-svg--copy {
     @apply absolute;
     transform: translate(-150%, 150%);
-  }
-
-  .button:hover {
-    background-color: #000;
-  }
-
-  .button:hover .button__icon-wrapper {
-    color: #000;
   }
 
   .button:hover .button__icon-svg:first-child {
@@ -89,67 +109,5 @@ body {
     @apply transition-transform duration-300 ease-in-out delay-100;
     transform: translate(0);
   }
-
-  /* Hover fill left animation (for transparent button with border) */
-  .hover-fill-left::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 0%;
-    background-color: #AA7446;
-    transition: width 0.4s ease-in-out;
-    z-index: 0;
-  }
-
-  .hover-fill-left:hover::before {
-    width: 100%;
-  }
-
-  .hover-fill-left span,
-  .hover-fill-left svg {
-    position: relative;
-    z-index: 10;
-    transition: color 0.4s ease-in-out;
-  }
-
-  .hover-fill-left:hover span,
-  .hover-fill-left:hover svg {
-    color: white !important;
-  }
-
-  /* Hover unfill left animation (for solid burntCopper button) */
-  .hover-unfill-left::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: #AA7446;
-    transition: width 0.4s ease-in-out;
-    z-index: 0;
-  }
-
-  .hover-unfill-left:hover::before {
-    width: 0%;
-  }
-
-  .hover-unfill-left:hover {
-    background-color: transparent !important;
-    color: #AA7446 !important;
-  }
-
-  .hover-unfill-left span,
-  .hover-unfill-left svg {
-    position: relative;
-    z-index: 10;
-    transition: color 0.4s ease-in-out;
-  }
-
-  .hover-unfill-left:hover span,
-  .hover-unfill-left:hover svg {
-    color: #AA7446 !important;
-  }
 }
+

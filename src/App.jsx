@@ -5,7 +5,6 @@ import Header1 from "./Components/Header1";
 import Header2 from "./Components/Header2";
 import Footer from "./Components/Footer";
 import Button from "./Pages/Button";
-
 import CustomCursor from "./Components/CustomCursor";
 
 const App = () => {
@@ -21,20 +20,20 @@ const App = () => {
     }
 
     if (isMenuOpen) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = '';
+      document.body.style.overflow = "";
     }
 
     return () => {
-      document.body.style.overflow = '';
+      document.body.style.overflow = "";
     };
-  }, [isMenuOpen]); 
+  }, [isMenuOpen]);
 
   return (
     <>
       <BrowserRouter>
-      <CustomCursor/>
+        <CustomCursor />
         <div ref={headerRef} className="relative z-20">
           <Header1 />
           <Header2 isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
@@ -46,8 +45,7 @@ const App = () => {
         <Footer />
         {isMenuOpen && (
           <div
-            className="fixed left-0 right-0 bottom-0 z-10 backdrop-blur-sm bg-black/20 md:hidden"
-            style={{ top: `${totalHeaderHeight}px` }}
+            className="fixed inset-0 z-10 backdrop-blur-xs  bg-black/60 md:hidden"
             onClick={toggleMenu}
           />
         )}

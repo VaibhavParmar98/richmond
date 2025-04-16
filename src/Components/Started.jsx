@@ -11,7 +11,7 @@ const Started = () => {
 
   return (
     <div className="bg-[#FBF6EF] py-12 sm:py-16 md:py-20">
-      <div className="relative max-w-full sm:max-w-3xl md:max-w-3xl mx-auto bg-white shadow-lg rounded-lg font-marcellus flex flex-col md:flex-row md:justify-between overflow-hidden">
+      <div className="relative max-w-full mx-4 sm:max-w-3xl md:max-w-3xl md:mx-auto bg-white shadow-lg rounded-lg font-marcellus flex flex-col md:flex-row md:justify-between overflow-hidden">
 
         <img
           src={image23}
@@ -39,8 +39,8 @@ const Started = () => {
             ref={descRef}
             className="text-xs sm:text-[14px] md:text-[14px] text-gray-500 leading-5 text-center md:text-start"
           >
-            Be part of Richmond’s creative transformation! Join us to <br /> celebrate 
-            local talent, revitalize public spaces, and build a <br /> vibrant arts 
+            Be part of Richmond’s creative transformation! Join us to <br className="md:block hidden" /> celebrate 
+            local talent, revitalize public spaces, and build a <br className="md:block hidden" /> vibrant arts 
             community together.
           </motion.p>
 
@@ -50,7 +50,7 @@ const Started = () => {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6, ease: [0.34, 1.56, 0.64, 1], delay: 0.4 }}
             ref={buttonRef}
-            className="button bg-burntCopper hover:bg-black w-40"
+            className="button bg-burntCopper hover:bg-black w-40 hover:border font-medium"
             style={{ "--clr": "#AA7446" }}
           >
             <span className="button__icon-wrapper">
