@@ -26,7 +26,7 @@ const Community = () => {
                 initial={{ opacity: 0, y: 50 }}
                 animate={isHeaderInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.8, ease: "easeOut" }}
-                className="text-xs sm:text-sm"
+                className="text-xs sm:text-sm  text-center md:text-start"
               >
                 What Our Community Says
               </motion.p>
@@ -35,7 +35,7 @@ const Community = () => {
                 initial={{ opacity: 0, y: 50 }}
                 animate={isHeaderInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-                className="text-2xl sm:text-3xl md:text-4xl"
+                className="text-2xl sm:text-3xl md:text-4xl text-center md:text-start"
               >
                 Voices of Appreciation, <br /> Trust, and Inspiration
               </motion.h1>
@@ -44,7 +44,7 @@ const Community = () => {
                 initial={{ opacity: 0, y: 50 }}
                 animate={isHeaderInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
-                className="text-xs sm:text-sm"
+                className="text-xs sm:text-[14px] leading-5 text-center md:text-start"
               >
                 Hear from artists, art lovers, and supporters who have experienced the impact of our platform. Their stories highlight the value of nurturing local talent and fostering a creative community.
               </motion.p>
@@ -60,7 +60,7 @@ const Community = () => {
               <img
                 src={frame1}
                 alt=""
-                className="w-full max-w-24 sm:max-w-32 md:max-w-none object-cover"
+                className=" h-20 w-20 max-w-24 sm:max-w-32 md:max-w-none mx-auto  "
               />
             </motion.div>
           </div>

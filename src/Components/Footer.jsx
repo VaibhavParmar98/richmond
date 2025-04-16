@@ -21,6 +21,8 @@ const Footer = () => {
     <>
       <div className="bg-champagneBeige py-12 sm:py-16 md:py-20">
         <div className="max-w-full sm:max-w-5xl md:max-w-6xl mx-auto px-4 sm:px-6 md:px-0 flex flex-col md:flex-row md:items-center md:justify-between gap-8 sm:gap-10">
+          
+          {/* Logo & Description */}
           <motion.div {...fadeInUp(0)} className="flex flex-col gap-6 sm:gap-8 w-full md:w-auto">
             <div className="flex gap-1 items-center">
               <img src={image20} alt="" className="w-8 sm:w-9 h-8 sm:h-9" />
@@ -47,11 +49,12 @@ const Footer = () => {
             </div>
           </motion.div>
 
+          {/* Navigation */}
           <motion.div {...fadeInUp(0.2)} className="flex flex-col gap-6 sm:gap-8 font-marcellus w-full md:w-auto">
             <label className="text-lg sm:text-xl md:text-xl font-semibold text-burntCopper">
               Navigation
             </label>
-            <motion.ul {...fadeInUp(0.3)} className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-2 sm:gap-3 text-xs sm:text-sm md:text-sm">
+            <motion.ul {...fadeInUp(0.3)} className="grid grid-cols-3 sm:grid-cols-2  gap-2 sm:gap-3 text-xs sm:text-sm md:text-sm">
               {["About", "Talks", "Event", "Shop List", "Gallery", "Faqs", "Tickets", "Blog", "Artist", "Testimonials"].map((item, index) => (
                 <motion.li key={index} {...fadeInUp(0.3 + index * 0.1)} className="flex gap-2 items-center">
                   <span>
@@ -63,20 +66,23 @@ const Footer = () => {
             </motion.ul>
           </motion.div>
 
+          {/* Newsletter */}
           <motion.div {...fadeInUp(0.4)} className="flex flex-col gap-6 sm:gap-8 font-marcellus w-full md:w-80">
             <label className="text-lg sm:text-xl md:text-xl font-semibold text-burntCopper">
               Newsletter
             </label>
             <form className="flex flex-col gap-2 sm:gap-3 text-xs sm:text-sm md:text-sm">
-              <motion.input {...fadeInUp(0.5)} type="text" className="p-1.5 sm:p-2 bg-white text-burntCopper" placeholder="Your Name" />
-              <motion.input {...fadeInUp(0.6)} type="text" className="p-1.5 sm:p-2 bg-white text-burntCopper" placeholder="Your Email" />
-              <motion.button {...fadeInUp(0.7)} className="uppercase p-1.5 sm:p-2 bg-burntCopper text-white cursor-pointer">
+              <motion.input {...fadeInUp(0.5)} type="text" className="p-1.5 sm:p-2 bg-white text-burntCopper rounded-3xl" placeholder="Your Name" />
+              <motion.input {...fadeInUp(0.6)} type="text" className="p-1.5 sm:p-2 bg-white text-burntCopper rounded-3xl" placeholder="Your Email" />
+              <motion.button {...fadeInUp(0.7)} className="uppercase p-1.5 sm:p-2 bg-burntCopper text-white cursor-pointer rounded-3xl">
                 subscribe
               </motion.button>
             </form>
           </motion.div>
         </div>
       </div>
+
+      {/* Bottom Bar */}
       <motion.div {...fadeInUp(0.8)} className="text-center p-2 sm:p-3 bg-burntCopper text-white font-marcellus text-xs sm:text-sm md:text-sm">
         <p>Richmond Renaissance | © 2025 All rights reserved</p>
       </motion.div>

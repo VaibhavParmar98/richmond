@@ -25,7 +25,7 @@ const TestimonialSection = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
       >
-        <p className="text-xs sm:text-sm md:text-sm">
+        <p className="text-xs sm:text-[14px] md:text-[14px] leading-5 text-center md:text-start">
           Joining This Website Has Been A Game-Changer For Me. It Has Given Me Exposure, Connected Me
           With Fellow Artists, And Inspired Me To Create More. The Supportive Community And Opportunities
           Provided Have Truly Helped Me Grow And Showcase My Work With Confidence. I'm Incredibly Thankful
@@ -70,7 +70,7 @@ const TestimonialSection = () => {
                 initial={{ opacity: 0, x: -10 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
-                className="absolute -top-1 left-1/3 w-2 sm:w-3 md:w-3 h-2 sm:h-3 md:h-3 bg-yellow-400 rounded-full"
+                className="absolute left-[32%] top-1/2 -translate-y-1/2 w-2 sm:w-2.5 md:w-3 h-2 sm:h-2.5 md:h-3 bg-yellow-400 rounded-full"
               ></motion.div>
             </div>
           </div>
@@ -89,14 +89,14 @@ const TestimonialSection = () => {
                 initial={{ width: "0%" }}
                 animate={{ width: "66%" }}
                 transition={{ duration: 1, ease: "easeOut" }}
-                className="absolute top-0 left-0 h-1 bg-yellow-400 rounded-full"
+                className="absolute top-0 left-0 h-1 bg-yellow-400"
               ></motion.div>
               <motion.div
                 ref={volumeThumbRef}
                 initial={{ opacity: 0, x: -10 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
-                className="absolute -top-1 left-2/3 w-2 sm:w-3 md:w-3 h-2 sm:h-3 md:h-3 bg-yellow-400 rounded-full"
+                className="absolute left-[60%] top-1/2 -translate-y-1/2 w-2 sm:w-2.5 md:w-3 h-2 sm:h-2.5 md:h-3 bg-yellow-400 rounded-full"
               ></motion.div>
             </div>
           </div>

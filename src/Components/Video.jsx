@@ -14,7 +14,7 @@ const Video = () => {
         <img
           src={image21}
           alt=""
-          className="w-full h-full object-cover blur-xs opacity-90"
+          className="w-full h-full  opacity-90"
         />
       </div>
 
@@ -39,8 +39,8 @@ const Video = () => {
             transition={{ duration: 0.6, ease: "easeOut", delay: 0 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="button font-medium bg-vintageBronze hover:bg-black"
-            style={{ "--clr": "#A99C67" }}
+            className="button font-medium bg-burntCopper hover:bg-black"
+            style={{ "--clr": "#AA7446" }}
           >
             <span className="button__icon-wrapper">
               <svg
@@ -77,7 +77,7 @@ const Video = () => {
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="button font-medium bg-transparent border border-black hover:bg-black"
+            className="button font-medium bg-transparent border border-black hover:border-none hover:bg-burntCopper"
             style={{ "--clr": "#000000" }}
           >
             <span className="button__icon-wrapper">

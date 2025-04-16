@@ -107,7 +107,7 @@ const Thoughts = () => {
                     }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: false, amount: 0.5 }} 
-                    className="text-sm text-center mt-2"
+                    className="text-[14px] text-center mt-2"
                   >
                     {text}
                   </motion.p>

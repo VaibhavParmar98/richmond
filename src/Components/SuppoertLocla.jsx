@@ -31,8 +31,8 @@ const SuppoertLocla = () => {
               alt="Support Local Artists"
               className="w-full h-auto object-cover"
             />
-            <h1 className="text-lg sm:text-xl">Support Local Artists – Make a Difference Today!</h1>
-            <p className="text-xs sm:text-sm">
+            <h1 className="text-lg sm:text-xl text-center md:text-start">Support Local Artists – Make a Difference Today!</h1>
+            <p className="text-xs sm:text-[14px] leading-5 text-center md:text-start mb-2">
               Your generous contribution helps empower local artists, fund community events,
               and create opportunities for emerging talent. Every donation nurtures creativity.
             </p>
@@ -68,8 +68,8 @@ const SuppoertLocla = () => {
               alt="Fuel Creativity"
               className="w-full h-auto object-cover"
             />
-            <h1 className="text-lg sm:text-xl">Fuel Creativity – Support Our Mission!</h1>
-            <p className="text-xs sm:text-sm">
+            <h1 className="text-lg sm:text-xl text-center md:text-start">Fuel Creativity – Support Our Mission!</h1>
+            <p className="text-xs sm:text-[14px] leading-5 text-center md:text-start mb-2">
               Help us continue providing a platform for local artists to showcase their talent.
               Your support ensures that art thrives and inspires future generations.
             </p>

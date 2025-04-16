@@ -42,45 +42,46 @@ const OurMinisters = () => {
         </motion.div>
 
         <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-2 sm:gap-3 mt-8 sm:mt-10">
-          {items.map((itm, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.8, ease: "easeOut", delay: idx * 0.2 }}
-              className="flex flex-col gap-3 sm:gap-4 border p-4 sm:py-8 w-full sm:w-56 md:w-60 h-auto min-h-56 sm:h-60"
-            >
-              <motion.span
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.6, ease: [0.34, 1.56, 0.64, 1], delay: idx * 0.2 + 0.1 }}
-                className="text-3xl sm:text-3xl"
-              >
-                {itm.icons}
-              </motion.span>
-              <motion.h1
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.6, ease: "easeOut", delay: idx * 0.2 + 0.2 }}
-                className="text-base sm:text-base"
-              >
-                {itm.title}
-              </motion.h1>
-              <motion.p
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.6, ease: "easeOut", delay: idx * 0.2 + 0.3 }}
-                className="text-xs sm:text-xs"
-              >
-                {itm.desc}
-              </motion.p>
-            </motion.div>
-          ))}
-        </div>
+  {items.map((itm, idx) => (
+    <motion.div
+      key={idx}
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.8, ease: "easeOut", delay: idx * 0.2 }}
+      className="flex flex-col gap-3 sm:gap-4 border p-4 sm:py-8 w-full sm:w-56 md:w-60 h-auto min-h-56 sm:h-60 justify-center items-center" // Added justify-center & items-center for centering
+    >
+      <motion.span
+        initial={{ opacity: 0, scale: 0.8 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.6, ease: [0.34, 1.56, 0.64, 1], delay: idx * 0.2 + 0.1 }}
+        className="text-3xl sm:text-3xl"
+      >
+        {itm.icons}
+      </motion.span>
+      <motion.h1
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.6, ease: "easeOut", delay: idx * 0.2 + 0.2 }}
+        className="text-base sm:text-lg"
+      >
+        {itm.title}
+      </motion.h1>
+      <motion.p
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.6, ease: "easeOut", delay: idx * 0.2 + 0.3 }}
+        className="text-sm sm:text-[14px] leading-5 text-center md:text-start"
+      >
+        {itm.desc}
+      </motion.p>
+    </motion.div>
+  ))}
+</div>
+
 
         <motion.button
           initial={{ opacity: 0, scale: 0.8 }}

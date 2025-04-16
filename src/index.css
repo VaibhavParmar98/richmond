@@ -19,13 +19,6 @@ body {
   }
 }
 
-@media (max-width: 640px) {
-  .animate-scroll {
-    overflow: visible;
-    white-space: normal;
-  }
-}
-
 .overflow-hidden {
   overflow: hidden;
 }
@@ -39,6 +32,7 @@ body {
 .animate-scroll {
   animation: scroll 20s linear infinite;
 }
+
 
 
 
@@ -63,7 +57,7 @@ body {
   .button {
     @apply inline-flex items-center gap-3 font-semibold text-white px-6 py-3 pl-5 rounded-full 
       whitespace-nowrap overflow-hidden text-ellipsis cursor-pointer transition-colors duration-300 
-      leading-none no-underline border-0;
+      leading-none no-underline border-0 relative;
     background-color: var(--clr);
   }
 
@@ -71,6 +65,11 @@ body {
     @apply flex-shrink-0 w-[25px] h-[25px] relative bg-white rounded-full grid place-items-center 
       overflow-hidden;
     color: var(--clr);
+  }
+
+  .button__icon-svg--copy {
+    @apply absolute;
+    transform: translate(-150%, 150%);
   }
 
   .button:hover {
@@ -81,11 +80,6 @@ body {
     color: #000;
   }
 
-  .button__icon-svg--copy {
-    @apply absolute;
-    transform: translate(-150%, 150%);
-  }
-
   .button:hover .button__icon-svg:first-child {
     @apply transition-transform duration-300 ease-in-out;
     transform: translate(150%, -150%);
@@ -94,5 +88,68 @@ body {
   .button:hover .button__icon-svg--copy {
     @apply transition-transform duration-300 ease-in-out delay-100;
     transform: translate(0);
+  }
+
+  /* Hover fill left animation (for transparent button with border) */
+  .hover-fill-left::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    background-color: #AA7446;
+    transition: width 0.4s ease-in-out;
+    z-index: 0;
+  }
+
+  .hover-fill-left:hover::before {
+    width: 100%;
+  }
+
+  .hover-fill-left span,
+  .hover-fill-left svg {
+    position: relative;
+    z-index: 10;
+    transition: color 0.4s ease-in-out;
+  }
+
+  .hover-fill-left:hover span,
+  .hover-fill-left:hover svg {
+    color: white !important;
+  }
+
+  /* Hover unfill left animation (for solid burntCopper button) */
+  .hover-unfill-left::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #AA7446;
+    transition: width 0.4s ease-in-out;
+    z-index: 0;
+  }
+
+  .hover-unfill-left:hover::before {
+    width: 0%;
+  }
+
+  .hover-unfill-left:hover {
+    background-color: transparent !important;
+    color: #AA7446 !important;
+  }
+
+  .hover-unfill-left span,
+  .hover-unfill-left svg {
+    position: relative;
+    z-index: 10;
+    transition: color 0.4s ease-in-out;
+  }
+
+  .hover-unfill-left:hover span,
+  .hover-unfill-left:hover svg {
+    color: #AA7446 !important;
   }
 }

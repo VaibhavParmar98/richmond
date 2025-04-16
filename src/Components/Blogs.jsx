@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import Slider from "react-slick";
 import image9 from '../assets/image9.png';
 import image11 from '../assets/image11.png';
 import image10 from '../assets/image10.png';
@@ -11,25 +12,25 @@ const Blogs = () => {
       img: image9,
       date: "March 21, 2024",
       title: "Exploring Emerging Trends in Local Art",
-      button: "Read More ...",
+      button: "Read More",
     },
     {
       img: image11,
       date: "March 21, 2024",
       title: "Tips to Support and Promote Local Artists",
-      button: "Read More ...",
+      button: "Read More",
     },
     {
       img: image10,
       date: "March 21, 2024",
       title: "Artist Spotlight: Inspiring Journeys and Stories",
-      button: "Read More ...",
+      button: "Read More",
     },
     {
       img: image12,
       date: "March 21, 2024",
       title: "Upcoming Art Events You Can’t Miss",
-      button: "Read More ...",
+      button: "Read More",
     },
   ];
 
@@ -41,10 +42,18 @@ const Blogs = () => {
   const isButtonInView = useInView(buttonRef, { once: true, margin: "-50px" });
   const isDividerInView = useInView(dividerRef, { once: true, margin: "-50px" });
 
+  const sliderSettings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
+
   return (
     <div className="py-12 sm:py-16 md:py-20">
       <div className="max-w-6xl mx-auto font-marcellus px-4 sm:px-6 md:px-0">
-        <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-4 sm:gap-6">
+        <div className="flex flex-col md:flex-row md:justify-between justify-center items-center md:items-center gap-4 sm:gap-6">
           <motion.div
             ref={headerRef}
             initial={{ opacity: 0, y: 50 }}
@@ -52,8 +61,8 @@ const Blogs = () => {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="flex flex-col gap-2 sm:gap-3"
           >
-            <p className="text-xs sm:text-sm">BRIDGES</p>
-            <h1 className="text-2xl sm:text-3xl md:text-4xl">Latest news & Blogs</h1>
+            <p className="text-xs sm:text-sm text-center md:text-start">BRIDGES</p>
+            <h1 className="text-2xl sm:text-3xl md:text-4xl text-center md:text-start">Latest news & Blogs</h1>
           </motion.div>
 
           <motion.button
@@ -61,7 +70,7 @@ const Blogs = () => {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={isButtonInView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 0.6, ease: [0.68, -0.55, 0.265, 1.55] }}
-            className="button bg-burntCopper hover:bg-black"
+            className="button bg-burntCopper hover:bg-black w-44"
             style={{ "--clr": "#AA7446" }}
           >
             <span className="button__icon-wrapper">
@@ -103,7 +112,30 @@ const Blogs = () => {
           className="border-b-0 border mt-8 sm:mt-10"
         />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-6 sm:gap-10 md:gap-16 mt-8 sm:mt-12 md:mt-16">
+        <div className="md:hidden mt-8 sm:mt-12 md:mt-16">
+          <Slider {...sliderSettings}>
+            {items.map((itm, idx) => (
+              <div key={idx}>
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                  <img
+                    src={itm.img}
+                    alt={itm.title}
+                    className="w-full sm:w-40 md:w-48 h-auto sm:h-36 md:h-40 rounded-md"
+                  />
+                  <div className="flex flex-col gap-3 sm:gap-4">
+                    <p className="date text-xs sm:text-sm">{itm.date}</p>
+                    <h1 className="text-lg sm:text-xl">{itm.title}</h1>
+                    <button className="text-sm font-bold hover:underline text-left hover:text-deepMaroon text-burntCopper">
+                      {itm.button}
+                    </button>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </Slider>
+        </div>
+
+        <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-6 sm:gap-10 md:gap-16 mt-8 sm:mt-12 md:mt-16">
           {items.map((itm, idx) => {
             const cardRef = useRef(null);
             const isInView = useInView(cardRef, { once: true, margin: "-50px" });
@@ -120,9 +152,8 @@ const Blogs = () => {
                   initial={{ opacity: 0, x: -50 }}
                   animate={isInView ? { opacity: 1, x: 0 } : {}}
                   transition={{ duration: 0.8, ease: "easeOut" }}
-                  className="w-full sm:w-40 md:w-48 h-32 sm:h-36 md:h-40 object-cover"
+                  className="w-full sm:w-40 md:w-48 h-auto sm:h-36 md:h-40 rounded-md"
                 />
-
                 <div className="flex flex-col gap-3 sm:gap-4">
                   <motion.p
                     initial={{ opacity: 0, y: 30 }}
@@ -132,7 +163,6 @@ const Blogs = () => {
                   >
                     {itm.date}
                   </motion.p>
-
                   <motion.h1
                     initial={{ opacity: 0, y: 30 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -141,12 +171,11 @@ const Blogs = () => {
                   >
                     {itm.title}
                   </motion.h1>
-
                   <motion.button
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={isInView ? { opacity: 1, scale: 1 } : {}}
                     transition={{ duration: 0.6, ease: [0.68, -0.55, 0.265, 1.55], delay: 0.4 }}
-                    className="text-sm font-bold hover:underline hover:text-deepMaroon cursor-pointer transition-all duration-300 sm:text-sm text-burntCopper w-28 sm:w-32"
+                    className="text-sm font-bold hover:underline text-left hover:text-deepMaroon text-burntCopper"
                   >
                     {itm.button}
                   </motion.button>

@@ -19,14 +19,14 @@ const Started = () => {
           className="absolute inset-0 w-full h-full object-cover opacity-20 z-0"
         />
 
-        <div className="relative z-10 flex flex-col gap-3 sm:gap-4 py-4 sm:py-6 px-4 sm:px-8 md:px-10">
+        <div className="relative z-10 flex flex-col gap-3 sm:gap-4 py-4 sm:py-6 px-4 sm:px-8 md:px-10 items-center justify-center md:justify-start md:items-start">
           <motion.h1
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             ref={titleRef}
-            className="text-2xl sm:text-3xl md:text-4xl"
+            className="text-2xl sm:text-3xl md:text-4xl text-center md:text-start"
           >
             Ready to get started?
           </motion.h1>
@@ -37,7 +37,7 @@ const Started = () => {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
             ref={descRef}
-            className="text-xs sm:text-sm md:text-sm text-gray-500"
+            className="text-xs sm:text-[14px] md:text-[14px] text-gray-500 leading-5 text-center md:text-start"
           >
             Be part of Richmond’s creative transformation! Join us to <br /> celebrate 
             local talent, revitalize public spaces, and build a <br /> vibrant arts 
@@ -95,7 +95,7 @@ const Started = () => {
             ref={imageRef}
             src={image15}
             alt=""
-            className="w-full sm:w-48 md:w-60 h-auto sm:h-48 md:h-60 p-2 sm:p-3 md:p-3"
+            className="w-full sm:w-48 md:w-60 h-auto sm:h-48 md:h-60 p-6 sm:p-3 md:p-3"
           />
         </motion.div>
       </div>
