@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import calendar from "../assets/calendar.svg";
 import { FaCaretRight } from "react-icons/fa6";
 import { MdOutlineKeyboardArrowDown, MdOutlineKeyboardArrowUp } from "react-icons/md";
+import { NavLink } from "react-router-dom";
 
 const HeaderDesktop = () => {
   const [isSubmenuOpen, setIsSubmenuOpen] = useState(false);
@@ -42,7 +43,8 @@ const HeaderDesktop = () => {
   return (
     <div className="bg-champagneBeige p-3 relative hidden md:block">
       <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
-        <div className="flex gap-1 items-center">
+       <NavLink to='/'>
+       <div className="flex gap-1 items-center">
           <img src="/image20.png" alt="Logo" className="w-9 h-9" />
           <p className="flex flex-col font-bold text-xl">
             Richmond
@@ -51,6 +53,7 @@ const HeaderDesktop = () => {
             </span>
           </p>
         </div>
+       </NavLink>
 
         <div className="flex items-center gap-16">
           <ul className="flex text-nowrap items-center gap-8 text-sm font-marcellus">

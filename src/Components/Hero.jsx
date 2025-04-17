@@ -4,6 +4,7 @@ import { motion, useInView } from "framer-motion";
 import image24 from "../assets/Group.png";
 import image1 from "../assets/image1.png";
 import image3 from "../assets/image3.png";
+import { NavLink } from "react-router-dom";
 
 const Hero = () => {
 
@@ -81,7 +82,8 @@ const Hero = () => {
                           </span>
                           Contact Us
                         </motion.button>
-              <motion.button
+             <NavLink to='/signup'>
+             <motion.button
                           ref={buttonRef}
                           initial={{ opacity: 0, scale: 0.8 }}
                           animate={isButtonInView ? { opacity: 1, scale: 1 } : {}}
@@ -116,8 +118,9 @@ const Hero = () => {
                               ></path>
                             </svg>
                           </span>
-                          Contact Us
+                          Sign Up
                         </motion.button>
+             </NavLink>
             </div>
           </motion.div>
           <motion.div

@@ -6,6 +6,9 @@ import Footer from "./Components/Footer";
 import CustomCursor from "./Components/CustomCursor";
 import HeaderMobile from "./Components/Header2Mobile";
 import HeaderDesktop from "./Components/Header2Desktop";
+import Header2 from "./Components/Header2";
+import Header1 from "./Components/Header1";
+import Signup from "./Components/Sigup";
 
 const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -34,12 +37,14 @@ const App = () => {
     <>
       <BrowserRouter>
         <CustomCursor />
+        <Header1  />
         <div ref={headerRef} className="relative z-20">
           <HeaderMobile isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
           <HeaderDesktop />
         </div>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/signup" element={<Signup />} />
         </Routes>
         <Footer />
         {isMenuOpen && (
