@@ -189,7 +189,7 @@ const Banner = () => {
 
           {/* Accessible Button */}
           <button
-            className="button font-medium text-sm sm:text-base px-6 py-2 md:py-3  mb-10 md:mb-0"
+            className="button font-medium text-sm sm:text-base px-6 py-2 md:py-3  md:mb-0"
             style={{ "--clr": "#AA7446" }}
             aria-label="RSVP for Community Listening Session"
           >
