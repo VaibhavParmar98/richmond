@@ -1,11 +1,11 @@
 import React, { useState, useRef, useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./Pages/Home";
-import Header1 from "./Components/Header1";
-import Header2 from "./Components/Header2";
+
 import Footer from "./Components/Footer";
-import Button from "./Pages/Button";
 import CustomCursor from "./Components/CustomCursor";
+import HeaderMobile from "./Components/Header2Mobile";
+import HeaderDesktop from "./Components/Header2Desktop";
 
 const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -35,17 +35,16 @@ const App = () => {
       <BrowserRouter>
         <CustomCursor />
         <div ref={headerRef} className="relative z-20">
-          <Header1 />
-          <Header2 isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
+          <HeaderMobile isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
+          <HeaderDesktop />
         </div>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/btn" element={<Button />} />
         </Routes>
         <Footer />
         {isMenuOpen && (
           <div
-            className="fixed inset-0 z-10 backdrop-blur-xs  bg-black/60 md:hidden"
+            className="fixed inset-0 z-10 backdrop-blur-xs bg-black/60 md:hidden"
             onClick={toggleMenu}
           />
         )}

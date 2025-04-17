@@ -10,21 +10,25 @@ import Community from '../Components/Community'
 import Thoughts from '../Components/Thoughts'
 import Contact from '../Components/Contact'
 import Started from '../Components/Started'
+import Banner from '../Components/Banner'
+import EventSchedule from '../Components/EventSchedule'
 
 const Home = () => {
   return (
     <>
-    <Hero/>
-    <AboutUs/>
-    <OurMinisters/>
-    <Team/>
-    <SuppoertLocla/>
-    <Video/>
-    <Blogs/>
-    <Community/>
-    <Thoughts/>
-    <Contact/>
-    <Started/>
+      <Banner />
+      <Hero />
+      <AboutUs />
+      <OurMinisters />
+      <Team />
+      <SuppoertLocla />
+      <EventSchedule/>
+      <Video />
+      <Blogs />
+      <Community />
+      <Thoughts />
+      <Contact />
+      <Started />
     </>
   )
 }
