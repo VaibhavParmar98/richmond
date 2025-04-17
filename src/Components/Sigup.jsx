@@ -80,7 +80,7 @@ const Signup = () => {
                       className="border-b-2 w-full sm:w-1/2 outline-none pb-1 pl-2"
                     />
                   </div>
-                  <div className="flex flex-col sm:flex-row gap-5">
+                  {/* <div className="flex flex-col sm:flex-row gap-5">
                     <input
                       type="text"
                       placeholder="Enter Password"
@@ -91,7 +91,7 @@ const Signup = () => {
                       placeholder="Enter Confirm Password"
                       className="border-b-2 w-full sm:w-1/2 outline-none pb-1 pl-2"
                     />
-                  </div>
+                  </div> */}
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
