@@ -58,7 +58,7 @@ const Community = () => {
               className="mt-4 md:mt-0"
             >
               <img
-                src={frame1}
+                src="https://iili.io/31cm2vs.png"
                 alt=""
                 className=" h-20 w-20 max-w-24 sm:max-w-32 md:max-w-none mx-auto  "
               />
@@ -84,7 +84,7 @@ const Community = () => {
           className="mt-6 md:mt-0"
         >
           <img
-            src={image13}
+            src="https://iili.io/31cmanV.png"
             alt=""
             className="w-full rounded-2xl h-auto sm:h-96 md:h-[510px] md:w-[900px] "
           />

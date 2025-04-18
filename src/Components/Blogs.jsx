@@ -9,25 +9,25 @@ import image12 from '../assets/image12.png';
 const Blogs = () => {
   const items = [
     {
-      img: image9,
+      img: "https://iili.io/31cmo67.png",
       date: "March 21, 2024",
       title: "Exploring Emerging Trends in Local Art",
       button: "Read More",
     },
     {
-      img: image11,
+      img: "https://iili.io/31cmRuj.png",
       date: "March 21, 2024",
       title: "Tips to Support and Promote Local Artists",
       button: "Read More",
     },
     {
-      img: image10,
+      img: "https://iili.io/31cmT8u.png",
       date: "March 21, 2024",
       title: "Artist Spotlight: Inspiring Journeys and Stories",
       button: "Read More",
     },
     {
-      img: image12,
+      img: "https://iili.io/31cm5wx.png",
       date: "March 21, 2024",
       title: "Upcoming Art Events You Can’t Miss",
       button: "Read More",

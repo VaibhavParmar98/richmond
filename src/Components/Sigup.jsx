@@ -22,7 +22,7 @@ const Signup = () => {
           animate={isHeadingInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <img src={image29} alt="" className="w-full h-[350px] object-cover" />
+          <img src="https://iili.io/31cmU9s.md.jpg" alt="" className="w-full h-[350px] object-cover" />
           <div className="absolute inset-0 bg-black/50" />
           <div className="absolute inset-0 flex items-center justify-center">
             <h1 className="text-white font-marcellus tracking-widest text-4xl font-bold">
@@ -41,7 +41,7 @@ const Signup = () => {
           <div className="max-w-6xl mx-auto flex flex-col md:flex-row py-10 gap-10">
             <div className="w-full md:w-1/2 flex items-center justify-center">
               <img
-                src={image28}
+                src="https://iili.io/31cmgAG.md.jpg"
                 alt=""
                 className="rounded-3xl h-80 w-[90%] max-w-[450px] object-cover"
               />

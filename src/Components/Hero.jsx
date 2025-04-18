@@ -1,16 +1,12 @@
 import React, { useRef } from "react";
 import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 import { motion, useInView } from "framer-motion";
-import image24 from "../assets/Group.png";
-import image1 from "../assets/image1.png";
-import image3 from "../assets/image3.png";
 import { NavLink } from "react-router-dom";
 
+
 const Hero = () => {
-
-    const buttonRef = useRef(null);
-    const isButtonInView = useInView(buttonRef, { once: true, margin: "-50px" });
-
+  const buttonRef = useRef(null);
+  const isButtonInView = useInView(buttonRef, { once: true, margin: "-50px" });
 
   return (
     <section className="relative overflow-hidden">
@@ -45,82 +41,85 @@ const Hero = () => {
               collaborations.
             </p>
             <div className="flex gap-3 sm:gap-4 mt-4 sm:mt-6 justify-center md:justify-start">
-            <motion.button
-                          ref={buttonRef}
-                          initial={{ opacity: 0, scale: 0.8 }}
-                          animate={isButtonInView ? { opacity: 1, scale: 1 } : {}}
-                          transition={{ duration: 0.6, ease: [0.68, -0.55, 0.265, 1.55] }}
-                          className="button font-medium bg-deepMaroon hover:border hover:bg-black"
-                          style={{ "--clr": "#2B0A0A" }}
-                        >
-                          <span className="button__icon-wrapper">
-                            <svg
-                              viewBox="0 0 14 15"
-                              fill="none"
-                              xmlns="http://www.w3.org/2000/svg"
-                              className="button__icon-svg"
-                              width="10"
-                            >
-                              <path
-                                d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
-                                fill="currentColor"
-                              ></path>
-                            </svg>
-              
-                            <svg
-                              viewBox="0 0 14 15"
-                              fill="none"
-                              width="10"
-                              xmlns="http://www.w3.org/2000/svg"
-                              className="button__icon-svg button__icon-svg--copy"
-                            >
-                              <path
-                                d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
-                                fill="currentColor"
-                              ></path>
-                            </svg>
-                          </span>
-                          Contact Us
-                        </motion.button>
-             <NavLink to='/signup'>
-             <motion.button
-                          ref={buttonRef}
-                          initial={{ opacity: 0, scale: 0.8 }}
-                          animate={isButtonInView ? { opacity: 1, scale: 1 } : {}}
-                          transition={{ duration: 0.6, ease: [0.68, -0.55, 0.265, 1.55] }}
-                          className="button font-medium hover:border bg-burntCopper hover:bg-black"
-                          style={{ "--clr": "#AA7446" }}
-                        >
-                          <span className="button__icon-wrapper">
-                            <svg
-                              viewBox="0 0 14 15"
-                              fill="none"
-                              xmlns="http://www.w3.org/2000/svg"
-                              className="button__icon-svg"
-                              width="10"
-                            >
-                              <path
-                                d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
-                                fill="currentColor"
-                              ></path>
-                            </svg>
-              
-                            <svg
-                              viewBox="0 0 14 15"
-                              fill="none"
-                              width="10"
-                              xmlns="http://www.w3.org/2000/svg"
-                              className="button__icon-svg button__icon-svg--copy"
-                            >
-                              <path
-                                d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
-                                fill="currentColor"
-                              ></path>
-                            </svg>
-                          </span>
-                          Sign Up
-                        </motion.button>
-             </NavLink>
+              <motion.button
+                ref={buttonRef}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={isButtonInView ? { opacity: 1, scale: 1 } : {}}
+                transition={{ duration: 0.6, ease: [0.68, -0.55, 0.265, 1.55] }}
+                className="button font-medium bg-deepMaroon hover:border hover:bg-black"
+                style={{ "--clr": "#2B0A0A" }}
+              >
+                <span className="button__icon-wrapper">
+                  <svg
+                    viewBox="0 0 14 15"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="button__icon-svg"
+                    width="10"
+                  >
+                    <path
+                      d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                      fill="currentColor"
+                    ></path>
+                  </svg>
+
+                  <svg
+                    viewBox="0 0 14 15"
+                    fill="none"
+                    width="10"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="button__icon-svg button__icon-svg--copy"
+                  >
+                    <path
+                      d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                      fill="currentColor"
+                    ></path>
+                  </svg>
+                </span>
+                Contact Us
+              </motion.button>
+              <NavLink to="/signup">
+                <motion.button
+                  ref={buttonRef}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={isButtonInView ? { opacity: 1, scale: 1 } : {}}
+                  transition={{
+                    duration: 0.6,
+                    ease: [0.68, -0.55, 0.265, 1.55],
+                  }}
+                  className="button font-medium hover:border bg-burntCopper hover:bg-black"
+                  style={{ "--clr": "#AA7446" }}
+                >
+                  <span className="button__icon-wrapper">
+                    <svg
+                      viewBox="0 0 14 15"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="button__icon-svg"
+                      width="10"
+                    >
+                      <path
+                        d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                        fill="currentColor"
+                      ></path>
+                    </svg>
+
+                    <svg
+                      viewBox="0 0 14 15"
+                      fill="none"
+                      width="10"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="button__icon-svg button__icon-svg--copy"
+                    >
+                      <path
+                        d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                        fill="currentColor"
+                      ></path>
+                    </svg>
+                  </span>
+                  Sign Up
+                </motion.button>
+              </NavLink>
             </div>
           </motion.div>
           <motion.div
@@ -129,7 +128,12 @@ const Hero = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
           >
-            <img src={image24} alt="Icon" className="w-20 sm:w-24 md:w-28 mt-8 md:mt-10" />
+            <img
+              src="https://iili.io/31cmdan.png
+"
+              alt="Icon"
+              className="w-20 sm:w-24 md:w-28 mt-8 md:mt-10"
+            />
           </motion.div>
         </div>
 
@@ -137,7 +141,11 @@ const Hero = () => {
           className="image-section flex flex-col md:flex-row gap-4 sm:gap-6"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.7, staggerChildren: 0.2, ease: "easeInOut" }}
+          transition={{
+            duration: 0.7,
+            staggerChildren: 0.2,
+            ease: "easeInOut",
+          }}
         >
           <motion.div
             className="w-full md:w-2/3"
@@ -145,7 +153,11 @@ const Hero = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, ease: "easeInOut" }}
           >
-            <img src={image1} alt="Art Mural" className="rounded-lg object-cover w-full h-64 sm:h-80 md:h-full" />
+            <img
+              src="https://iili.io/31cP13v.png"
+              alt="Art Mural"
+              className="rounded-lg object-cover w-full h-64 sm:h-80 md:h-full"
+            />
           </motion.div>
           <motion.div
             className="w-full md:w-1/3 relative rounded-lg overflow-hidden shadow-lg"
@@ -154,7 +166,11 @@ const Hero = () => {
             transition={{ duration: 0.7, ease: "easeInOut" }}
           >
             <div className="relative w-full h-80 sm:h-96 md:h-[450px]">
-              <img src={image3} alt="Artist Event" className="w-full h-full object-cover" />
+              <img
+                src="https://iili.io/31cPl6J.png"
+                alt="Artist Event"
+                className="w-full h-full object-cover"
+              />
               <div className="absolute inset-0 bg-black opacity-50"></div>
             </div>
             <motion.div
@@ -186,7 +202,8 @@ const Hero = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.3, ease: "easeInOut" }}
                 >
-                  Host a guided walk through local galleries with artists discussing their works.
+                  Host a guided walk through local galleries with artists
+                  discussing their works.
                 </motion.p>
                 <motion.button
                   className="button text-base font-medium bg-burntCopper hover:bg-black mt-3"
@@ -196,13 +213,25 @@ const Hero = () => {
                   transition={{ duration: 0.5, delay: 0.4, ease: "easeInOut" }}
                 >
                   <span className="button__icon-wrapper">
-                    <svg viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg" className="button__icon-svg" width="10">
+                    <svg
+                      viewBox="0 0 14 15"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="button__icon-svg"
+                      width="10"
+                    >
                       <path
                         d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
                         fill="currentColor"
                       />
                     </svg>
-                    <svg viewBox="0 0 14 15" fill="none" width="10" xmlns="http://www.w3.org/2000/svg" className="button__icon-svg button__icon-svg--copy">
+                    <svg
+                      viewBox="0 0 14 15"
+                      fill="none"
+                      width="10"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="button__icon-svg button__icon-svg--copy"
+                    >
                       <path
                         d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
                         fill="currentColor"
@@ -220,7 +249,11 @@ const Hero = () => {
           className="stats-section bg-offWhite rounded-xl mt-6 p-4 sm:p-6 flex flex-col md:flex-row justify-between items-center text-deepMaroon text-xs sm:text-sm gap-4 sm:gap-6 text-center md:text-left"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, staggerChildren: 0.1, ease: "easeInOut" }}
+          transition={{
+            duration: 0.5,
+            staggerChildren: 0.1,
+            ease: "easeInOut",
+          }}
         >
           <motion.div
             initial={{ opacity: 0, y: 20 }}

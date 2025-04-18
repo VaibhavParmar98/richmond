@@ -14,7 +14,7 @@ const Started = () => {
       <div className="relative max-w-full mx-4 sm:max-w-3xl md:max-w-3xl md:mx-auto bg-white shadow-lg rounded-lg font-marcellus flex flex-col md:flex-row md:justify-between overflow-hidden">
 
         <img
-          src={image23}
+          src="https://iili.io/31cmNMN.png"
           alt="Background Design"
           className="absolute inset-0 w-full h-full object-cover opacity-20 z-0"
         />
@@ -93,7 +93,7 @@ const Started = () => {
         >
           <img
             ref={imageRef}
-            src={image15}
+            src="https://iili.io/31cml6P.png"
             alt=""
             className="w-full sm:w-48 md:w-60 h-auto sm:h-48 md:h-60 p-6 sm:p-3 md:p-3"
           />

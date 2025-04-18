@@ -27,7 +27,7 @@ const SuppoertLocla = () => {
             className="flex flex-col gap-4 sm:gap-6 w-full md:w-1/2"
           >
             <img
-              src={image8}
+              src="https://iili.io/31cmIae.md.png"
               alt="Support Local Artists"
               className="w-full h-auto object-cover"
             />
@@ -64,7 +64,7 @@ const SuppoertLocla = () => {
             className="flex flex-col gap-4 sm:gap-6 w-full md:w-1/2"
           >
             <img
-              src={image7}
+              src="https://iili.io/31cmzF9.png"
               alt="Fuel Creativity"
               className="w-full h-auto object-cover"
             />

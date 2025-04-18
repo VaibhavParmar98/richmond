@@ -12,7 +12,7 @@ const Video = () => {
     <div ref={sectionRef} className="relative w-full h-[500px] flex items-center justify-center overflow-hidden font-marcellus">
       <div className="absolute inset-0">
         <img
-          src={image21}
+          src="https://iili.io/31cmwnp.md.png"
           alt=""
           className="w-full h-full  opacity-90"
         />

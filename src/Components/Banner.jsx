@@ -89,7 +89,7 @@ const Banner = () => {
           animate="center"
           exit="exit"
         >
-          <img src={image24} alt="Banner" className="w-full h-full object-cover" />
+          <img src="https://iili.io/31cPcGa.jpg" alt="Banner" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-black/50 z-10" />
           <div className="absolute inset-0 z-20 flex flex-col justify-center items-center text-white px-4 sm:px-6 md:px-8">
             <div className="flex flex-col lg:flex-row justify-between w-full max-w-7xl mx-auto gap-4 sm:gap-8 lg:gap-12">
@@ -125,9 +125,7 @@ const Banner = () => {
               </div>
             </div>
           </div>
-          <div className="absolute bottom-3 sm:bottom-4 md:bottom-6 w-full z-20 text-white text-xs sm:text-sm text-center">
-            <p>© FundsnMotion 2025 | All Rights Reserved</p>
-          </div>
+          
         </motion.div>
       </AnimatePresence>
 
@@ -139,7 +137,7 @@ const Banner = () => {
           animate="center"
           exit="exit"
         >
-          <img src={image25} alt="Banner" className="w-full h-full object-cover" />
+          <img src="https://iili.io/31cmkFt.jpg" alt="Banner" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-red-900/70 z-10" />
           <div className="absolute inset-0 z-20 flex flex-col justify-center items-center text-white px-4 sm:px-6 md:px-8">
             <div className="flex flex-col lg:flex-row justify-between w-full max-w-7xl mx-auto gap-4 sm:gap-8 lg:gap-12">
@@ -175,9 +173,7 @@ const Banner = () => {
               </div>
             </div>
           </div>
-          <div className="absolute bottom-3 sm:bottom-4 md:bottom-6 w-full z-20 text-white text-xs sm:text-sm text-center">
-            <p>© FundsnMotion 2025 | All Rights Reserved</p>
-          </div>
+          
         </motion.div>
       </AnimatePresence>
 
@@ -189,7 +185,7 @@ const Banner = () => {
           animate="center"
           exit="exit"
         >
-          <img src={image26} alt="Conceptual Framework" className="w-full h-full object-cover" />
+          <img src="https://iili.io/31cmvcX.jpg" alt="Conceptual Framework" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-blue-900/60 z-10" />
           <div className="absolute inset-0 z-20 flex flex-col justify-center items-center text-white px-4 sm:px-6 md:px-8">
             <div className="flex flex-col gap-3 sm:gap-4 items-center justify-center text-center">
@@ -212,9 +208,7 @@ const Banner = () => {
               </motion.p>
             </div>
           </div>
-          <div className="absolute bottom-3 sm:bottom-4 md:bottom-6 w-full z-20 text-white text-xs sm:text-sm text-center">
-            <p>© FundsnMotion 2025 | All Rights Reserved</p>
-          </div>
+          
         </motion.div>
       </AnimatePresence>
 
@@ -228,7 +222,7 @@ const Banner = () => {
           aria-labelledby="community-session-heading"
         >
           <img
-            src={image27}
+            src="https://iili.io/31cm8Sn.jpg"
             sizes="(max-width: 600px) 100vw, (max-width: 960px) 80vw, 1200px"
             alt="Community Listening Session"
             className="w-full h-full object-cover"
@@ -322,9 +316,7 @@ const Banner = () => {
               </motion.button>
             </div>
           </div>
-          <div className="absolute bottom-4 w-full z-20 text-white text-xs sm:text-sm text-center">
-            <p>© FundsnMotion 2025 | All Rights Reserved</p>
-          </div>
+         
         </motion.section>
       </AnimatePresence>
     </Slider>

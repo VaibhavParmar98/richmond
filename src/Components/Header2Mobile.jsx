@@ -37,7 +37,7 @@ const HeaderMobile = ({ isMenuOpen, toggleMenu }) => {
       <div className="max-w-full mx-auto px-4 flex flex-col">
         <div className="flex justify-between items-center w-full">
           <div className="flex gap-1 items-center">
-            <img src="/image20.png" alt="Logo" className="w-8 h-8" />
+            <img src="https://iili.io/31cmG8g.png" alt="Logo" className="w-8 h-8" />
             <p className="flex flex-col font-bold text-lg">
               Richmond
               <span className="text-[7px] font-medium text-oldLavender">

@@ -26,7 +26,7 @@ const Contact = () => {
           className="w-full md:w-auto"
         >
           <img
-            src={image14}
+            src="https://iili.io/31cm7ZQ.png"
             alt=""
             className="mx-auto md:w-auto w-40 h-40 sm:h-80 md:h-[500px] "
           />

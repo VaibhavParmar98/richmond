@@ -45,7 +45,7 @@ const HeaderDesktop = () => {
       <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
        <NavLink to='/'>
        <div className="flex gap-1 items-center">
-          <img src="/image20.png" alt="Logo" className="w-9 h-9" />
+          <img src="https://iili.io/31cmG8g.png" alt="Logo" className="w-9 h-9" />
           <p className="flex flex-col font-bold text-xl">
             Richmond
             <span className="text-[8px] font-medium text-oldLavender">

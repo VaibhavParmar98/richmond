@@ -8,6 +8,8 @@ import {
 import { motion, useInView } from "framer-motion";
 import image4 from "../assets/image4.png";
 import image6 from "../assets/image6.png";
+// https://iili.io/31lIMBI.png
+
 
 const items = [
   {
@@ -70,7 +72,9 @@ const AboutUs = () => {
 </div>
 
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mt-4 sm:mt-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mt-4 sm:mt-6 bg-cover bg-center bg-no-repeat"
+              style={{ backgroundImage: `url('https://iili.io/31lAELQ.png')`,backgroundSize: "150px" }}
+            >
               {items.map((itm, idx) => (
                 <motion.div
                   key={idx}
@@ -128,7 +132,7 @@ const AboutUs = () => {
     whileInView="visible"
     viewport={{ once: true, amount: 0.5 }}
     transition={{ duration: 0.8 }}
-    src={image4}
+    src="https://iili.io/31cmfj4.png"
     className="w-full h-60 md:h-full sm:w-full md:w-1/2 mt-4 md:mt-6 object-cover rounded-xl"
   />
   <div className="flex flex-col gap-4 sm:gap-6">
@@ -138,7 +142,7 @@ const AboutUs = () => {
       whileInView="visible"
       viewport={{ once: true, amount: 0.5 }}
       transition={{ duration: 0.8, delay: 0.2 }}
-      src={image6}
+      src="https://iili.io/31cmCn2.png"
       className="w-full sm:w-full md:w-64 h-60 sm:h-48 md:h-52 object-cover rounded-xl"
     />
    <div className="flex flex-col gap-4 sm:gap-10 sm:mt-16 ml-0 md:ml-10">

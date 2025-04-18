@@ -10,7 +10,7 @@ import image19 from '../assets/image19.png';
 const Team = () => {
   const items = [
     {
-      img: image16,
+      img: "https://iili.io/31cm1F1.png",
       name: "Christopher Paul",
       position: "Founder & Creative Director",
       social: [
@@ -21,7 +21,7 @@ const Team = () => {
       ],
     },
     {
-      img: image18,
+      img: "https://iili.io/31cmV9a.png",
       name: "Mark Hagne",
       position: "Community Manager",
       social: [
@@ -32,7 +32,7 @@ const Team = () => {
       ],
     },
     {
-      img: image17,
+      img: "https://iili.io/31cmEcF.png",
       name: "Michelle Parker",
       position: "Photographer",
       social: [
@@ -43,7 +43,7 @@ const Team = () => {
       ],
     },
     {
-      img: image19,
+      img: "https://iili.io/31cmWAJ.png",
       name: "Mia Chen",
       position: "Event Coordinator",
       social: [
@@ -99,7 +99,7 @@ const Team = () => {
             layout
           >
             <div className="flex flex-col md:flex md:flex-row gap-6 md:gap-3 items-center justify-center">
-              <img src="/fram2.png" alt="" className="w-9 h-10 object-cover items-center justify-center" />
+              <img src="https://iili.io/31lflYQ.png" alt="" className="w-9 h-10 object-cover items-center justify-center" />
               <p className="text-[14px] leading-5 text-center md:text-start">
                 Get to Know Our Passionate Team Dedicated to Empowering Local Artists, <br className="md:block hidden" /> Showcasing Talent, and Building a Thriving Creative Community Together.
               </p>
