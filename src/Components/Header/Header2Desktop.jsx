@@ -44,8 +44,8 @@ const HeaderDesktop = () => {
   return (
     <div className="bg-champagneBeige p-3 relative hidden md:block">
       <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
-       <NavLink to='/'>
-       <div className="flex gap-1 items-center">
+       
+       <NavLink to="/" className="flex gap-1 items-center">
           <img src="https://iili.io/31cmG8g.png" alt="Logo" className="w-9 h-9" />
           <p className="flex flex-col font-bold text-xl">
             Richmond
@@ -53,8 +53,8 @@ const HeaderDesktop = () => {
               Richmond Arts Corridor
             </span>
           </p>
-        </div>
-       </NavLink>
+        </NavLink>
+       
 
         <div className="flex items-center gap-16">
           <ul className="flex text-nowrap items-center gap-8 text-sm font-marcellus">
@@ -126,7 +126,7 @@ const HeaderDesktop = () => {
                 </ul>
               </div>
             </li>
-            <li className="cursor-pointer">Artist Registry</li>
+            <NavLink to='/signup'><li className="cursor-pointer">Artist Registry</li></NavLink>
             <li className="cursor-pointer">Contact Us</li>
           </ul>
 

@@ -5,6 +5,7 @@ import {
   MdOutlineKeyboardArrowDown,
   MdOutlineKeyboardArrowUp,
 } from "react-icons/md";
+import { NavLink } from "react-router-dom";
 
 const HeaderMobile = ({ isMenuOpen, toggleMenu }) => {
   const [activeSubmenu, setActiveSubmenu] = useState(null);
@@ -36,7 +37,7 @@ const HeaderMobile = ({ isMenuOpen, toggleMenu }) => {
     >
       <div className="max-w-full mx-auto px-4 flex flex-col">
         <div className="flex justify-between items-center w-full">
-          <div className="flex gap-1 items-center">
+          <NavLink to='/'  className="flex gap-1 items-center">
             <img
               src="https://iili.io/31cmG8g.png"
               alt="Logo"
@@ -48,7 +49,7 @@ const HeaderMobile = ({ isMenuOpen, toggleMenu }) => {
                 Richmond Arts Corridor
               </span>
             </p>
-          </div>
+          </NavLink>
           <button
             className="text-xl focus:outline-none"
             onClick={toggleMenu}
@@ -144,7 +145,7 @@ const HeaderMobile = ({ isMenuOpen, toggleMenu }) => {
               </div>
             </li>
 
-            <li className="cursor-pointer">Artist Registry</li>
+            <NavLink to='/signup'><li className="cursor-pointer">Artist Registry</li></NavLink>
             <li className="cursor-pointer">Contact Us</li>
           </ul>
 
