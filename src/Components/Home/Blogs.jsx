@@ -1,10 +1,6 @@
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import Slider from "react-slick";
-import image9 from '../assets/image9.png';
-import image11 from '../assets/image11.png';
-import image10 from '../assets/image10.png';
-import image12 from '../assets/image12.png';
 
 const Blogs = () => {
   const items = [
@@ -40,19 +36,22 @@ const Blogs = () => {
 
   const isHeaderInView = useInView(headerRef, { once: true, margin: "-50px" });
   const isButtonInView = useInView(buttonRef, { once: true, margin: "-50px" });
-  const isDividerInView = useInView(dividerRef, { once: true, margin: "-50px" });
+  const isDividerInView = useInView(dividerRef, {
+    once: true,
+    margin: "-50px",
+  });
 
   const sliderSettings = {
     dots: true,
     infinite: true,
     speed: 500,
-    dotsClass: "slick-dots custom-dots", 
+    dotsClass: "slick-dots custom-dots",
     slidesToShow: 1,
     slidesToScroll: 1,
   };
 
   return (
-    <div className="py-12 sm:py-16 md:py-20">
+    <div className="py-12 sm:py-16 md:py-20 bg-white">
       <div className="max-w-6xl mx-auto font-marcellus px-4 sm:px-6 md:px-0">
         <div className="flex flex-col md:flex-row md:justify-between justify-center items-center md:items-center gap-4 sm:gap-6">
           <motion.div
@@ -62,8 +61,12 @@ const Blogs = () => {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="flex flex-col gap-2 sm:gap-3"
           >
-            <p className="text-xs sm:text-sm text-center md:text-start">BRIDGES</p>
-            <h1 className="text-2xl sm:text-3xl md:text-4xl text-center md:text-start">Latest news & Blogs</h1>
+            <p className="text-xs sm:text-sm text-center md:text-start">
+              BRIDGES
+            </p>
+            <h1 className="text-2xl sm:text-3xl md:text-4xl text-center md:text-start">
+              Latest news & Blogs
+            </h1>
           </motion.div>
 
           <motion.button
@@ -139,7 +142,10 @@ const Blogs = () => {
         <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-6 sm:gap-10 md:gap-16 mt-8 sm:mt-12 md:mt-16">
           {items.map((itm, idx) => {
             const cardRef = useRef(null);
-            const isInView = useInView(cardRef, { once: true, margin: "-50px" });
+            const isInView = useInView(cardRef, {
+              once: true,
+              margin: "-50px",
+            });
 
             return (
               <div
@@ -175,7 +181,11 @@ const Blogs = () => {
                   <motion.button
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                    transition={{ duration: 0.6, ease: [0.68, -0.55, 0.265, 1.55], delay: 0.4 }}
+                    transition={{
+                      duration: 0.6,
+                      ease: [0.68, -0.55, 0.265, 1.55],
+                      delay: 0.4,
+                    }}
                     className="text-sm font-bold hover:underline text-left hover:text-deepMaroon text-burntCopper"
                   >
                     {itm.button}

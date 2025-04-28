@@ -1,20 +1,21 @@
 import React, { useRef } from "react";
-import image28 from "../assets/image28.jpg";
-import image29 from "../assets/image29.jpg";
 import { useInView, motion } from "framer-motion";
 import Help from "./Help";
-import Started from "./Started";
+import Started from "./Home/Started";
 
 const Signup = () => {
   const headingRef = useRef(null);
   const formRef = useRef(null);
 
-  const isHeadingInView = useInView(headingRef, { once: true, margin: "-100px" });
+  const isHeadingInView = useInView(headingRef, {
+    once: true,
+    margin: "-100px",
+  });
   const isFormInView = useInView(formRef, { once: true, margin: "-100px" });
 
   return (
     <>
-      <div>
+      <div className="bg-white">
         <motion.div
           className="relative"
           ref={headingRef}
@@ -22,7 +23,11 @@ const Signup = () => {
           animate={isHeadingInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <img src="https://iili.io/31cmU9s.md.jpg" alt="" className="w-full h-[350px] object-cover" />
+          <img
+            src="https://iili.io/31cmU9s.md.jpg"
+            alt=""
+            className="w-full h-[350px] object-cover"
+          />
           <div className="absolute inset-0 bg-black/50" />
           <div className="absolute inset-0 flex items-center justify-center">
             <h1 className="text-white font-marcellus tracking-widest text-4xl font-bold">
@@ -47,7 +52,9 @@ const Signup = () => {
               />
             </div>
             <div className="w-full md:w-1/2 flex flex-col gap-3">
-              <h1 className="text-3xl md:text-4xl text-center md:text-start">Sign Up</h1>
+              <h1 className="text-3xl md:text-4xl text-center md:text-start">
+                Sign Up
+              </h1>
               <p className="text-lg md:text-xl text-center md:text-start">
                 Already Have an Account ?
                 <span className="text-burntCopper hover:underline hover:text-deepMaroon cursor-pointer ml-1">
@@ -139,4 +146,4 @@ const Signup = () => {
   );
 };
 
-export default Signup; 
+export default Signup;

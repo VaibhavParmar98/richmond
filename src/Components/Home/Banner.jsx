@@ -1,10 +1,6 @@
 import React from "react";
 import Slider from "react-slick";
 import { motion, AnimatePresence } from "framer-motion";
-import image24 from "../assets/image24.jpg";
-import image25 from "../assets/image25.jpg";
-import image26 from "../assets/image26.jpg";
-import image27 from "../assets/image27.jpg";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -36,14 +32,26 @@ const textVariants = {
 
 const buttonVariants = {
   hidden: { opacity: 0, scale: 0.8 },
-  visible: { opacity: 1, scale: 1, transition: { duration: 0.5, ease: "easeOut" } },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 0.5, ease: "easeOut" },
+  },
   hover: { scale: 1.1, transition: { duration: 0.3 } },
 };
 
 const slideVariants = {
   enter: { opacity: 0, x: 100 },
-  center: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeInOut" } },
-  exit: { opacity: 0, x: -100, transition: { duration: 0.8, ease: "easeInOut" } },
+  center: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.8, ease: "easeInOut" },
+  },
+  exit: {
+    opacity: 0,
+    x: -100,
+    transition: { duration: 0.8, ease: "easeInOut" },
+  },
 };
 
 const Banner = () => {
@@ -58,7 +66,8 @@ const Banner = () => {
     arrows: true,
     prevArrow: <PrevArrow />,
     nextArrow: <NextArrow />,
-    className: "w-full h-[50vh] sm:h-[60vh] md:h-[70vh] min-h-[350px] font-marcellus",
+    className:
+      "w-full h-[50vh] sm:h-[60vh] md:h-[70vh] min-h-[350px] font-marcellus",
     responsive: [
       {
         breakpoint: 1024,
@@ -89,8 +98,12 @@ const Banner = () => {
           animate="center"
           exit="exit"
         >
-          <img src="https://iili.io/31cPcGa.jpg" alt="Banner" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-black/50 z-10" />
+          <img
+            src="https://iili.io/31cPcGa.jpg"
+            alt="Banner"
+            className="w-full h-full object-cover"
+          />
+
           <div className="absolute inset-0 z-20 flex flex-col justify-center items-center text-white px-4 sm:px-6 md:px-8">
             <div className="flex flex-col lg:flex-row justify-between w-full max-w-7xl mx-auto gap-4 sm:gap-8 lg:gap-12">
               <div className="lg:w-1/2 flex flex-col gap-3 sm:gap-4 items-center justify-center text-center lg:text-left">
@@ -109,7 +122,8 @@ const Banner = () => {
                   animate="visible"
                   transition={{ delay: 0.2 }}
                 >
-                  A short message to hype up the community-led transformation and development of an arts corridor.
+                  A short message to hype up the community-led transformation
+                  and development of an arts corridor.
                 </motion.p>
               </div>
               <div className="lg:w-1/2 flex flex-col items-center justify-center text-center">
@@ -125,7 +139,6 @@ const Banner = () => {
               </div>
             </div>
           </div>
-          
         </motion.div>
       </AnimatePresence>
 
@@ -137,7 +150,11 @@ const Banner = () => {
           animate="center"
           exit="exit"
         >
-          <img src="https://iili.io/31cmkFt.jpg" alt="Banner" className="w-full h-full object-cover" />
+          <img
+            src="https://iili.io/31cmkFt.jpg"
+            alt="Banner"
+            className="w-full h-full object-cover"
+          />
           <div className="absolute inset-0 bg-red-900/70 z-10" />
           <div className="absolute inset-0 z-20 flex flex-col justify-center items-center text-white px-4 sm:px-6 md:px-8">
             <div className="flex flex-col lg:flex-row justify-between w-full max-w-7xl mx-auto gap-4 sm:gap-8 lg:gap-12">
@@ -157,7 +174,9 @@ const Banner = () => {
                   animate="visible"
                   transition={{ delay: 0.2 }}
                 >
-                  Get your voice heard! Imagine what the Arts Corridor can be — how can we make Richmond the next viral hot spot while being sustainable, and ensure development without displacement.
+                  Get your voice heard! Imagine what the Arts Corridor can be —
+                  how can we make Richmond the next viral hot spot while being
+                  sustainable, and ensure development without displacement.
                 </motion.p>
               </div>
               <div className="lg:w-1/2 flex flex-col items-center justify-center text-center">
@@ -173,7 +192,6 @@ const Banner = () => {
               </div>
             </div>
           </div>
-          
         </motion.div>
       </AnimatePresence>
 
@@ -185,7 +203,11 @@ const Banner = () => {
           animate="center"
           exit="exit"
         >
-          <img src="https://iili.io/31cmvcX.jpg" alt="Conceptual Framework" className="w-full h-full object-cover" />
+          <img
+            src="https://iili.io/31cmvcX.jpg"
+            alt="Conceptual Framework"
+            className="w-full h-full object-cover"
+          />
           <div className="absolute inset-0 bg-blue-900/60 z-10" />
           <div className="absolute inset-0 z-20 flex flex-col justify-center items-center text-white px-4 sm:px-6 md:px-8">
             <div className="flex flex-col gap-3 sm:gap-4 items-center justify-center text-center">
@@ -204,11 +226,11 @@ const Banner = () => {
                 animate="visible"
                 transition={{ delay: 0.2 }}
               >
-                A conceptual framework of ideas that have been populated by artists and community members to build on!
+                A conceptual framework of ideas that have been populated by
+                artists and community members to build on!
               </motion.p>
             </div>
           </div>
-          
         </motion.div>
       </AnimatePresence>
 
@@ -249,8 +271,9 @@ const Banner = () => {
                     animate="visible"
                     transition={{ delay: 0.2 }}
                   >
-                    Attend an upcoming listening session and share your <br className="md:block hidden" /> voice!
-                    All events link to an RSVP page.
+                    Attend an upcoming listening session and share your{" "}
+                    <br className="md:block hidden" /> voice! All events link to
+                    an RSVP page.
                   </motion.p>
                   <motion.div
                     className="grid grid-cols-2 md:grid-cols-1 ml-6 md:ml-0 text-start gap-1 text-sm sm:text-base"
@@ -271,10 +294,18 @@ const Banner = () => {
                   animate="visible"
                   transition={{ delay: 0.6 }}
                 >
-                  <div className="tracking-wide text-center sm:text-start">Ryse Center</div>
-                  <div className="tracking-wide text-center sm:text-start">East Bay Center For Performing Arts</div>
-                  <div className="tracking-wide text-center sm:text-start">Richmond Art Center</div>
-                  <div className="tracking-wide text-center sm:text-start">Richmond Museum of History and Culture</div>
+                  <div className="tracking-wide text-center sm:text-start">
+                    Ryse Center
+                  </div>
+                  <div className="tracking-wide text-center sm:text-start">
+                    East Bay Center For Performing Arts
+                  </div>
+                  <div className="tracking-wide text-center sm:text-start">
+                    Richmond Art Center
+                  </div>
+                  <div className="tracking-wide text-center sm:text-start">
+                    Richmond Museum of History and Culture
+                  </div>
                 </motion.div>
               </div>
               <motion.button
@@ -316,7 +347,6 @@ const Banner = () => {
               </motion.button>
             </div>
           </div>
-         
         </motion.section>
       </AnimatePresence>
     </Slider>

@@ -1,8 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
-import calendar from "../assets/calendar.svg";
 import { FaCaretRight } from "react-icons/fa6";
 import { MdOutlineKeyboardArrowDown, MdOutlineKeyboardArrowUp } from "react-icons/md";
 import { NavLink } from "react-router-dom";
+
+
+
 
 const HeaderDesktop = () => {
   const [isSubmenuOpen, setIsSubmenuOpen] = useState(false);
@@ -10,7 +12,6 @@ const HeaderDesktop = () => {
   const submenuRef = useRef(null);
   const submenuRef2 = useRef(null);
 
-  // Handle outside clicks to close submenus
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (
@@ -135,7 +136,7 @@ const HeaderDesktop = () => {
             </button>
             <button className="flex gap-2 rounded-3xl items-center py-1 px-4 bg-white cursor-pointer">
               <span>
-                <img src={calendar} alt="Calendar" className="w-5 h-5" />
+                <img src="https://iili.io/3VR8DeS.png" alt="Calendar" className="w-5 h-5" />
               </span>
               Calendar
             </button>

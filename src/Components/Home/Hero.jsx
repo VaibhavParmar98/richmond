@@ -3,7 +3,6 @@ import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 import { motion, useInView } from "framer-motion";
 import { NavLink } from "react-router-dom";
 
-
 const Hero = () => {
   const buttonRef = useRef(null);
   const isButtonInView = useInView(buttonRef, { once: true, margin: "-50px" });

@@ -1,7 +1,5 @@
 import React from "react";
 import { motion } from "framer-motion";
-import image8 from '../assets/image8.png'
-import image7 from '../assets/image7.png'
 
 const SuppoertLocla = () => {
   return (
@@ -14,8 +12,12 @@ const SuppoertLocla = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="text-center flex flex-col gap-2 sm:gap-3"
         >
-          <p className="uppercase text-xs sm:text-sm">Support Local Art, Inspire Creativity</p>
-          <h1 className="text-2xl sm:text-3xl md:text-4xl">Make a Lasting Impact Through Your Donation</h1>
+          <p className="uppercase text-xs sm:text-sm">
+            Support Local Art, Inspire Creativity
+          </p>
+          <h1 className="text-2xl sm:text-3xl md:text-4xl">
+            Make a Lasting Impact Through Your Donation
+          </h1>
         </motion.div>
 
         <div className="flex flex-col md:flex-row gap-6 sm:gap-8 md:gap-10 mt-8 sm:mt-10">
@@ -31,10 +33,13 @@ const SuppoertLocla = () => {
               alt="Support Local Artists"
               className="w-full h-auto object-cover"
             />
-            <h1 className="text-lg sm:text-xl text-center md:text-start">Support Local Artists – Make a Difference Today!</h1>
+            <h1 className="text-lg sm:text-xl text-center md:text-start">
+              Support Local Artists – Make a Difference Today!
+            </h1>
             <p className="text-xs sm:text-[14px] leading-5 text-center md:text-start mb-2">
-              Your generous contribution helps empower local artists, fund community events,
-              and create opportunities for emerging talent. Every donation nurtures creativity.
+              Your generous contribution helps empower local artists, fund
+              community events, and create opportunities for emerging talent.
+              Every donation nurtures creativity.
             </p>
 
             <div className="w-full mt-2">
@@ -68,10 +73,13 @@ const SuppoertLocla = () => {
               alt="Fuel Creativity"
               className="w-full h-auto object-cover"
             />
-            <h1 className="text-lg sm:text-xl text-center md:text-start">Fuel Creativity – Support Our Mission!</h1>
+            <h1 className="text-lg sm:text-xl text-center md:text-start">
+              Fuel Creativity – Support Our Mission!
+            </h1>
             <p className="text-xs sm:text-[14px] leading-5 text-center md:text-start mb-2">
-              Help us continue providing a platform for local artists to showcase their talent.
-              Your support ensures that art thrives and inspires future generations.
+              Help us continue providing a platform for local artists to
+              showcase their talent. Your support ensures that art thrives and
+              inspires future generations.
             </p>
 
             <div className="w-full mt-2">

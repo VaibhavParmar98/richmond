@@ -1,8 +1,6 @@
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import TestimonialSection from "./TestimonialSection ";
-import image13 from '../assets/image13.png';
-import frame1 from '../assets/Frame1.png';
 
 const Community = () => {
   const sectionRef = useRef(null);
@@ -12,15 +10,27 @@ const Community = () => {
   const testimonialRef = useRef(null);
 
   const isHeaderInView = useInView(headerRef, { once: true, margin: "-50px" });
-  const isSmallImageInView = useInView(smallImageRef, { once: true, margin: "-50px" });
-  const isLargeImageInView = useInView(largeImageRef, { once: true, margin: "-50px" });
-  const isTestimonialInView = useInView(testimonialRef, { once: true, margin: "-50px" });
+  const isSmallImageInView = useInView(smallImageRef, {
+    once: true,
+    margin: "-50px",
+  });
+  const isLargeImageInView = useInView(largeImageRef, {
+    once: true,
+    margin: "-50px",
+  });
+  const isTestimonialInView = useInView(testimonialRef, {
+    once: true,
+    margin: "-50px",
+  });
 
   return (
     <div ref={sectionRef} className="bg-deepMaroon py-12 sm:py-16 md:py-20">
       <div className="max-w-6xl mx-auto font-marcellus px-4 sm:px-6 md:px-0 flex flex-col md:flex-row md:gap-20 gap-6 sm:gap-10">
         <div className="flex flex-col w-full">
-          <div ref={headerRef} className="flex flex-col md:flex-row md:justify-between gap-4 sm:gap-6">
+          <div
+            ref={headerRef}
+            className="flex flex-col md:flex-row md:justify-between gap-4 sm:gap-6"
+          >
             <div className="text-white flex flex-col gap-3 sm:gap-4">
               <motion.p
                 initial={{ opacity: 0, y: 50 }}
@@ -46,7 +56,10 @@ const Community = () => {
                 transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
                 className="text-xs sm:text-[14px] leading-5 text-center md:text-start"
               >
-                Hear from artists, art lovers, and supporters who have experienced the impact of our platform. Their stories highlight the value of nurturing local talent and fostering a creative community.
+                Hear from artists, art lovers, and supporters who have
+                experienced the impact of our platform. Their stories highlight
+                the value of nurturing local talent and fostering a creative
+                community.
               </motion.p>
             </div>
 

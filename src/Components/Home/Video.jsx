@@ -1,6 +1,5 @@
 import React, { useRef } from "react";
 import { motion } from "framer-motion";
-import image21 from '../assets/image21.png';
 
 const Video = () => {
   const sectionRef = useRef(null);
@@ -9,7 +8,10 @@ const Video = () => {
   const buttonsRef = useRef([]);
 
   return (
-    <div ref={sectionRef} className="relative w-full h-[500px] flex items-center justify-center overflow-hidden font-marcellus">
+    <div
+      ref={sectionRef}
+      className="relative w-full h-[500px] flex items-center justify-center overflow-hidden font-marcellus"
+    >
       <div className="absolute inset-0">
         <img
           src="https://iili.io/31cmwnp.md.png"
@@ -71,24 +73,44 @@ const Video = () => {
             Watch video
           </motion.button>
 
-
-          <motion.button ref={(el) => (buttonsRef.current[1] = el)}
+          <motion.button
+            ref={(el) => (buttonsRef.current[1] = el)}
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }} className="button text-base hover:text-deepMaroon font-medium bg-deepMaroon hover:bg-black" style={{ "--clr": "#AA7446" }}>
-                <span className="button__icon-wrapper hover:text-black text-deepMaroon">
-                  <svg viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg" className="button__icon-svg" width="10">
-                    <path d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z" fill="currentColor" />
-                  </svg>
-                  <svg viewBox="0 0 14 15" fill="none" width="10" xmlns="http://www.w3.org/2000/svg" className="button__icon-svg button__icon-svg--copy">
-                    <path d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z" fill="currentColor" />
-                  </svg>
-                </span>
-                Contact Us
-              </motion.button>
-          
+            viewport={{ once: true }}
+            className="button text-base hover:text-deepMaroon font-medium bg-deepMaroon hover:bg-black"
+            style={{ "--clr": "#AA7446" }}
+          >
+            <span className="button__icon-wrapper hover:text-black text-deepMaroon">
+              <svg
+                viewBox="0 0 14 15"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="button__icon-svg"
+                width="10"
+              >
+                <path
+                  d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                  fill="currentColor"
+                />
+              </svg>
+              <svg
+                viewBox="0 0 14 15"
+                fill="none"
+                width="10"
+                xmlns="http://www.w3.org/2000/svg"
+                className="button__icon-svg button__icon-svg--copy"
+              >
+                <path
+                  d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                  fill="currentColor"
+                />
+              </svg>
+            </span>
+            Contact Us
+          </motion.button>
         </div>
       </div>
     </div>

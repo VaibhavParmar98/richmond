@@ -26,11 +26,13 @@ const TestimonialSection = () => {
         viewport={{ once: true }}
       >
         <p className="text-xs sm:text-[14px] md:text-[14px] leading-5 text-center md:text-start">
-          Joining This Website Has Been A Game-Changer For Me. It Has Given Me Exposure, Connected Me
-          With Fellow Artists, And Inspired Me To Create More. The Supportive Community And Opportunities
-          Provided Have Truly Helped Me Grow And Showcase My Work With Confidence. I'm Incredibly Thankful
-          For This Experience And Continued Support. Through The Various Events, Workshops, And Collaborations,
-          I’ve Gained Valuable Knowledge And Built Lasting Relationships With Other Creatives.
+          Joining This Website Has Been A Game-Changer For Me. It Has Given Me
+          Exposure, Connected Me With Fellow Artists, And Inspired Me To Create
+          More. The Supportive Community And Opportunities Provided Have Truly
+          Helped Me Grow And Showcase My Work With Confidence. I'm Incredibly
+          Thankful For This Experience And Continued Support. Through The
+          Various Events, Workshops, And Collaborations, I’ve Gained Valuable
+          Knowledge And Built Lasting Relationships With Other Creatives.
         </p>
       </motion.div>
 
@@ -45,7 +47,11 @@ const TestimonialSection = () => {
             viewport={{ once: true }}
             className="w-12 sm:w-14 md:w-14 h-12 sm:h-14 md:h-14 bg-gray-100 text-black rounded-full flex items-center justify-center cursor-pointer"
           >
-            <svg className="w-5 sm:w-6 md:w-6 h-5 sm:h-6 md:h-6" fill="currentColor" viewBox="0 0 24 24">
+            <svg
+              className="w-5 sm:w-6 md:w-6 h-5 sm:h-6 md:h-6"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
               <path d="M8 5v14l11-7z" />
             </svg>
           </motion.div>
@@ -75,12 +81,19 @@ const TestimonialSection = () => {
             </div>
           </div>
 
-          <div ref={durationEndRef} className="text-xs sm:text-sm md:text-sm ml-0 sm:ml-2">
+          <div
+            ref={durationEndRef}
+            className="text-xs sm:text-sm md:text-sm ml-0 sm:ml-2"
+          >
             15:30
           </div>
 
           <div className="flex items-center gap-2 ml-0 sm:ml-4 mt-3 sm:mt-0">
-            <svg className="w-4 sm:w-5 md:w-5 h-4 sm:h-5 md:h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+            <svg
+              className="w-4 sm:w-5 md:w-5 h-4 sm:h-5 md:h-5 text-white"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
               <path d="M3 10v4h4l5 5V5l-5 5H3z" />
             </svg>
             <div className="relative w-20 sm:w-24 md:w-24 h-1 bg-white rounded-full">

@@ -50,7 +50,7 @@ const Thoughts = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.5 }} 
+            viewport={{ once: false, amount: 0.5 }}
             className="uppercase text-sm text-gray-600"
           >
             Support Local Art, Inspire Creativity
@@ -60,7 +60,7 @@ const Thoughts = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.5 }} 
+            viewport={{ once: false, amount: 0.5 }}
             className="text-3xl sm:text-4xl mt-2"
           >
             What are your thoughts and what <br className="md:block hidden" />
@@ -87,7 +87,7 @@ const Thoughts = () => {
                     delay: idx * 0.3 + i * 0.1,
                   }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: false, amount: 0.5 }} 
+                  viewport={{ once: false, amount: 0.5 }}
                 >
                   <div
                     className="color-bar absolute -top-3 left-4 right-4 h-6 rounded-t-md flex items-center px-3 space-x-1"
@@ -106,7 +106,7 @@ const Thoughts = () => {
                       delay: idx * 0.3 + i * 0.1 + 0.3,
                     }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: false, amount: 0.5 }} 
+                    viewport={{ once: false, amount: 0.5 }}
                     className="text-[14px] text-center mt-2"
                   >
                     {text}

@@ -1,6 +1,4 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Marcellus&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Marcellus&display=swap");
 
 @import "tailwindcss";
 
@@ -8,15 +6,15 @@ html,
 body {
   height: 100%;
   overflow-x: hidden;
-  background-color: transparent;
+  background-color: black;
 }
 
 .custom-dots li {
-  margin: 0 1px !important; 
+  margin: 0 1px !important;
 }
 
 .custom-dots li button::before {
-  font-size: 10px; 
+  font-size: 10px;
 }
 
 @keyframes scroll {
@@ -42,22 +40,23 @@ body {
   animation: scroll 20s linear infinite;
 }
 
-
-
-
 @theme {
-    --font-marcellus: "Marcellus", sans-serif;
-    --color-caramelGold: #DBA860;
-  --color-offWhite: #F2F2F2;
-  --color-deepMaroon: #2B0A0A;
-  --color-champagneBeige: #ECD3AF;
-  --color-vintageBronze: #A99C67;
-  --color-mossyOlive: #B8AA70;
-  --color-deepGold: #BD9800;
-  --color-mustardBrown: #8B7107;
-  --color-burntCopper: #AA7446;
-  --color-oldLavender: #6F5A7D;
-  --color-softCream: #F9F5EF;
+  --font-marcellus: "Marcellus", sans-serif;
+  --color-caramelGold: #dba860;
+  --color-offWhite: #f2f2f2;
+  --color-deepMaroon: #2b0a0a;
+  --color-champagneBeige: #ecd3af;
+  --color-vintageBronze: #a99c67;
+  --color-mossyOlive: #b8aa70;
+  --color-deepGold: #bd9800;
+  --color-mustardBrown: #8b7107;
+  --color-burntCopper: #aa7446;
+  --color-oldLavender: #6f5a7d;
+  --color-softCream: #f9f5ef;
+  --color-gradis: #9a9a9a;
+  --color-beiage: #c1a78c;
+  --color-cream: #F5F0E0;
+  --color-mustard: #CCB363;
   
 }
 
@@ -110,4 +109,6 @@ body {
     transform: translate(0);
   }
 }
+
+/* -------------------------    PAGE ABOUT.JSX  ------------------------------------ */
 

@@ -1,4 +1,3 @@
-// components/DropdownMenu.jsx
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";

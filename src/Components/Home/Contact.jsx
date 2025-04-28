@@ -3,7 +3,6 @@ import { FaTelegramPlane, FaPhoneAlt } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { IoMdMail } from "react-icons/io";
 import { motion, useInView } from "framer-motion";
-import image14 from "../assets/image14.png";
 
 const Contact = () => {
   const sectionRef = useRef(null);
@@ -119,9 +118,7 @@ const Contact = () => {
               </div>
             </div>
 
-            <button
-              className="bg-burntCopper hover:bg-black transition-all duration-500 cursor-pointer text-white p-2 sm:p-3 rounded-full text-xs sm:text-sm md:text-sm w-full  hover:bg-opacity-90"
-            >
+            <button className="bg-burntCopper hover:bg-black transition-all duration-500 cursor-pointer text-white p-2 sm:p-3 rounded-full text-xs sm:text-sm md:text-sm w-full  hover:bg-opacity-90">
               Send Message
             </button>
           </motion.form>
