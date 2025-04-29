@@ -151,10 +151,10 @@ const About = () => {
           initial="hidden"
           animate={aboutInView ? "visible" : "hidden"}
           variants={sectionVariants}
-          className="max-w-6xl mx-auto flex gap-4 py-20 items-center justify-center max-md:flex-col max-md:p-4 max-md:py-8 max-[480px]:p-2 max-[480px]:py-6"
+          className="max-w-6xl mx-auto flex md:flex-col lg:flex-row xl:flex-row xl:gap-4 lg:gap-32 lg:px-4 xl:px-0 md:px-6 py-20 items-center justify-center max-md:flex-col max-md:p-4 max-md:py-8 max-[480px]:p-2 max-[480px]:py-6"
         >
-          <div className="flex w-1/2 max-md:w-full max-md:justify-center">
-            <div className="relative max-md:flex max-md:flex-col max-md:items-center">
+          <div className="flex lg:w-1/2 xl:w-1/2 md:w-full w-full lg:justify-start xl:justify-start justify-center">
+            <div className="lg:relative xl:relative flex flex-col md:flex-row items-center">
               <img
                 src="https://iili.io/3V5fSvj.png"
                 alt="main"
@@ -163,71 +163,76 @@ const About = () => {
               <img
                 src="https://iili.io/3V5f8Yb.png"
                 alt="overlay"
-                className="w-80 h-96 absolute top-12 left-56 max-md:relative max-md:top-0 max-md:left-0 max-md:mt-4 max-md:w-full max-md:h-auto max-md:max-w-[300px] max-[480px]:max-w-[250px]"
+                className="w-80 h-96 lg:absolute xl:absolute top-12 left-56 max-md:relative max-md:top-0 max-md:left-0 max-md:mt-4 max-md:w-full max-md:h-auto max-md:max-w-[300px] max-[480px]:max-w-[250px]"
               />
             </div>
           </div>
 
-          <div className="w-1/2 flex flex-col gap-3 justify-center max-md:w-full max-md:p-4">
-            <p className="text-sm text-center md:text-left uppercase">
+          <div className="lg:w-1/2 xl:w-1/2 w-full mt-6 flex flex-col gap-3 justify-center max-md:w-full max-md:p-4">
+            <p className="text-sm text-center  lg:text-left xl:lg:text-left uppercase">
               ABOUT US
             </p>
-            <h1 className="text-2xl sm:text-3xl md:text-3xl max-md:text-center max-[480px]">
+            <h1 className="text-2xl sm:text-3xl md:text-3xl text-center  lg:text-left xl:lg:text-left">
               Empowering Local Creativity, Connecting Communities, Inspiring
               Growth, and Fostering Inclusion
             </h1>
-            <p className="text-sm sm:text-[14px] leading-5 text-center md:text-left">
+            <p className="text-sm sm:text-[14px] leading-5 text-center  lg:text-left xl:lg:text-left">
               At Richmond Arts Corridor, we are dedicated to celebrating and
               uplifting the vibrant artistic voices of Richmond. Our mission is
               to provide local artists with a platform to showcase their talent,
               connect with art enthusiasts, and build a thriving creative
               community.
             </p>
-            <p className="flex flex-col gap-2 text-sm sm:text-[14px] leading-5 text-center md:text-left">
+            <p className="flex flex-col gap-2 text-sm sm:text-[14px] leading-5 text-center  lg:text-left xl:lg:text-left">
               <span>Our Vision ✨</span> To transform Richmond into a dynamic
               hub where artists can express themselves, gain recognition, and
               inspire future generations.
             </p>
-            <p className="flex flex-col gap-2 text-sm sm:text-[14px] leading-5 text-center md:text-left">
+            <p className="flex flex-col gap-2 text-sm sm:text-[14px] leading-5 text-center  lg:text-left xl:lg:text-left">
               <span>What We Do 🎭</span>
               we aim to cultivate a thriving artistic environment where local
               creators can showcase their talents, connect with the community,
               and inspire.
             </p>
+            <div className="flex items-center justify-center lg:items-start lg:justify-start  ">
             <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="button w-full text-center items-center justify-center flex md:w-36 font-medium border bg-burntCopper hover:bg-black max-md:w-full max-md:max-w-[200px] max-md:mx-auto"
-              style={{ "--clr": "#AA7446" }}
-            >
-              <span className="button__icon-wrapper">
-                <svg
-                  viewBox="0 0 14 15"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="button__icon-svg"
-                  width="10"
-                >
-                  <path
-                    d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
-                    fill="currentColor"
-                  ></path>
-                </svg>
-                <svg
-                  viewBox="0 0 14 15"
-                  fill="none"
-                  width="10"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="button__icon-svg button__icon-svg--copy"
-                >
-                  <path
-                    d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
-                    fill="currentColor"
-                  ></path>
-                </svg>
-              </span>
-              About Us
-            </motion.button>
+                     initial={{ opacity: 0, scale: 0.8 }}
+                     whileInView={{ opacity: 1, scale: 1 }}
+                     viewport={{ once: true, amount: 0.4 }}
+                     className="button text-base flex items-center justify-center w-40 font-medium bg-burntCopper hover:bg-black mt-4"
+                     transition={{ duration: 0.6, ease: [0.34, 1.56, 0.64, 1] }}
+                     style={{ "--clr": "#AA7446" }}
+                   >
+                     <span className="button__icon-wrapper">
+                       <svg
+                         viewBox="0 0 14 15"
+                         fill="none"
+                         xmlns="http://www.w3.org/2000/svg"
+                         className="button__icon-svg"
+                         width="10"
+                       >
+                         <path
+                           d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                           fill="currentColor"
+                         />
+                       </svg>
+                       <svg
+                         viewBox="0 0 14 15"
+                         fill="none"
+                         width="10"
+                         xmlns="http://www.w3.org/2000/svg"
+                         className="button__icon-svg button__icon-svg--copy"
+                       >
+                         <path
+                           d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                           fill="currentColor"
+                         />
+                       </svg>
+                     </span>
+                     About Us
+                   </motion.button>
+            </div>
+            
           </div>
         </motion.div>
 
@@ -236,7 +241,7 @@ const About = () => {
           initial="hidden"
           animate={empoweringInView ? "visible" : "hidden"}
           variants={sectionVariants}
-          className="max-w-6xl mx-auto md:py-10 py-6"
+          className="max-w-6xl md:px-6 px-0  mx-auto md:py-10 py-6"
         >
           <div className="flex max-md:flex-col max-md:p-4 gap-3">
             <h1 className="text-2xl sm:text-3xl md:text-3xl w-1/2 max-md:w-full max-md:text-center">
@@ -250,7 +255,7 @@ const About = () => {
               cultural landscape.
             </p>
           </div>
-          <div className="flex flex-col sm:flex-row flex-wrap items-center justify-between lg:py-10 py-3 gap-2 sm:gap-3 mt-8 sm:mt-10 max-md:flex-col max-md:items-center">
+          <div className="lg:flex lg:flex-row xl:flex-row xl:flex md:grid md:grid-cols-2 flex flex-col items-center justify-center lg:justify-between xl:justify-between lg:py-10 py-3 gap-2  mt-8 ">
             {items.map((itm, idx) => (
               <motion.div
                 key={idx}
@@ -311,10 +316,10 @@ const About = () => {
           variants={sectionVariants}
           className="bg-champagneBeige py-10"
         >
-          <div className="max-w-6xl mx-auto flex gap-20 items-center justify-center max-md:flex-col max-md:gap-8 max-md:p-4 max-md:py-8">
-            <div className="flex flex-col gap-6 w-1/2 max-md:w-full max-md:items-center">
-              <p className="text-sm uppercase">WHAT WE DO IN CHURCH</p>
-              <h1 className="text-2xl sm:text-3xl md:text-3xl max-md:text-center">
+          <div className="max-w-6xl mx-auto flex-col lg:flex-row xl:flex-row px-6 lg:px-6 xl:px-0 flex gap-20 items-center justify-center max-md:flex-col max-md:gap-8 max-md:p-4 max-md:py-8">
+            <div className="flex flex-col gap-6 lg:w-1/2 xl:w-1/2 w-full max-md:items-center">
+              <p className="text-sm uppercase text-center  lg:text-left xl:lg:text-left">WHAT WE DO IN CHURCH</p>
+              <h1 className="text-2xl sm:text-3xl md:text-3xl text-center  lg:text-left xl:lg:text-left">
                 The church is the people of God{" "}
                 <br className="hidden md:block" />
                 within the world being agents <br className="hidden md:block" />
@@ -342,47 +347,51 @@ const About = () => {
                   </motion.div>
                 ))}
               </div>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="button w-full text-center items-center justify-center flex md:w-36 font-medium border bg-burntCopper hover:bg-black max-md:w-full max-md:max-w-[200px] max-md:mx-auto"
-                style={{ "--clr": "#AA7446" }}
-              >
-                <span className="button__icon-wrapper">
-                  <svg
-                    viewBox="0 0 14 15"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="button__icon-svg"
-                    width="10"
-                  >
-                    <path
-                      d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
-                      fill="currentColor"
-                    ></path>
-                  </svg>
-                  <svg
-                    viewBox="0 0 14 15"
-                    fill="none"
-                    width="10"
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="button__icon-svg button__icon-svg--copy"
-                  >
-                    <path
-                      d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
-                      fill="currentColor"
-                    ></path>
-                  </svg>
-                </span>
-                Contact Us
-              </motion.button>
+              <div className="flex items-center justify-center lg:items-start lg:justify-start  ">
+            <motion.button
+                     initial={{ opacity: 0, scale: 0.8 }}
+                     whileInView={{ opacity: 1, scale: 1 }}
+                     viewport={{ once: true, amount: 0.4 }}
+                     className="button text-base flex items-center justify-center w-40 font-medium bg-burntCopper hover:bg-black mt-4"
+                     transition={{ duration: 0.6, ease: [0.34, 1.56, 0.64, 1] }}
+                     style={{ "--clr": "#AA7446" }}
+                   >
+                     <span className="button__icon-wrapper">
+                       <svg
+                         viewBox="0 0 14 15"
+                         fill="none"
+                         xmlns="http://www.w3.org/2000/svg"
+                         className="button__icon-svg"
+                         width="10"
+                       >
+                         <path
+                           d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                           fill="currentColor"
+                         />
+                       </svg>
+                       <svg
+                         viewBox="0 0 14 15"
+                         fill="none"
+                         width="10"
+                         xmlns="http://www.w3.org/2000/svg"
+                         className="button__icon-svg button__icon-svg--copy"
+                       >
+                         <path
+                           d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                           fill="currentColor"
+                         />
+                       </svg>
+                     </span>
+                     Contact Us
+                   </motion.button>
+            </div>
             </div>
             <motion.div
               custom={0}
               initial="hidden"
               animate={churchInView ? "visible" : "hidden"}
               variants={itemVariants}
-              className="w-1/2 max-md:w-full"
+              className="lg:w-1/2 xl:w-1/2 w-full flex items-center justify-center"
             >
               <img
                 src="https://iili.io/3V5fUyx.png"
@@ -398,9 +407,9 @@ const About = () => {
           initial="hidden"
           animate={ministriesInView ? "visible" : "hidden"}
           variants={sectionVariants}
-          className="bg-deepMaroon py-20"
+          className="bg-deepMaroon py-20 md:px-6 px-0 xl:px-0"
         >
-          <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 max-md:flex-col max-md:items-center max-md:text-center max-md:gap-8">
+          <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center  gap-6 max-md:flex-col max-md:items-center max-md:text-center max-md:gap-8">
             <div className="flex flex-col gap-3 text-white text-center md:text-left">
               <p className="text-sm uppercase tracking-wide">OUR MINISTRIES</p>
               <h1 className="text-2xl sm:text-3xl md:text-3xl leading-tight">

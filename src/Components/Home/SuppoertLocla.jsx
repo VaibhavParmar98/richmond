@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 const SuppoertLocla = () => {
   return (
     <div className="bg-champagneBeige py-12 sm:py-16 md:py-20">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-0 flex flex-col items-center justify-center font-marcellus">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-6 flex flex-col items-center justify-center font-marcellus">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}

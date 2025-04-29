@@ -149,7 +149,7 @@ const ArtFusionFestival = () => {
           initial="hidden"
           animate={eventDetailInView ? "visible" : "hidden"}
           variants={sectionVariants}
-          className="max-w-6xl mx-auto py-20 max-md:p-4 max-md:py-8 max-[480px]:p-2 max-[480px]:py-6"
+          className="max-w-6xl mx-auto md:px-6 px-6 lg:px-6 xl:px-0 py-20 max-md:p-4 max-md:py-8 max-[480px]:p-2 max-[480px]:py-6"
         >
           <div>
             <h1 className="text-2xl sm:text-3xl md:text-3xl text-center">
@@ -176,13 +176,13 @@ const ArtFusionFestival = () => {
           initial="hidden"
           animate={aboutEventInView ? "visible" : "hidden"}
           variants={sectionVariants}
-          className="flex gapsome gap-6 py-14 max-md:flex-col max-md:gap-8 max-w-6xl mx-auto"
+          className="flex gapsome gap-6 px-6 py-14 md:flex flex-col lg:flex-row xl:flex-row max-md:gap-8 max-w-6xl mx-auto"
         >
           <div className="flex flex-col gap-6 w-[800px] max-md:w-full">
-            <h1 className="text-2xl sm:text-3xl md:text-3xl text-center md:text-left">
+            <h1 className="text-2xl sm:text-3xl md:text-3xl text-center  lg:text-left xl:text-left">
               About event
             </h1>
-            <p className="text-sm sm:text-[14px] leading-5 text-center md:text-left">
+            <p className="text-sm sm:text-[14px] leading-5 text-center  lg:text-left xl:text-left">
               ArtFusion Festival unites local artists, creators, and innovators
               to showcase their talents through vibrant exhibitions, interactive
               workshops, and captivating live performances. This one-day
@@ -211,7 +211,7 @@ const ArtFusionFestival = () => {
                 />
               ))}
             </div>
-            <p className="text-sm sm:text-[14px] leading-5 text-center md:text-left">
+            <p className="text-sm sm:text-[14px] leading-5 text-center  lg:text-left xl:text-left">
               Attendees can immerse themselves in diverse art forms, engage with
               passionate creators, and witness the power of community-driven
               creativity. By supporting local talent, the festival nurtures
@@ -221,7 +221,7 @@ const ArtFusionFestival = () => {
 
           <div>
             <div>
-              <h1 className="p-3 mt-6 text-xl bg-deepMaroon text-center text-white w-80 max-md:w-full max-md:text-[1.2rem]">
+              <h1 className="p-3 mt-6 text-xl bg-deepMaroon text-center text-white lg:w-80 xl:w-80 w-full max-md:w-full max-md:text-[1.2rem]">
                 Details & Venue
               </h1>
               <div>
@@ -234,9 +234,9 @@ const ArtFusionFestival = () => {
                     variants={itemVariants}
                     className="text-center md:text-left"
                   >
-                    <p className="p-3 border text-sm tracking-widest font-semibold max-md:text-[0.85rem]">
+                    <p className="p-3 border text-sm tracking-widest text-center  lg:text-left xl:text-left font-semibold max-md:text-[0.85rem]">
                       {itm.key}
-                      <span className="ml-2 font-medium">{itm.pair}</span>
+                      <span className="ml-2 font-medium text-center  lg:text-left xl:text-left">{itm.pair}</span>
                     </p>
                   </motion.div>
                 ))}
@@ -250,9 +250,9 @@ const ArtFusionFestival = () => {
           initial="hidden"
           animate={eventProgramInView ? "visible" : "hidden"}
           variants={sectionVariants}
-          className="flex gap-6 max-md:flex-col max-md:gap-8 max-w-6xl mx-auto"
+          className="flex gap-6 px-6 lg:px-6 xl:px-0 max-md:flex-col max-md:gap-8 max-w-6xl mx-auto"
         >
-          <div className="w-[800px] h-[400px] bg-cream flex flex-col gap-6 relative p-10 max-md:w-full max-md:h-auto max-md:p-6">
+          <div className="w-[800px] md:h-[500px] lg:h-[400px] xl:h-[400px]   bg-cream flex flex-col gap-6 relative p-10 max-md:w-full max-md:h-auto max-md:p-6">
             <h1 className="text-2xl sm:text-3xl md:text-3xl text-center md:text-left">
               Event Program
             </h1>
@@ -338,26 +338,32 @@ const ArtFusionFestival = () => {
           initial="hidden"
           animate={eventRegistrationInView ? "visible" : "hidden"}
           variants={sectionVariants}
-          className="pt-10 max-w-6xl mx-auto"
+          className="pt-10 max-w-6xl mx-auto "
         >
           <h1 className="text-3xl text-center max-md:text-[1.8rem] max-[480px]:text-[1.5rem]">
             Event registration
           </h1>
-          <form className="flex flex-col gap-4 mt-8 items-center justify-center max-md:p-4">
-            <div className="md:flex md:flex-row flex-col md:gap-2 gap-6">
-              {["First Name", "Last Name"].map((placeholder, idx) => (
-                <motion.input
-                  key={idx}
-                  custom={idx}
-                  initial="hidden"
-                  animate={eventRegistrationInView ? "visible" : "hidden"}
-                  variants={itemVariants}
-                  type="text"
-                  placeholder={placeholder}
-                  className="border p-3 rounded md:w-96 max-md:w-full max-md:max-w-full max-md:text-[0.9rem] max-[480px]:text-[0.85rem]"
-                />
-              ))}
-            </div>
+          <form className="flex flex-col gap-4 mt-8 items-center justify-center max-md:p-4 md:px-6 lg:px-6 px-0">
+          <div className="flex lg:flex-row items-center justify-center  w-full xl:flex-row flex-col md:gap-2 gap-6">
+  <motion.input
+    initial="hidden"
+    animate={eventRegistrationInView ? "visible" : "hidden"}
+    variants={itemVariants}
+    type="text"
+    placeholder="First Name"
+    className="border p-3 rounded lg:w-96 xl:w-96 w-full  max-md:text-[0.9rem] max-[480px]:text-[0.85rem]"
+  />
+
+  <motion.input
+    initial="hidden"
+    animate={eventRegistrationInView ? "visible" : "hidden"}
+    variants={itemVariants}
+    type="text"
+    placeholder="Last Name"
+    className="border p-3 rounded lg:w-96 xl:w-96 w-full  max-md:text-[0.9rem] max-[480px]:text-[0.85rem]"
+  />
+</div>
+
             <motion.input
               custom={2}
               initial="hidden"
@@ -365,14 +371,14 @@ const ArtFusionFestival = () => {
               variants={itemVariants}
               type="text"
               placeholder="Email"
-              className="border p-3 rounded w-[777px] max-md:w-full max-md:max-w-full max-md:text-[0.9rem] max-[480px]:text-[0.85rem]"
+              className="border p-3 rounded lg:w-[777px] xl:w-[777px] w-full max-md:text-[0.9rem] max-[480px]:text-[0.85rem]"
             />
             <motion.select
               custom={3}
               initial="hidden"
               animate={eventRegistrationInView ? "visible" : "hidden"}
               variants={itemVariants}
-              className="text-black p-3 outline-none rounded w-[777px] border cursor-pointer max-md:w-full max-md:max-w-full max-md:text-[0.9rem] max-[480px]:text-[0.85rem]"
+              className="text-black p-3 outline-none rounded lg:w-[777px] xl:w-[777px] w-full border cursor-pointer max-md:w-full max-md:max-w-full max-md:text-[0.9rem] max-[480px]:text-[0.85rem]"
             >
               <option value="">Select Event</option>
               <option value="option1">Event 1</option>
@@ -386,7 +392,7 @@ const ArtFusionFestival = () => {
               variants={itemVariants}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="uppercase hover:bg-black w-[777px] transition-all duration-300 p-3 bg-burntCopper text-white rounded cursor-pointer max-md:w-full max-md:max-w-full max-md:text-[0.9rem] max-[480px]:text-[0.85rem]"
+              className="uppercase hover:bg-black lg:w-[777px] xl:w-[777px] w-full transition-all duration-300 p-3 bg-burntCopper text-white rounded cursor-pointer max-md:w-full max-md:max-w-full max-md:text-[0.9rem] max-[480px]:text-[0.85rem]"
             >
               subscribe
             </motion.button>
@@ -419,27 +425,28 @@ const ArtFusionFestival = () => {
                 ))}
               </ul>
             </motion.div>
-            <div className="border-b-0 border mt-8 sm:mt-10" />
+            <div className="border-b border-gray-300 mt-8 sm:mt-10" />
             <motion.div
-              custom={10}
-              initial="hidden"
-              animate={eventRegistrationInView ? "visible" : "hidden"}
-              variants={itemVariants}
-              className="flex justify-between mt-3 text-sm sm:text-[14px] leading-5"
-            >
-              <p className="flex items-center gap-4">
-                <span>
-                  <GoArrowLeft />
-                </span>
-                Previous Events
-              </p>
-              <p className="flex items-center gap-4">
-                Next Events{" "}
-                <span>
-                  <GoArrowRight />
-                </span>
-              </p>
-            </motion.div>
+  custom={10}
+  initial="hidden"
+  animate={eventRegistrationInView ? "visible" : "hidden"}
+  variants={itemVariants}
+  className="flex justify-between w-full mt-3 text-sm sm:text-[14px] leading-5"
+>
+  <p className="flex items-center gap-4">
+    <span>
+      <GoArrowLeft />
+    </span>
+    Previous Events
+  </p>
+  <p className="flex items-center gap-4">
+    Next Events
+    <span>
+      <GoArrowRight />
+    </span>
+  </p>
+</motion.div>
+
           </form>
         </motion.div>
 

@@ -24,7 +24,7 @@ const Hero = () => {
           >
             <h1 className="hero-heading text-3xl sm:text-4xl md:text-5xl font-semibold leading-tight text-deepMaroon">
               Empowering Local Artistry,
-              <br className="md:block hidden" />
+              <br className="md:block lg:hidden hidden" />
               One Creation At A Time
             </h1>
           </motion.div>
@@ -259,8 +259,8 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
           >
-            <p className="text-base sm:text-lg">
-              Embracing Faith’s Promise <br /> Sharing Love’s Light
+            <p className="lg:text-base xl:text-base text-lg md:text-base">
+              Embracing Faith’s Promise <br className=" hidden lg:block xl:block" /> Sharing Love’s Light
             </p>
           </motion.div>
           <motion.div

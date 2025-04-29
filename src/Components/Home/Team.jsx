@@ -74,7 +74,7 @@ const Team = () => {
       <div className="max-w-6xl mx-auto font-marcellus px-4 sm:px-6 md:px-0">
         <div className="flex flex-col md:flex-row md:justify-between gap-4 sm:gap-6">
           <motion.div
-            className="flex flex-col gap-4"
+            className="flex flex-col gap-4 md:w-1/2 lg:w-1/2 xl:w-1/2 w-auto"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
@@ -82,13 +82,13 @@ const Team = () => {
             viewport={{ once: true, amount: 0.5 }}
             layout
           >
-            <p className="text-sm text-center md:text-start">CHURCH PASTORS</p>
-            <h1 className="text-3xl text-center md:text-start">
+            <p className="text-sm text-center md:text-start ml-0 lg-ml-0 md:ml-4 xl-ml-0  ">CHURCH PASTORS</p>
+            <h1 className="text-3xl text-center md:text-start ml-0 lg-ml-0 md:ml-4 xl-ml-0">
               Our Passionate Team Behind the Vision
             </h1>
           </motion.div>
           <motion.div
-            className="flex gap-3 mt-4 md:mt-0"
+            className="flex gap-3 mt-4 md:mt-0 md:w-1/2 lg:w-1/2 xl:w-1/2 w-auto"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
@@ -104,7 +104,7 @@ const Team = () => {
               />
               <p className="text-[14px] leading-5 text-center md:text-start">
                 Get to Know Our Passionate Team Dedicated to Empowering Local
-                Artists, <br className="md:block hidden" /> Showcasing Talent,
+                Artists, <br className=" hidden  xl:block" /> Showcasing Talent,
                 and Building a Thriving Creative Community Together.
               </p>
             </div>
@@ -169,7 +169,7 @@ const Team = () => {
                 {itm.social.map((s, i) => (
                   <motion.span
                     key={i}
-                    className="social-icon"
+                    className="social-icon mb-6"
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{

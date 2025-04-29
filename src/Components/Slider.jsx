@@ -28,23 +28,29 @@ const Slider = () => {
   };
 
   return (
-    <>
-      <div className="bg-offWhite pb-4">
-        <div ref={sliderRef} className="flex gap-2">
-          {slides.map((itm, idx) => (
-            <motion.div
-              key={idx}
-              custom={idx}
-              initial="hidden"
-              animate={isInView ? "visible" : "hidden"}
-              variants={slideVariants}
-            >
-              <img src={itm.img} alt={`slide-${idx}`} />
-            </motion.div>
-          ))}
-        </div>
+    <div className="bg-offWhite flex justify-center items-center">
+      <div
+        ref={sliderRef}
+        className="flex gap-4 flex-wrap md:flex-nowrap justify-center items-center px-4"
+      >
+        {slides.map((itm, idx) => (
+          <motion.div
+            key={idx}
+            custom={idx}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            variants={slideVariants}
+            className="w-40 sm:w-48 md:w-auto"
+          >
+            <img
+              src={itm.img}
+              alt={`slide-${idx}`}
+              className="w-full h-auto object-contain"
+            />
+          </motion.div>
+        ))}
       </div>
-    </>
+    </div>
   );
 };
 

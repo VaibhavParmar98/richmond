@@ -5,14 +5,14 @@ import { motion } from "framer-motion";
 const EventSchedule = () => {
   const sectionRef = useRef(null);
   const isSectionInView = useInView(sectionRef, { once: false });
+
   const events = [
     {
       keyStakeholder: "High-School Age Youth",
       communityPartner: "RYSE",
       dateTime: "Monday, May 19th, 4:00PM - 6:30PM",
       location: "RYSE",
-      uniqueConcept:
-        "Youth artist Sharing Pieces at the beginning of the session",
+      uniqueConcept: "Youth artist Sharing Pieces at the beginning of the session",
     },
     {
       keyStakeholder: "Elementary and Middle School Groups",
@@ -36,10 +36,8 @@ const EventSchedule = () => {
       uniqueConcept: "Local Artist Social Gathering",
     },
     {
-      keyStakeholder:
-        "Anti-Displacement and Environmental Justice (In Spanish)",
-      communityPartner:
-        "Alliance of Californians For Community Empowerment (ACCE)",
+      keyStakeholder: "Anti-Displacement and Environmental Justice (In Spanish)",
+      communityPartner: "Alliance of Californians For Community Empowerment (ACCE)",
       dateTime: "TBD",
       location: "ACCE",
       uniqueConcept: "Co-Led by Tenant Leaders of Color",
@@ -84,9 +82,9 @@ const EventSchedule = () => {
       <h2 className="text-4xl font-marcellus font-bold text-center mb-6">
         Event Schedule
       </h2>
-
+      <div className="px-6">
       <div className="container max-w-6xl mx-auto rounded-3xl font-marcellus px-6 bg-gray-100 py-6">
-        <div className="hidden md:block">
+        <div className="hidden  md:block">
           <div className="grid grid-cols-5 gap-4 text-sm font-medium text-gray-700 bg-gray-200 p-2 rounded-t-lg">
             <div>Key Stakeholder Group</div>
             <div>Community Partner</div>
@@ -126,11 +124,14 @@ const EventSchedule = () => {
                   </span>
                   <span>{expandedIndex === index ? "−" : "+"}</span>
                 </div>
-                {expandedIndex === index && (
-                  <div className="mt-2 text-gray-600 text-sm space-y-2">
+                <div
+                  className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                    expandedIndex === index ? "max-h-96 mt-2" : "max-h-0"
+                  }`}
+                >
+                  <div className="text-gray-600 text-sm space-y-2 py-2">
                     <p>
-                      <strong>Community Partner:</strong>{" "}
-                      {event.communityPartner}
+                      <strong>Community Partner:</strong> {event.communityPartner}
                     </p>
                     <p>
                       <strong>Date & Time:</strong> {event.dateTime}
@@ -142,12 +143,15 @@ const EventSchedule = () => {
                       <strong>Unique Concept:</strong> {event.uniqueConcept}
                     </p>
                   </div>
-                )}
+                </div>
               </div>
             ))}
           </div>
         </div>
       </div>
+      </div>
+      
+
       <motion.button
         initial={{ opacity: 0, scale: 0.8 }}
         animate={

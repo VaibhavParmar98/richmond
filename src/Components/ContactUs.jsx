@@ -95,7 +95,7 @@ const ContactUs = () => {
                     className="text-black bg-beiage p-3 outline-none rounded w-full h-32 resize-none"
                   />
                   <button
-                    className="button text-base hover:border font-medium bg-burntCopper hover:bg-black max-md:w-full max-md:max-w-[200px] max-md:mx-auto"
+                    className="button text-base w-48  hover:border font-medium bg-burntCopper hover:bg-black max-md:w-full max-md:max-w-[200px] max-md:mx-auto"
                     style={{ "--clr": "#AA7446" }}
                   >
                     <span className="button__icon-wrapper">

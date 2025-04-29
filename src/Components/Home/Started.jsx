@@ -8,8 +8,8 @@ const Started = () => {
   const imageRef = useRef(null);
 
   return (
-    <div className="bg-[#FBF6EF] py-12 sm:py-16 md:py-20">
-      <div className="relative max-w-full mx-4 sm:max-w-3xl md:max-w-3xl md:mx-auto bg-white shadow-lg rounded-lg font-marcellus flex flex-col md:flex-row md:justify-between overflow-hidden">
+    <div className="bg-[#FBF6EF] py-12 md:px-4 lg:px-0 xl:px-0 px-0 sm:py-16 md:py-20">
+      <di v className="relative max-w-full mx-4 sm:max-w-3xl md:max-w-3xl md:mx-auto bg-white shadow-lg rounded-lg font-marcellus flex flex-col md:flex-row md:justify-between overflow-hidden">
         <img
           src="https://iili.io/31cmNMN.png"
           alt="Background Design"
@@ -100,7 +100,7 @@ const Started = () => {
             className="w-full sm:w-48 md:w-60 h-auto sm:h-48 md:h-60 p-6 sm:p-3 md:p-3"
           />
         </motion.div>
-      </div>
+      </di>
     </div>
   );
 };

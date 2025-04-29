@@ -103,9 +103,9 @@ const Banner = () => {
             alt="Banner"
             className="w-full h-full object-cover"
           />
-
+ <div className="absolute inset-0 bg-black/70 z-10" />
           <div className="absolute inset-0 z-20 flex flex-col justify-center items-center text-white px-4 sm:px-6 md:px-8">
-            <div className="flex flex-col lg:flex-row justify-between w-full max-w-7xl mx-auto gap-4 sm:gap-8 lg:gap-12">
+            <div className="flex flex-col xl:flex-row items-center justify-between w-full max-w-7xl mx-auto gap-4 sm:gap-8 lg:gap-12">
               <div className="lg:w-1/2 flex flex-col gap-3 sm:gap-4 items-center justify-center text-center lg:text-left">
                 <motion.h1
                   className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold tracking-widest"
@@ -157,7 +157,7 @@ const Banner = () => {
           />
           <div className="absolute inset-0 bg-red-900/70 z-10" />
           <div className="absolute inset-0 z-20 flex flex-col justify-center items-center text-white px-4 sm:px-6 md:px-8">
-            <div className="flex flex-col lg:flex-row justify-between w-full max-w-7xl mx-auto gap-4 sm:gap-8 lg:gap-12">
+            <div className="flex flex-col xl:flex-row items-center justify-between w-full max-w-7xl mx-auto gap-4 sm:gap-8 lg:gap-12">
               <div className="lg:w-1/2 flex flex-col gap-3 sm:gap-4 items-center justify-center text-center lg:text-left">
                 <motion.h1
                   className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold tracking-widest uppercase text-center"
@@ -252,7 +252,7 @@ const Banner = () => {
           />
           <div className="absolute inset-0 bg-black/70 z-10" />
           <div className="absolute inset-0 z-20 flex flex-col justify-center items-center text-white px-4 sm:px-6 md:px-8">
-            <div className="w-full max-w-4xl flex flex-col gap-4 sm:gap-6 md:gap-8 items-center text-center">
+            <div className="w-full max-w-4xl flex flex-col gap-4 sm:gap-6 md:gap-8 items-center text-center lg:mb-0 xl:mb-0 md:mb-0 mb-10">
               <motion.h1
                 id="community-session-heading"
                 className="text-base sm:text-lg md:text-2xl lg:text-3xl font-bold tracking-wide uppercase"

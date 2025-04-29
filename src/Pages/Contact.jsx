@@ -97,34 +97,54 @@ const Contact = () => {
               </motion.p>
               <div className="mt-6">
                 <form className="flex flex-col gap-6 max-md:w-full max-md:max-w-[350px]">
-                  <div className="md:flex flex-col md:flex-row md:gap-6">
-                    {["First Name", "Last Name"].map((placeholder, idx) => (
-                      <motion.input
-                        key={idx}
-                        custom={3 + idx}
-                        initial="hidden"
-                        animate={formInView ? "visible" : "hidden"}
-                        variants={itemVariants}
-                        type="text"
-                        placeholder={placeholder}
-                        className="border-b-2 w-full sm:w-1/2 outline-none pb-1 pl-2 max-md:text-[0.9rem] max-[480px]:text-[0.85rem]"
-                      />
-                    ))}
-                  </div>
+                <div className="md:flex flex-col md:flex-row md:gap-6">
+
+<motion.input
+  custom={3}
+  initial="hidden"
+  animate={formInView ? "visible" : "hidden"}
+  variants={itemVariants}
+  type="text"
+  placeholder="First Name"
+  className="border-b-2 w-full sm:w-1/2 outline-none pb-1 pl-2 max-md:text-[0.9rem] max-[480px]:text-[0.85rem]"
+/>
+
+<motion.input
+  custom={4}
+  initial="hidden"
+  animate={formInView ? "visible" : "hidden"}
+  variants={itemVariants}
+  type="text"
+  placeholder="Last Name"
+  className="border-b-2 w-full mt-6 sm:w-1/2 outline-none pb-1 pl-2 max-md:text-[0.9rem] max-[480px]:text-[0.85rem]"
+/>
+
+</div>
+
                   <div className="flex flex-col sm:flex-row gap-5 max-md:flex-col max-md:gap-4">
-                    {["Enter Email", "Enter Mobile"].map((placeholder, idx) => (
-                      <motion.input
-                        key={idx}
-                        custom={5 + idx}
-                        initial="hidden"
-                        animate={formInView ? "visible" : "hidden"}
-                        variants={itemVariants}
-                        type="text"
-                        placeholder={placeholder}
-                        className="border-b-2 w-full sm:w-1/2 outline-none pb-1 pl-2 max-md:w-full max-md:text-[0.9rem] max-[480px]:text-[0.85rem]"
-                      />
-                    ))}
-                  </div>
+  
+  <motion.input
+    custom={5}
+    initial="hidden"
+    animate={formInView ? "visible" : "hidden"}
+    variants={itemVariants}
+    type="text"
+    placeholder="Enter Email"
+    className="border-b-2 w-full sm:w-1/2 outline-none pb-1 pl-2 max-md:w-full max-md:text-[0.9rem] max-[480px]:text-[0.85rem]"
+  />
+
+  <motion.input
+    custom={6}
+    initial="hidden"
+    animate={formInView ? "visible" : "hidden"}
+    variants={itemVariants}
+    type="text"
+    placeholder="Enter Mobile"
+    className="border-b-2 w-full sm:w-1/2 outline-none pb-1 pl-2 max-md:w-full max-md:text-[0.9rem] max-[480px]:text-[0.85rem]"
+  />
+
+</div>
+
                   <motion.div
                     custom={7}
                     initial="hidden"
@@ -181,21 +201,22 @@ const Contact = () => {
         </motion.div>
 
         <motion.div
-          ref={mapRef}
-          initial="hidden"
-          animate={mapInView ? "visible" : "hidden"}
-          variants={sectionVariants}
-          className="w-full h-[400px] max-w-6xl mx-auto pb-10 max-md:h-[300px] max-[480px]:h-[250px]"
-        >
-          <iframe
-            title="Google Map"
-            className="w-full h-full border-0"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.123456789!2d72.123456!3d19.123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be799999999999%3A0x123456789abcdef!2sYour%20Location!5e0!3m2!1sen!2sin!4v1714286165367!5m2!1sen!2sin"
-            allowFullScreen=""
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          ></iframe>
-        </motion.div>
+  ref={mapRef}
+  initial="hidden"
+  animate={mapInView ? "visible" : "hidden"}
+  variants={sectionVariants}
+  className="w-full px-6 h-[400px] max-w-6xl mx-auto pb-10 max-md:h-[300px] max-[480px]:h-[250px]"
+>
+  <iframe
+    title="Google Map"
+    className="w-full h-full border-0"
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d46830151.11795828!2d-119.8093025!3d44.24236485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54eab584e432360b%3A0x1c3bb99243deb742!2sUnited%20States!5e0!3m2!1sen!2sin!4v1745927548376!5m2!1sen!2sin"
+    allowFullScreen=""
+    loading="lazy"
+    referrerPolicy="no-referrer-when-downgrade"
+  ></iframe>
+</motion.div>
+
 
         <Help />
         <Started />

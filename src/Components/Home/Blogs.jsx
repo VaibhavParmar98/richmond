@@ -52,7 +52,7 @@ const Blogs = () => {
 
   return (
     <div className="py-12 sm:py-16 md:py-20 bg-white">
-      <div className="max-w-6xl mx-auto font-marcellus px-4 sm:px-6 md:px-0">
+      <div className="max-w-6xl mx-auto font-marcellus px-4   lg:px-6 xl-px-0">
         <div className="flex flex-col md:flex-row md:justify-between justify-center items-center md:items-center gap-4 sm:gap-6">
           <motion.div
             ref={headerRef}
@@ -116,7 +116,7 @@ const Blogs = () => {
           className="border-b-0 border mt-8 sm:mt-10"
         />
 
-        <div className="md:hidden mt-8 sm:mt-12 md:mt-16">
+        <div className="lg:hidden xl:hidden  mt-8 sm:mt-12 md:mt-16">
           <Slider {...sliderSettings}>
             {items.map((itm, idx) => (
               <div key={idx}>
@@ -139,7 +139,7 @@ const Blogs = () => {
           </Slider>
         </div>
 
-        <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-6 sm:gap-10 md:gap-16 mt-8 sm:mt-12 md:mt-16">
+        <div className="hidden md:hidden lg:grid xl:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-6 sm:gap-10 md:gap-16 mt-8 sm:mt-12 md:mt-16">
           {items.map((itm, idx) => {
             const cardRef = useRef(null);
             const isInView = useInView(cardRef, {

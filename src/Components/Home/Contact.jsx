@@ -16,22 +16,22 @@ const Contact = () => {
 
   return (
     <div ref={sectionRef} className="bg-deepMaroon flex items-center">
-      <div className="max-w-6xl font-marcellus mx-auto px-4 sm:px-6 md:px-4 flex flex-col md:flex-row gap-6 sm:gap-8 md:gap-10 items-center justify-center w-full py-4 sm:py-16 md:py-0">
+      <div className="max-w-6xl font-marcellus mx-auto px-4 sm:px-6 md:px-4 flex md:flex-col flex-col lg:flex-row xl:flex-row gap-6 sm:gap-8 md:gap-10 items-center justify-center w-full py-4 sm:py-16 md:py-0">
         <motion.div
           ref={imageRef}
           initial={{ opacity: 0, x: -100 }}
           animate={imageInView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="w-full md:w-auto"
+          className="w-full md:w-auto "
         >
           <img
             src="https://iili.io/31cm7ZQ.png"
             alt=""
-            className="mx-auto md:w-auto w-40 h-40 sm:h-80 md:h-[500px] "
+            className="mx-auto mt-2 md:w-auto w-40 h-40 sm:h-80 lg:h-[500px] xl:h-[500px] "
           />
         </motion.div>
 
-        <div className="mt-8 sm:mt-12 md:mt-20 mb-8 sm:mb-12 md:mb-20 shadow-lg max-w-full sm:max-w-md md:max-w-lg w-full">
+        <div className="mt-8 md:mt-2 lg:mt-20 xl:mt-20 mb-8 sm:mb-12 md:mb-20 shadow-lg max-w-full sm:max-w-md md:max-w-lg w-full">
           <motion.div
             ref={headerRef}
             initial={{ opacity: 0, y: 50 }}
@@ -39,10 +39,10 @@ const Contact = () => {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="text-white gap-4 sm:gap-6 flex flex-col"
           >
-            <p className="text-xs sm:text-sm md:text-base text-center md:text-start">
+            <p className="text-xs sm:text-sm md:text-base md:text-cente text-center lg:text-start xl:text-start">
               Contact Information
             </p>
-            <h1 className="text-2xl sm:text-3xl md:text-4xl text-center md:text-start">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl md:text-cente text-center lg:text-start xl:text-start">
               Let Your Wanderlust <br /> Guide You
             </h1>
           </motion.div>

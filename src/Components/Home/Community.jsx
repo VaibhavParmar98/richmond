@@ -25,18 +25,18 @@ const Community = () => {
 
   return (
     <div ref={sectionRef} className="bg-deepMaroon py-12 sm:py-16 md:py-20">
-      <div className="max-w-6xl mx-auto font-marcellus px-4 sm:px-6 md:px-0 flex flex-col md:flex-row md:gap-20 gap-6 sm:gap-10">
+      <div className="max-w-6xl mx-auto font-marcellus lg:px-4 xl:px-4 md:px-4 px-6  flex md:flex-col flex-col lg:flex-row xl:flex-row md:gap-20 gap-6 sm:gap-10">
         <div className="flex flex-col w-full">
           <div
             ref={headerRef}
-            className="flex flex-col md:flex-row md:justify-between gap-4 sm:gap-6"
+            className="flex md:flex-col flex-col lg:flex-row xl:lg:flex-row lg:justify-between xl:justify-between gap-4 sm:gap-6"
           >
             <div className="text-white flex flex-col gap-3 sm:gap-4">
               <motion.p
                 initial={{ opacity: 0, y: 50 }}
                 animate={isHeaderInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.8, ease: "easeOut" }}
-                className="text-xs sm:text-sm  text-center md:text-start"
+                className="text-xs sm:text-sm md:text-cente text-center lg:text-start xl:text-start"
               >
                 What Our Community Says
               </motion.p>
@@ -45,7 +45,7 @@ const Community = () => {
                 initial={{ opacity: 0, y: 50 }}
                 animate={isHeaderInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-                className="text-2xl sm:text-3xl md:text-4xl text-center md:text-start"
+                className="text-2xl sm:text-3xl md:text-4xl md:text-cente text-center lg:text-start xl:text-start"
               >
                 Voices of Appreciation, <br /> Trust, and Inspiration
               </motion.h1>
@@ -54,7 +54,7 @@ const Community = () => {
                 initial={{ opacity: 0, y: 50 }}
                 animate={isHeaderInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
-                className="text-xs sm:text-[14px] leading-5 text-center md:text-start"
+                className="text-xs sm:text-[14px] leading-5 md:text-cente text-center lg:text-start xl:text-start"
               >
                 Hear from artists, art lovers, and supporters who have
                 experienced the impact of our platform. Their stories highlight

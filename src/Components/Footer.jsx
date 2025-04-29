@@ -42,12 +42,12 @@ const Footer = () => {
   return (
     <>
       <div className="bg-champagneBeige py-12 sm:py-16 md:py-20">
-        <div className="max-w-full sm:max-w-5xl md:max-w-6xl mx-auto px-4 sm:px-6 md:px-0 flex flex-col md:flex-row md:items-center md:justify-between gap-8 sm:gap-10">
+        <div className="max-w-full  sm:max-w-5xl md:max-w-6xl mx-auto px-4 sm:px-6 md:px-6 flex flex-col lg:flex-row xl:flex-row md:items-center md:justify-between gap-8 sm:gap-10">
           <motion.div
             {...fadeInUp(0)}
             className="flex flex-col gap-6 sm:gap-8 w-full md:w-auto"
           >
-            <div className="flex gap-1 items-center justify-center md:justify-start">
+            <div className="flex gap-1 items-center justify-center lg:justify-start xl:ustify-start">
               <img
                 src="https://iili.io/3WNCYUg.png"
                 alt=""
@@ -61,7 +61,7 @@ const Footer = () => {
               </p>
             </div>
             <div className="flex flex-col gap-8 sm:gap-6 font-marcellus">
-              <p className="text-[14px] leading-5 text-center md:text-start">
+              <p className="text-[14px] leading-5 text-center lg:text-start xl:text-start">
                 Discover Richmond’s thriving arts scene! Engage with local
                 talent,
                 <br className="md:block hidden" />
@@ -74,7 +74,7 @@ const Footer = () => {
               </p>
               <motion.span
                 {...scaleInStagger}
-                className="flex items-center gap-2 sm:gap-3 justify-center md:justify-start text-burntCopper text-lg sm:text-xl"
+                className="flex items-center gap-2 sm:gap-3 justify-center lg:justify-start xl:justify-start text-burntCopper text-lg sm:text-xl"
               >
                 <FaFacebook />
                 <FaInstagram />
@@ -93,7 +93,7 @@ const Footer = () => {
             </label>
             <motion.ul
               {...fadeInUp(0.3)}
-              className="grid grid-cols-3 sm:grid-cols-2 lg:grid-cols-2 gap-2 sm:gap-3 text-xs sm:text-sm md:text-sm"
+              className="grid grid-cols-3 lg:grid-cols-2 xl:grid-cols-2 gap-2 sm:gap-3 text-xs sm:text-sm md:text-sm"
             >
               {navItems.map((item, index) => (
                 <motion.li

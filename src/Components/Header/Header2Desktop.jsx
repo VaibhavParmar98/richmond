@@ -43,7 +43,7 @@ const HeaderDesktop = () => {
 
   return (
     <div className="bg-champagneBeige p-3 relative hidden md:block">
-      <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
+      <div className="max-w-6xl mx-auto  flex items-center xl:justify-between">
        
        <NavLink to="/" className="flex gap-1 items-center">
           <img src="https://iili.io/31cmG8g.png" alt="Logo" className="w-9 h-9" />
@@ -56,8 +56,8 @@ const HeaderDesktop = () => {
         </NavLink>
        
 
-        <div className="flex items-center gap-16">
-          <ul className="flex text-nowrap items-center gap-8 text-sm font-marcellus">
+        <div className="flex xl:flex-row lg:flex-row md:flex-col md:ml-16 md:gap-4 lg:ml-12 items-center lg:gap-7 xl:gap-16">
+          <ul className="flex text-nowrap items-center gap-8 text-sm font-marcellus ">
             <li className="cursor-pointer">The Story</li>
             <li
               ref={submenuRef}
@@ -130,7 +130,7 @@ const HeaderDesktop = () => {
             <li className="cursor-pointer">Contact Us</li>
           </ul>
 
-          <div className="flex gap-4 text-sm font-marcellus">
+          <div className="flex w-full md:justify-end gap-4 text-sm font-marcellus">
             <button className="py-3 rounded-3xl px-4 bg-white cursor-pointer">
               Donations
             </button>
