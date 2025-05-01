@@ -4,8 +4,13 @@ const CustomCursor = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [inDeepmoran, setInDeepmoran] = useState(false);
   const [onButton, setOnButton] = useState(false);
+  const [showCursor, setShowCursor] = useState(window.innerWidth >= 768);
 
   useEffect(() => {
+    const handleResize = () => {
+      setShowCursor(window.innerWidth >= 768);
+    };
+
     const move = (e) => {
       setPosition({ x: e.clientX, y: e.clientY });
 
@@ -18,8 +23,15 @@ const CustomCursor = () => {
     };
 
     window.addEventListener("mousemove", move);
-    return () => window.removeEventListener("mousemove", move);
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("mousemove", move);
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
+
+  if (!showCursor) return null;
 
   return (
     <div

@@ -56,37 +56,48 @@ const slideVariants = {
 
 const Banner = () => {
   const settings = {
-    dots: false,
+    dots: false, 
     infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 5000,
     arrows: true,
     prevArrow: <PrevArrow />,
     nextArrow: <NextArrow />,
-    className:
-      "w-full h-[50vh] sm:h-[60vh] md:h-[70vh] min-h-[350px] font-marcellus",
+    className: "w-full h-[50vh] sm:h-[60vh] md:h-[70vh] min-h-[350px] font-marcellus",
     responsive: [
       {
         breakpoint: 1024,
         settings: {
           autoplaySpeed: 4000,
           arrows: true,
+          dots: false,
           slidesToShow: 1,
         },
       },
       {
-        breakpoint: 640,
+        breakpoint: 768,
         settings: {
           autoplaySpeed: 3000,
           arrows: true,
+          dots: false, 
+          slidesToShow: 1,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          autoplaySpeed: 3000,
+          arrows: false,
+          dots: true, 
           slidesToShow: 1,
         },
       },
     ],
   };
+  
 
   return (
     <Slider {...settings}>

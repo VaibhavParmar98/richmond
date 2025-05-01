@@ -118,7 +118,7 @@ const Contact = () => {
               </div>
             </div>
 
-            <button className="bg-burntCopper hover:bg-black transition-all duration-500 cursor-pointer text-white p-2 sm:p-3 rounded-full text-xs sm:text-sm md:text-sm w-full  hover:bg-opacity-90">
+            <button className="bg-burntCopper w-auto hover:bg-black transition-all duration-500 cursor-pointer text-white p-3 rounded-full text-xs sm:text-sm md:text-sm  hover:bg-opacity-90">
               Send Message
             </button>
           </motion.form>

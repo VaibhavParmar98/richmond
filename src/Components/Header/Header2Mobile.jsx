@@ -7,7 +7,7 @@ import {
 } from "react-icons/md";
 import { NavLink } from "react-router-dom";
 
-const HeaderMobile = ({ isMenuOpen, toggleMenu }) => {
+const HeaderMobile = ({ isMenuOpen, toggleMenu, setIsMenuOpen }) => {
   const [activeSubmenu, setActiveSubmenu] = useState(null);
   const menuRef = useRef(null);
 
@@ -15,7 +15,7 @@ const HeaderMobile = ({ isMenuOpen, toggleMenu }) => {
     const handleClickOutside = (event) => {
       if (menuRef.current && !menuRef.current.contains(event.target)) {
         setActiveSubmenu(null);
-        toggleMenu(); // Close full menu when clicking outside
+        if (isMenuOpen) setIsMenuOpen(false); // Only close if open
       }
     };
 
@@ -23,10 +23,10 @@ const HeaderMobile = ({ isMenuOpen, toggleMenu }) => {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [toggleMenu]);
+  }, [isMenuOpen, setIsMenuOpen]);
 
   const toggleSubmenu = (menu) => {
-    setActiveSubmenu(activeSubmenu === menu ? null : menu);
+    setActiveSubmenu((prev) => (prev === menu ? null : menu));
   };
 
   return (
@@ -38,7 +38,7 @@ const HeaderMobile = ({ isMenuOpen, toggleMenu }) => {
     >
       <div className="max-w-full mx-auto px-4 flex flex-col">
         <div className="flex justify-between items-center w-full">
-          <NavLink to="/" className="flex gap-1 items-center" onClick={toggleMenu}>
+          <NavLink to="/" className="flex gap-1 items-center">
             <img
               src="https://iili.io/31cmG8g.png"
               alt="Logo"
@@ -60,6 +60,7 @@ const HeaderMobile = ({ isMenuOpen, toggleMenu }) => {
           </button>
         </div>
 
+        {/* Mobile Menu Content */}
         <div
           className={`flex flex-col w-full mt-4 bg-champagneBeige overflow-hidden transition-[max-height,opacity] duration-500 ease-in-out transform ${
             isMenuOpen
@@ -68,9 +69,9 @@ const HeaderMobile = ({ isMenuOpen, toggleMenu }) => {
           }`}
         >
           <ul className="flex flex-col text-nowrap items-start gap-4 text-xs font-marcellus px-1">
-            <li className="cursor-pointer" onClick={toggleMenu}>The Story</li>
+            <li className="cursor-pointer text-[14px]" onClick={toggleMenu}>The Story</li>
 
-            <li className="cursor-pointer w-full">
+            <li className="cursor-pointer w-full text-[14px]">
               <div
                 className="flex items-center gap-1"
                 onClick={() => toggleSubmenu("whoWeAre")}
@@ -85,32 +86,25 @@ const HeaderMobile = ({ isMenuOpen, toggleMenu }) => {
               <div
                 className={`transition-[max-height,opacity] duration-300 ease-in-out overflow-hidden ${
                   activeSubmenu === "whoWeAre"
-                    ? "max-h-40 opacity-100"
+                    ? "max-h-50 opacity-100"
                     : "max-h-0 opacity-0"
                 }`}
               >
-                <ul className="p-4 mt-2 bg-champagneBeige w-auto rounded-lg flex flex-col gap-2">
-                  <li className="py-1 px-2 hover:bg-gray-100 rounded flex gap-2 items-center" onClick={toggleMenu}>
-                    <FaCaretRight />
-                    Richmond Renaissance
-                  </li>
-                  <li className="py-1 px-2 hover:bg-gray-100 rounded flex gap-2 items-center" onClick={toggleMenu}>
-                    <FaCaretRight />
-                    Co-Founders and Steering Committee
-                  </li>
-                  <li className="py-1 px-2 hover:bg-gray-100 rounded flex gap-2 items-center" onClick={toggleMenu}>
-                    <FaCaretRight />
-                    Anchor Organizations
-                  </li>
-                  <li className="py-1 px-2 hover:bg-gray-100 rounded flex gap-2 items-center" onClick={toggleMenu}>
-                    <FaCaretRight />
-                    Organizations at Large
+                <ul className="p-4 mt-2 bg-champagneBeige rounded-lg flex flex-col gap-2">
+                  <li onClick={toggleMenu} className="flex items-center gap-2 hover:bg-gray-100 px-2 py-1 rounded"><FaCaretRight /> Richmond Renaissance</li>
+                  <li onClick={toggleMenu} className="flex items-center gap-2 hover:bg-gray-100 px-2 py-1 rounded"><FaCaretRight /> Co-Founders and Steering Committee</li>
+                  <li onClick={toggleMenu} className="flex items-center gap-2 hover:bg-gray-100 px-2 py-1 rounded"><FaCaretRight /> Anchor Organizations</li>
+                  <li onClick={toggleMenu} className="flex items-center gap-2 hover:bg-gray-100 px-2 py-1 rounded"><FaCaretRight /> Organizations at Large</li>
+                  <li onClick={toggleMenu}>
+                    <NavLink to="/about" className="flex gap-2 items-center hover:bg-gray-100 px-2 py-1 rounded">
+                      <FaCaretRight /> About Us
+                    </NavLink>
                   </li>
                 </ul>
               </div>
             </li>
 
-            <li className="cursor-pointer w-full">
+            <li className="cursor-pointer w-full text-[14px]">
               <div
                 className="flex items-center gap-1"
                 onClick={() => toggleSubmenu("thingsToDo")}
@@ -123,36 +117,67 @@ const HeaderMobile = ({ isMenuOpen, toggleMenu }) => {
                 )}
               </div>
               <div
-                className={`transition-[max-height,opacity] duration-700 ease-in-out overflow-hidden ${
+                className={`transition-[max-height,opacity] duration-300 ease-in-out overflow-hidden ${
                   activeSubmenu === "thingsToDo"
                     ? "max-h-40 opacity-100"
                     : "max-h-0 opacity-0"
                 }`}
               >
                 <ul className="p-4 mt-2 bg-champagneBeige w-40 rounded-lg flex flex-col gap-2">
-                  <li className="py-1 px-2 hover:bg-gray-100 rounded flex gap-2 items-center" onClick={toggleMenu}>
-                    <FaCaretRight />
-                    Food
-                  </li>
-                  <li className="py-1 px-2 hover:bg-gray-100 rounded flex gap-2 items-center" onClick={toggleMenu}>
-                    <FaCaretRight />
-                    Services
-                  </li>
-                  <li className="py-1 px-2 hover:bg-gray-100 rounded flex gap-2 items-center" onClick={toggleMenu}>
-                    <FaCaretRight />
-                    Events
+                  <li onClick={toggleMenu} className="flex items-center gap-2 hover:bg-gray-100 px-2 py-1 rounded"><FaCaretRight /> Food</li>
+                  <li onClick={toggleMenu} className="flex items-center gap-2 hover:bg-gray-100 px-2 py-1 rounded"><FaCaretRight /> Services</li>
+                  <li onClick={toggleMenu}>
+                    <NavLink to="/event" className="flex gap-2 items-center hover:bg-gray-100 px-2 py-1 rounded">
+                      <FaCaretRight /> Events
+                    </NavLink>
                   </li>
                 </ul>
               </div>
             </li>
 
-            <li className="cursor-pointer" onClick={toggleMenu}>
-              <NavLink to="/signup">Artist Registry</NavLink>
+            <li className="cursor-pointer w-full text-[14px]">
+              <div
+                className="flex items-center gap-1"
+                onClick={() => toggleSubmenu("artistRegistry")}
+              >
+                Artist Registry
+                {activeSubmenu === "artistRegistry" ? (
+                  <MdOutlineKeyboardArrowUp className="text-base" />
+                ) : (
+                  <MdOutlineKeyboardArrowDown className="text-base" />
+                )}
+              </div>
+              <div
+                className={`transition-[max-height,opacity] duration-300 ease-in-out overflow-hidden ${
+                  activeSubmenu === "artistRegistry"
+                    ? "max-h-40 opacity-100"
+                    : "max-h-0 opacity-0"
+                }`}
+              >
+                <ul className="p-4 mt-2 bg-champagneBeige w-40 rounded-lg flex flex-col gap-2">
+                  <li onClick={toggleMenu}>
+                    <NavLink to="/signup" className="flex gap-2 items-center hover:bg-gray-100 px-2 py-1 rounded">
+                      <FaCaretRight /> Register
+                    </NavLink>
+                  </li>
+                  <li onClick={toggleMenu}>
+                    <NavLink to="/gallery" className="flex gap-2 items-center hover:bg-gray-100 px-2 py-1 rounded">
+                      <FaCaretRight /> Gallery
+                    </NavLink>
+                  </li>
+                  <li onClick={toggleMenu}>
+                    <NavLink to="/faq" className="flex gap-2 items-center hover:bg-gray-100 px-2 py-1 rounded">
+                      <FaCaretRight /> FAQ
+                    </NavLink>
+                  </li>
+                </ul>
+              </div>
             </li>
-            <li className="cursor-pointer" onClick={toggleMenu}>Contact Us</li>
+
+            <li className="cursor-pointer text-[14px]" onClick={toggleMenu}>Contact Us</li>
           </ul>
 
-          <div className="flex gap-3 text-xs font-marcellus mt-4">
+          <div className="flex gap-3 text-xs font-marcellus mt-4 text-[14px]">
             <button
               className="py-3 rounded-3xl px-3 bg-white cursor-pointer"
               onClick={toggleMenu}
@@ -163,9 +188,7 @@ const HeaderMobile = ({ isMenuOpen, toggleMenu }) => {
               className="flex gap-2 rounded-3xl items-center py-1 px-3 bg-white cursor-pointer"
               onClick={toggleMenu}
             >
-              <span>
-                <img src="https://iili.io/3VR8DeS.png" alt="Calendar" className="w-4 h-4" />
-              </span>
+              <img src="https://iili.io/3VR8DeS.png" alt="Calendar" className="w-4 h-4" />
               Calendar
             </button>
           </div>

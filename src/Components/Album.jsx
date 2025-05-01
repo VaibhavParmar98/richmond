@@ -45,39 +45,51 @@
     };
 
 
-    const settings = {
-      dots: true,
-      arrows: false,
-      infinite: true,
-      speed: 500,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      appendDots: dots => (
-        <div
-          style={{
-            marginTop: "10px",
-            display: "flex",
-            justifyContent: "center",
-            gap: "0.1px" ,
-            
-          }}
-        >
-          {dots}
-        </div>
-      ),
-      customPaging: i => (
-        <button
-          style={{
-            width: "0px",
-            height: "0px",
-            borderRadius: "50%",
-            background: "#999",
-            border: "none",
-            padding: 0,
-          }}
-        />
-      ),
-    };
+  const settings = {
+  dots: true,
+  arrows: false,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  appendDots: dots => (
+    <div
+      style={{
+        marginTop: "10px",
+        display: "flex",
+        justifyContent: "center",
+        gap: "px",
+      }}
+    >
+      {React.Children.map(dots, (dot, index) => {
+        return React.cloneElement(dot, {
+          children: React.cloneElement(dot.props.children, {
+            style: {
+              width: "6px",
+              height: "6px",
+              borderRadius: "50%",
+              background:
+                dot.props.className && dot.props.className.includes("slick-active")
+                  ? "#aa7446"
+                  : "#999",
+            },
+          }),
+        });
+      })}
+    </div>
+  ),
+  customPaging: i => (
+    <div
+      style={{
+        width: "10px",
+        height: "10px",
+        borderRadius: "50%",
+        background: "#999",
+      }}
+    />
+  ),
+};
+
     
     const images = [
       "https://iili.io/3V0z1Uv.png",
@@ -100,9 +112,8 @@
 
     return (
       <>
-        <div className="bg-white">
-          <div className="max-w-6xl mx-auto">
-            {/* Header Section */}
+        <div className="bg-white ">
+          <div className="max-w-6xl mx-auto ">
             <motion.div
               ref={headerRef}
               className="flex flex-col gap-5 items-center justify-center md:p-4 max-md:p-4 max-md:text-center"
@@ -140,7 +151,6 @@
 
             <div className="border-b-0 border mt-8 sm:mt-10" />
 
-            {/* Gallery Section for desktop*/}
             <motion.div
               ref={galleryRef}
               className="hidden lg:flex flex-col gap-3 py-10 lg:p-4 xl:p-4 gallery-section"              variants={staggerContainer}
@@ -239,13 +249,12 @@
               </motion.div>
             </motion.div>
 
-            {/* GALLERY SECTION FOR MOBILE AND TABLET */}
 
             <motion.div
       className="lg:hidden block py-6 px-4"
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.3 }} // scroll trigger config
+      viewport={{ once: true, amount: 0.3 }} 
       transition={{ staggerChildren: 0.3 }}
     >
       <Slider {...settings}>

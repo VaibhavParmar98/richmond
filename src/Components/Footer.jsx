@@ -128,18 +128,18 @@ const Footer = () => {
               <motion.input
                 {...fadeInUp(0.5)}
                 type="text"
-                className="p-1.5 sm:p-2 bg-white text-burntCopper rounded-3xl"
+                className="p-3 bg-white text-burntCopper rounded-3xl"
                 placeholder="Your Name"
               />
               <motion.input
                 {...fadeInUp(0.6)}
                 type="text"
-                className="p-1.5 sm:p-2 bg-white text-burntCopper rounded-3xl"
+                className="p-3 bg-white text-burntCopper rounded-3xl"
                 placeholder="Your Email"
               />
               <motion.button
                 {...fadeInUp(0.7)}
-                className="uppercase hover:bg-black transition-all duration-300 p-1.5 sm:p-2 bg-burntCopper text-white rounded-3xl cursor-pointer"
+                className="uppercase hover:bg-black transition-all duration-300 p-3 bg-burntCopper text-white rounded-3xl cursor-pointer"
               >
                 subscribe
               </motion.button>

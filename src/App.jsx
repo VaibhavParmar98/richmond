@@ -17,56 +17,53 @@ import Contact from "./Pages/Contact";
 const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const headerRef = useRef(null);
-  const [totalHeaderHeight, setTotalHeaderHeight] = useState(0);
 
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const toggleMenu = () => setIsMenuOpen((prev) => !prev);
 
   useEffect(() => {
-    if (headerRef.current) {
-      setTotalHeaderHeight(headerRef.current.offsetHeight);
-    }
-
-    if (isMenuOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
-
+    document.body.style.overflow = isMenuOpen ? "hidden" : "auto";
     return () => {
-      document.body.style.overflow = "";
+      document.body.style.overflow = "auto";
     };
   }, [isMenuOpen]);
 
   return (
-    <>
-      <BrowserRouter>
-        <CustomCursor />
-        <Header1 />
-        <div ref={headerRef} className="relative z-20">
-          <HeaderMobile isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
-          <HeaderDesktop />
-        </div>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/event" element={<Event />} />
-          <Route path="/art" element={<ArtFusionFestival />} />
-          <Route path="/gallery" element={<Gallery />} />
-          <Route path="/faq" element={<Faq />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
-        <Footer />
-        {isMenuOpen && (
-  <div
-    className="fixed bottom-0 left-0 right-0 h-1/2 z-10 bg-black/80  md:hidden"
-    onClick={toggleMenu}
-  />
-)}
+    <BrowserRouter>
+      <CustomCursor />
+      <Header1 />
+      <div className="scroll-container">
+        <div className="scrolling-wrapper"></div>
+      <div ref={headerRef} className="relative z-20">
+        <HeaderMobile
+          isMenuOpen={isMenuOpen}
+          toggleMenu={toggleMenu}
+          setIsMenuOpen={setIsMenuOpen}
+        />
+        <HeaderDesktop />
+      </div>
 
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/event" element={<Event />} />
+        <Route path="/art" element={<ArtFusionFestival />} />
+        <Route path="/gallery" element={<Gallery />} />
+        <Route path="/faq" element={<Faq />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
 
-      </BrowserRouter>
-    </>
+      <Footer />
+
+      {/* Overlay to close menu */}
+      {isMenuOpen && (
+        <div
+          className="fixed bottom-0 left-0 right-0 h-1/2 z-10 bg-black/80 md:hidden"
+          onClick={toggleMenu}
+        />
+      )}
+      </div>
+    </BrowserRouter>
   );
 };
 
