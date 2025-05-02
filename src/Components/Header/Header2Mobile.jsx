@@ -37,7 +37,7 @@ const HeaderMobile = ({ isMenuOpen, toggleMenu, setIsMenuOpen }) => {
       ref={menuRef}
     >
       <div className="max-w-full mx-auto px-4 flex flex-col">
-        <div className="flex justify-between items-center w-full">
+        <div className="flex justify-between items-center w-full mt-2">
           <NavLink to="/" className="flex gap-1 items-center">
             <img
               src="https://iili.io/31cmG8g.png"

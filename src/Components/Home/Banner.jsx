@@ -319,7 +319,7 @@ const Banner = () => {
                   </div>
                 </motion.div>
               </div>
-              <motion.button
+              {/* <motion.button
                 className="button font-medium text-sm sm:text-base px-6 py-2 md:py-3 md:mb-0"
                 style={{ "--clr": "#AA7446" }}
                 variants={buttonVariants}
@@ -355,7 +355,7 @@ const Banner = () => {
                   </svg>
                 </span>
                 RSVP Now
-              </motion.button>
+              </motion.button> */}
             </div>
           </div>
         </motion.section>

@@ -63,7 +63,7 @@ const Contact = () => {
                   <input
                     type="text"
                     placeholder="Your Email"
-                    className="border p-2 sm:p-3 pl-4 pr-10 rounded-full text-xs sm:text-sm md:text-sm w-full outline-none"
+                    className="border p-3 pl-4 pr-10 rounded-full text-xs sm:text-sm md:text-sm w-full outline-none"
                   />
                   <span className="absolute right-3 top-2 sm:top-3 mt-0.5 sm:mt-1">
                     <FaTelegramPlane className="w-3 h-3" />
@@ -78,7 +78,7 @@ const Contact = () => {
                   <input
                     type="text"
                     placeholder="Your Phone"
-                    className="border p-2 sm:p-3 pl-4 pr-10 rounded-full text-xs sm:text-sm md:text-sm w-full outline-none"
+                    className="border p-3 pl-4 pr-10 rounded-full text-xs sm:text-sm md:text-sm w-full outline-none"
                   />
                   <span className="absolute right-3 top-2 sm:top-3 mt-0.5 sm:mt-1">
                     <FaPhoneAlt className="w-3 h-3" />
@@ -95,7 +95,7 @@ const Contact = () => {
                 <input
                   type="text"
                   placeholder="Your Address"
-                  className="border p-2 sm:p-3 pl-4 pr-10 rounded-full text-xs sm:text-sm md:text-sm w-full outline-none"
+                  className="border p-3 pl-4 pr-10 rounded-full text-xs sm:text-sm md:text-sm w-full outline-none"
                 />
                 <span className="absolute right-3 top-2 sm:top-3 mt-0.5 sm:mt-1">
                   <FaLocationDot className="w-3 h-3" />
@@ -110,7 +110,7 @@ const Contact = () => {
               <div className="relative">
                 <textarea
                   placeholder="Write Message..."
-                  className="border p-2 sm:p-3 pl-4 pr-10 rounded-2xl text-xs sm:text-sm md:text-sm w-full h-20 sm:h-24 resize-none outline-none"
+                  className="border p-3 pl-4 pr-10 rounded-2xl text-xs sm:text-sm md:text-sm w-full h-20 sm:h-24 resize-none outline-none"
                 ></textarea>
                 <span className="absolute right-3 top-2 sm:top-3">
                   <IoMdMail className="w-3 h-3" />

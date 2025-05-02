@@ -5,7 +5,7 @@ const Help = () => {
     <div className="flex flex-col sm:flex-row w-full text-white font-marcellus">
       <div className="bg-champagneBeige w-full sm:w-1/2 text-center flex flex-col items-center justify-center h-48 sm:h-56 p-4">
         <p className="text-base sm:text-lg tracking-widest text-black">
-          give a little, Help a lot
+          Give a little, Help a lot
         </p>
         <h1 className="text-2xl sm:text-3xl tracking-widest text-black">
           DONATE NOW !

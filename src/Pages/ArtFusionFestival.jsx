@@ -131,7 +131,7 @@ const ArtFusionFestival = () => {
           <img
             src="https://iili.io/3V08nuj.png"
             alt="about banner"
-            className="w-full max-md:h-[50vh] max-md:object-cover"
+            className="w-full h-[50vh] max-md:object-cover"
           />
           <div className="absolute inset-0 bg-black/50"></div>
           <div className="absolute inset-0 flex flex-col gap-4 items-center justify-center max-md:gap-4">
@@ -164,10 +164,16 @@ const ArtFusionFestival = () => {
               alt=""
               className="mt-10 max-md:w-full max-md:h-auto"
             />
-            <p className="p-3 bg-burntCopper text-white w-full tracking-widest text-center max-md:text-[0.85rem] max-md:p-4 max-[480px]:text-[0.8rem]">
-              LocalArtShowcase | CommunityArtEvent | VibrantExpressions |
-              CulturalCelebration | SupportLocalArtists | LivePerformances
-            </p>
+           <div className="ticker-container">
+      <div className="ticker">
+        <span>
+          LocalArtShowcase | CommunityArtEvent | VibrantExpressions | CulturalCelebration | SupportLocalArtists | LivePerformances
+        </span>
+        <span>
+          LocalArtShowcase | CommunityArtEvent | VibrantExpressions | CulturalCelebration | SupportLocalArtists | LivePerformances
+        </span>
+      </div>
+    </div>
           </div>
         </motion.div>
 
@@ -176,7 +182,7 @@ const ArtFusionFestival = () => {
           initial="hidden"
           animate={aboutEventInView ? "visible" : "hidden"}
           variants={sectionVariants}
-          className="flex gapsome gap-6 px-6 py-14 md:flex flex-col lg:flex-row xl:flex-row max-md:gap-8 max-w-6xl mx-auto"
+          className="flex gapsome gap-6 px-6 py-6 md:flex flex-col lg:flex-row xl:flex-row max-md:gap-8 max-w-6xl mx-auto"
         >
           <div className="flex flex-col gap-6 w-[800px] max-md:w-full">
             <h1 className="text-2xl sm:text-3xl md:text-3xl text-center  lg:text-left xl:text-left">
@@ -338,7 +344,7 @@ const ArtFusionFestival = () => {
           initial="hidden"
           animate={eventRegistrationInView ? "visible" : "hidden"}
           variants={sectionVariants}
-          className="pt-10 max-w-6xl mx-auto "
+          className="pt-10  max-w-6xl mx-auto "
         >
           <h1 className="text-3xl text-center max-md:text-[1.8rem] max-[480px]:text-[1.5rem]">
             Event registration
@@ -351,7 +357,7 @@ const ArtFusionFestival = () => {
     variants={itemVariants}
     type="text"
     placeholder="First Name"
-    className="border p-3 rounded lg:w-96 xl:w-96 w-full  max-md:text-[0.9rem] max-[480px]:text-[0.85rem]"
+    className="border p-3 rounded-full lg:w-96 xl:w-96 w-full  max-md:text-[0.9rem] max-[480px]:text-[0.85rem]"
   />
 
   <motion.input
@@ -360,7 +366,7 @@ const ArtFusionFestival = () => {
     variants={itemVariants}
     type="text"
     placeholder="Last Name"
-    className="border p-3 rounded lg:w-96 xl:w-96 w-full  max-md:text-[0.9rem] max-[480px]:text-[0.85rem]"
+    className="border p-3 rounded-full lg:w-96 xl:w-96 w-full  max-md:text-[0.9rem] max-[480px]:text-[0.85rem]"
   />
 </div>
 
@@ -371,14 +377,14 @@ const ArtFusionFestival = () => {
               variants={itemVariants}
               type="text"
               placeholder="Email"
-              className="border p-3 rounded lg:w-[777px] xl:w-[777px] w-full max-md:text-[0.9rem] max-[480px]:text-[0.85rem]"
+              className="border p-3 rounded-full lg:w-[777px] xl:w-[777px] w-full max-md:text-[0.9rem] max-[480px]:text-[0.85rem]"
             />
             <motion.select
               custom={3}
               initial="hidden"
               animate={eventRegistrationInView ? "visible" : "hidden"}
               variants={itemVariants}
-              className="text-black p-3 outline-none rounded lg:w-[777px] xl:w-[777px] w-full border cursor-pointer max-md:w-full max-md:max-w-full max-md:text-[0.9rem] max-[480px]:text-[0.85rem]"
+              className="text-black p-3 outline-none rounded-full lg:w-[777px] xl:w-[777px] w-full border cursor-pointer max-md:w-full max-md:max-w-full max-md:text-[0.9rem] max-[480px]:text-[0.85rem]"
             >
               <option value="">Select Event</option>
               <option value="option1">Event 1</option>
@@ -392,7 +398,7 @@ const ArtFusionFestival = () => {
               variants={itemVariants}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="uppercase hover:bg-black lg:w-[777px] xl:w-[777px] w-full transition-all duration-300 p-3 bg-burntCopper text-white rounded cursor-pointer max-md:w-full max-md:max-w-full max-md:text-[0.9rem] max-[480px]:text-[0.85rem]"
+              className="uppercase hover:bg-black lg:w-[777px] xl:w-[777px] w-full transition-all duration-300 p-3 bg-burntCopper text-white rounded-full cursor-pointer max-md:w-full max-md:max-w-full max-md:text-[0.9rem] max-[480px]:text-[0.85rem]"
             >
               subscribe
             </motion.button>
@@ -408,10 +414,10 @@ const ArtFusionFestival = () => {
               </p>
               <ul className="flex items-center gap-3">
                 {[
-                  <FaFacebook className="text-3xl max-md:text-[1.5rem] max-[480px]:text-[1.2rem]" />,
-                  <FaInstagram className="bg-black text-white text-3xl p-1 rounded-full max-md:text-[1.5rem] max-[480px]:text-[1.2rem]" />,
-                  <FaTwitter className="bg-black text-white text-3xl p-1 rounded-full max-md:text-[1.5rem] max-[480px]:text-[1.2rem]" />,
-                  <FaYoutube className="bg-black text-white text-3xl p-1 rounded-full max-md:text-[1.5rem] max-[480px]:text-[1.2rem]" />,
+                  <FaFacebook className="text-3xl hover:text-burntCopper hover:scale-125 transition-all duration-500 cursor-pointer max-md:text-[1.5rem] max-[480px]:text-[1.2rem]" />,
+                  <FaInstagram className="bg-black hover:bg-burntCopper hover:scale-125 cursor-pointer text-white text-3xl p-1 rounded-full max-md:text-[1.5rem] max-[480px]:text-[1.2rem]" />,
+                  <FaTwitter className="bg-black hover:bg-burntCopper hover:scale-125 cursor-pointer text-white text-3xl p-1 rounded-full max-md:text-[1.5rem] max-[480px]:text-[1.2rem]" />,
+                  <FaYoutube className="bg-black hover:bg-burntCopper hover:scale-125 cursor-pointer text-white text-3xl p-1 rounded-full max-md:text-[1.5rem] max-[480px]:text-[1.2rem]" />,
                 ].map((icon, idx) => (
                   <motion.li
                     key={idx}

@@ -105,7 +105,7 @@ const Faq = () => {
         <img
           src="https://iili.io/3VVHRta.png"
           alt="about banner"
-          className="w-full max-md:h-[50vh] max-md:object-cover"
+          className="w-full h-[50vh] max-md:object-cover"
         />
         <div className="absolute inset-0 bg-black/50"></div>
         <div className="absolute inset-0 flex flex-col gap-4 items-center justify-center">

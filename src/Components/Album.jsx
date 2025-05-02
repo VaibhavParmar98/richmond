@@ -264,11 +264,12 @@
             variants={imageVariant}
             transition={{ duration: 0.6, ease: 'easeOut' }}
           >
-            <img
-              src={src}
-              alt={`Gallery ${index + 1}`}
-              className="w-full h-auto max-h-[400px] object-cover rounded-xl"
-            />
+           <img
+  src={src}
+  alt={`Gallery ${index + 1}`}
+  className="w-full h-[400px] object-object rounded-xl "
+/>
+
           </motion.div>
         ))}
       </Slider>

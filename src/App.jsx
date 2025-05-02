@@ -31,8 +31,6 @@ const App = () => {
     <BrowserRouter>
       <CustomCursor />
       <Header1 />
-      <div className="scroll-container">
-        <div className="scrolling-wrapper"></div>
       <div ref={headerRef} className="relative z-20">
         <HeaderMobile
           isMenuOpen={isMenuOpen}
@@ -55,14 +53,12 @@ const App = () => {
 
       <Footer />
 
-      {/* Overlay to close menu */}
       {isMenuOpen && (
         <div
           className="fixed bottom-0 left-0 right-0 h-1/2 z-10 bg-black/80 md:hidden"
           onClick={toggleMenu}
         />
       )}
-      </div>
     </BrowserRouter>
   );
 };

@@ -6,6 +6,7 @@ html,
 body {
   height: 100%;
   overflow: auto;
+  overflow-x: hidden;
   background-color: black;
 }
 
@@ -21,12 +22,33 @@ body {
   overflow-x: hidden;
   position: relative;
 }
-.scrolling-wrapper {
+/* .scrolling-wrapper {
   display: flex;
   flex-wrap: nowrap;
   animation: scroll 20s linear infinite;
   will-change: transform;
+} */
+
+@media (max-width: 480px) {
+  .slick-dots {
+    margin-top: 1rem;
+    padding: 0.5rem;
+    bottom: 10px !important; 
+    
+  }
+
+  .slick-dots li button:before {
+    font-size: 12px; 
+    color: white !important;   
+    opacity: 0.75;
+  }
+
+  .slick-dots li.slick-active button:before {
+    color: #AA7446 !important; 
+    opacity: 1;
+  }
 }
+
 
 
 @keyframes scroll {
@@ -140,6 +162,52 @@ body {
   .button:hover .button__icon-svg--copy {
     @apply transition-transform duration-300 ease-in-out delay-100;
     transform: translate(0);
+  }
+}
+
+
+/* TICKER */
+
+.ticker-container {
+  width: 100%;
+  overflow: hidden;
+  background-color: #8B4513; /* burntCopper color */
+  padding: 0.75rem 0; /* Adjust padding */
+}
+
+.ticker {
+  display: flex;
+  white-space: nowrap;
+  animation: ticker 20s linear infinite; /* Adjust duration (20s) for speed */
+}
+
+.ticker span {
+  color: white;
+  font-size: 1rem; /* Default font size */
+  tracking-widest: uppercase;
+  padding-right: 2rem; /* Space between repeated content */
+}
+
+/* Animation for infinite scrolling */
+@keyframes ticker {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); /* Moves half the content width for seamless loop */
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .ticker span {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .ticker span {
+    font-size: 0.8rem;
   }
 }
 

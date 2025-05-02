@@ -133,7 +133,7 @@ const About = () => {
           <img
             src="https://iili.io/3V5fZ3g.png"
             alt="about banner"
-            className="w-full max-md:h-[50vh] max-md:object-cover"
+            className="w-full h-[50vh] max-md:object-cover"
           />
           <div className="absolute inset-0 bg-black/50"></div>
           <div className="absolute inset-0 flex flex-col gap-4 items-center justify-center max-md:gap-4">
@@ -199,7 +199,7 @@ const About = () => {
                      initial={{ opacity: 0, scale: 0.8 }}
                      whileInView={{ opacity: 1, scale: 1 }}
                      viewport={{ once: true, amount: 0.4 }}
-                     className="button text-base flex items-center justify-center w-40 font-medium bg-burntCopper hover:bg-black mt-4"
+                     className="button border text-base flex items-center justify-center w-40 font-medium bg-burntCopper hover:bg-black mt-4"
                      transition={{ duration: 0.6, ease: [0.34, 1.56, 0.64, 1] }}
                      style={{ "--clr": "#AA7446" }}
                    >
@@ -352,7 +352,7 @@ const About = () => {
                      initial={{ opacity: 0, scale: 0.8 }}
                      whileInView={{ opacity: 1, scale: 1 }}
                      viewport={{ once: true, amount: 0.4 }}
-                     className="button text-base flex items-center justify-center w-40 font-medium bg-burntCopper hover:bg-black mt-4"
+                     className="button border text-base flex items-center justify-center w-40 font-medium bg-burntCopper hover:bg-black mt-4"
                      transition={{ duration: 0.6, ease: [0.34, 1.56, 0.64, 1] }}
                      style={{ "--clr": "#AA7446" }}
                    >
