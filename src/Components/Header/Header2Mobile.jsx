@@ -174,7 +174,7 @@ const HeaderMobile = ({ isMenuOpen, toggleMenu, setIsMenuOpen }) => {
               </div>
             </li>
 
-            <li className="cursor-pointer text-[14px]" onClick={toggleMenu}>Contact Us</li>
+            <NavLink to='/contact'><li className="cursor-pointer text-[14px]" onClick={toggleMenu}>Contact Us</li></NavLink>
           </ul>
 
           <div className="flex gap-3 text-xs font-marcellus mt-4 text-[14px]">

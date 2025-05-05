@@ -72,8 +72,10 @@ const Team = () => {
   return (
     <div className="py-20 bg-white">
       <div className="max-w-6xl mx-auto font-marcellus px-4 sm:px-6 md:px-0">
-        <div className="flex flex-col md:flex-row md:justify-between gap-4 sm:gap-6">
-          <motion.div
+        <div className="flex flex-col
+        items-center mb-3
+         justify-center gap-4 sm:gap-6">
+          {/* <motion.div
             className="flex flex-col gap-4 md:w-1/2 lg:w-1/2 xl:w-1/2 w-auto"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
@@ -86,7 +88,7 @@ const Team = () => {
             <h1 className="text-3xl text-center md:text-start ml-0 lg-ml-0 md:ml-4 xl-ml-0">
               Our Passionate Team Behind the Vision
             </h1>
-          </motion.div>
+          </motion.div> */}
           <motion.div
             className="flex gap-3 mt-4 md:mt-0 md:w-1/2 lg:w-1/2 xl:w-1/2 w-auto"
             initial={{ opacity: 0, y: 50 }}

@@ -20,6 +20,9 @@ const ArtFusionFestival = () => {
   const eventProgramRef = useRef(null);
   const eventRegistrationRef = useRef(null);
 
+    const buttonRef = useRef(null);
+    const isButtonInView = useInView(buttonRef, { once: true, margin: "-50px" });
+
   const heroInView = useInView(heroRef, { once: true, margin: "-50px" });
   const eventDetailInView = useInView(eventDetailRef, {
     once: true,
@@ -279,40 +282,46 @@ const ArtFusionFestival = () => {
                 </motion.div>
               ))}
               <div className="flex justify-end mt-4">
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="button text-base hover:border font-medium bg-burntCopper hover:bg-black max-md:w-full max-md:max-w-[200px] max-md:mx-auto"
-                  style={{ "--clr": "#AA7446" }}
-                >
-                  <span className="button__icon-wrapper">
-                    <svg
-                      viewBox="0 0 14 15"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="button__icon-svg"
-                      width="10"
-                    >
-                      <path
-                        d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
-                        fill="currentColor"
-                      />
-                    </svg>
-                    <svg
-                      viewBox="0 0 14 15"
-                      fill="none"
-                      width="10"
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="button__icon-svg button__icon-svg--copy"
-                    >
-                      <path
-                        d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
-                        fill="currentColor"
-                      />
-                    </svg>
-                  </span>
-                  Add To Calendar
-                </motion.button>
+             <motion.button
+                              ref={buttonRef}
+                              initial={{ opacity: 0, scale: 0.8 }}
+                              animate={isButtonInView ? { opacity: 1, scale: 1 } : {}}
+                              transition={{
+                                duration: 0.6,
+                                ease: [0.68, -0.55, 0.265, 1.55],
+                              }}
+                              className="button font-medium hover:border bg-burntCopper hover:bg-black"
+                              style={{ "--clr": "#AA7446" }}
+                            >
+                              <span className="button__icon-wrapper">
+                                <svg
+                                  viewBox="0 0 14 15"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  className="button__icon-svg"
+                                  width="10"
+                                >
+                                  <path
+                                    d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                                    fill="currentColor"
+                                  ></path>
+                                </svg>
+            
+                                <svg
+                                  viewBox="0 0 14 15"
+                                  fill="none"
+                                  width="10"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  className="button__icon-svg button__icon-svg--copy"
+                                >
+                                  <path
+                                    d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                                    fill="currentColor"
+                                  ></path>
+                                </svg>
+                              </span>
+                              Add To Calender
+                            </motion.button>
               </div>
             </div>
             <motion.img

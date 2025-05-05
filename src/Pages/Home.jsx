@@ -6,8 +6,8 @@ import Team from '../Components/Home/Team'
 import SuppoertLocla from '../Components/Home/SuppoertLocla'
 import Video from '../Components/Home/Video'
 import Blogs from '../Components/Home/Blogs'
-import Community from '../Components/Home/Community'
-import Thoughts from '../Components/Home/Thoughts'
+// import Community from '../Components/Home/Community'
+// import Thoughts from '../Components/Home/Thoughts'
 import Contact from '../Components/Home/Contact'
 import Started from '../Components/Home/Started'
 import Banner from '../Components/Home/Banner'
@@ -18,15 +18,15 @@ const Home = () => {
     <>
       <Banner />
       <Hero />
+      <EventSchedule/>
       <AboutUs />
       <OurMinisters />
       <Team />
       <SuppoertLocla />
-      <EventSchedule/>
       <Video />
       <Blogs />
-      <Community />
-      <Thoughts />
+      {/* <Community /> */}
+      {/* <Thoughts /> */}
       <Contact />
       <Started />
     </>

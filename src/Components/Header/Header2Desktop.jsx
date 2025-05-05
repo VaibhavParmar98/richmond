@@ -161,18 +161,25 @@ const HeaderDesktop = () => {
             </li>
 
            
-            <li className="cursor-pointer">Contact Us</li>
+            <NavLink to='/contact'><li className="cursor-pointer">Contact Us</li></NavLink>
           </ul>
 
           <div className="flex w-full md:justify-end gap-4 text-sm font-marcellus">
-            <button className="py-3 rounded-3xl px-4 bg-white cursor-pointer">Donations</button>
-            <button className="flex gap-2 rounded-3xl items-center py-1 px-4 bg-white cursor-pointer">
-              <span>
-                <img src="https://iili.io/3VR8DeS.png" alt="Calendar" className="w-5 h-5" />
-              </span>
-              Calendar
-            </button>
-          </div>
+  <button className="py-3 rounded-3xl px-4 bg-white cursor-pointer">Donations</button>
+
+  <a
+    href="https://calendar.google.com/calendar/u/0?cid=N2IxOTc3NjlkZjkwYjAzZjUwM2ZkZTdlZjQxYjBkM[...]DU2ODVlY2Q3ODk1MWViZTUzYkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex gap-2 rounded-3xl items-center py-1 px-4 bg-white cursor-pointer"
+  >
+    <span>
+      <img src="https://iili.io/3VR8DeS.png" alt="Calendar" className="w-5 h-5" />
+    </span>
+    Calendar
+  </a>
+</div>
+
         </div>
       </div>
     </div>

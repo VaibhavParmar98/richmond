@@ -244,7 +244,7 @@ const Hero = () => {
           </motion.div>
         </motion.div>
 
-        <motion.div
+        {/* <motion.div
           className="stats-section bg-offWhite rounded-xl mt-6 p-4 sm:p-6 flex flex-col md:flex-row justify-between items-center text-deepMaroon text-xs sm:text-sm gap-4 sm:gap-6 text-center md:text-left"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -304,7 +304,7 @@ const Hero = () => {
             </span>
             <span>Building Bonds Blessings</span>
           </motion.div>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );
