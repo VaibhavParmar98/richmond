@@ -34,10 +34,10 @@ const Hero = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
           >
+            <h1 className="font-semibold text-[18px] sm:text-[16px]">Help Shape the Future of Local Art</h1>
             <p className="text-deepMaroon text-[14px] leading-5 max-w-md">
-              Discover, support, and celebrate the vibrant creativity of local
-              artists in your community through exhibitions, workshops, and
-              collaborations.
+            
+            We're conducting a short survey to better understand how we can support and uplift our local artist community. Your feedback will guide our future events, workshops, and artist features.
             </p>
             <div className="flex gap-3 sm:gap-4 mt-4 sm:mt-6 justify-center md:justify-start">
               <motion.button
@@ -75,7 +75,7 @@ const Hero = () => {
                     ></path>
                   </svg>
                 </span>
-                Contact Us
+                Survey
               </motion.button>
               <NavLink to="/signup">
                 <motion.button
@@ -166,11 +166,11 @@ const Hero = () => {
           >
             <div className="relative w-full h-80 sm:h-96 md:h-[450px]">
               <img
-                src="https://iili.io/31cPl6J.png"
+                src="https://iili.io/3O4BNPs.jpg"
                 alt="Artist Event"
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-black opacity-50"></div>
+              <div className="absolute inset-0 bg-black opacity-30"></div>
             </div>
             <motion.div
               className="absolute inset-0 flex items-center mt-32 md:items-end md:justify-start p-2 sm:p-3 md:p-4 text-center md:text-left"
@@ -205,7 +205,7 @@ const Hero = () => {
                   discussing their works.
                 </motion.p>
                 <motion.button
-                  className="button text-base font-medium bg-burntCopper hover:bg-black mt-3"
+                  className="button text-base font-medium bg-deepMaroon hover:bg-black mt-3"
                   style={{ "--clr": "#AA7446" }}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -237,7 +237,7 @@ const Hero = () => {
                       />
                     </svg>
                   </span>
-                  View Event
+                   P D F
                 </motion.button>
               </div>
             </motion.div>

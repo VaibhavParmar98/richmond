@@ -11,7 +11,7 @@ import About from "./Pages/About";
 import Event from "./Pages/Event";
 import ArtFusionFestival from "./Pages/ArtFusionFestival";
 import Gallery from "./Pages/Gallery";
-import Faq from "./Pages/Faq";
+// import Faq from "./Pages/Faq";
 import Contact from "./Pages/Contact";
 
 const App = () => {
@@ -47,7 +47,7 @@ const App = () => {
         <Route path="/event" element={<Event />} />
         <Route path="/art" element={<ArtFusionFestival />} />
         <Route path="/gallery" element={<Gallery />} />
-        <Route path="/faq" element={<Faq />} />
+        {/* <Route path="/faq" element={<Faq />} /> */}
         <Route path="/contact" element={<Contact />} />
       </Routes>
 

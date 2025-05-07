@@ -171,7 +171,6 @@ body {
 .ticker-container {
   width: 100%;
   overflow: hidden;
-  background-color: #8B4513; 
   padding: 0.75rem 0; 
 }
 
@@ -195,6 +194,12 @@ body {
   }
   100% {
     transform: translateX(-50%); 
+  }
+}
+
+@layer utilities {
+  .animate-ticker {
+    animation: ticker 90s linear infinite;
   }
 }
 

@@ -167,7 +167,7 @@ const ArtFusionFestival = () => {
               alt=""
               className="mt-10 max-md:w-full max-md:h-auto"
             />
-           <div className="ticker-container">
+           <div className="ticker-container bg-burntCopper">
       <div className="ticker">
         <span>
           LocalArtShowcase | CommunityArtEvent | VibrantExpressions | CulturalCelebration | SupportLocalArtists | LivePerformances
