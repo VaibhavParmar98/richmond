@@ -44,35 +44,36 @@ const Calendar = () => {
   };
 
 
-  useEffect(() => {
-    if (!accessToken) return;
+ useEffect(() => {
+  if (!accessToken) return;
 
-    const fetchEvents = async () => {
-      try {
-        const res = await fetch('https://www.googleapis.com/calendar/v3/calendars/primary/events', {
-          headers: {
-            Authorization: `Bearer ${accessToken}`,
-          },
-        });
-        const data = await res.json();
+  const fetchEvents = async () => {
+    try {
+      const res = await fetch('https://www.googleapis.com/calendar/v3/calendars/primary/events', {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+        },
+      });
+      const data = await res.json();
 
-        if (data.items) {
-          const formattedEvents = data.items.map((event) => ({
-            id: event.id,
-            title: event.summary,
-            start: event.start.dateTime || event.start.date,
-            end: event.end.dateTime || event.end.date,
-          }));
-          setEvents(formattedEvents); 
-        
-        }
-      } catch (err) {
-        console.error('Failed to fetch events:', err);
+      if (data.items) {
+        const formattedEvents = data.items.map((event) => ({
+          id: event.id,
+          title: event.summary,
+          start: event.start.dateTime || event.start.date,
+          end: event.end.dateTime || event.end.date,
+        }));
+        setEvents(formattedEvents); 
+        localStorage.setItem("events", JSON.stringify(formattedEvents)); // Save here
       }
-    };
+    } catch (err) {
+      console.error('Failed to fetch events:', err);
+    }
+  };
 
-    fetchEvents();
-  }, [accessToken, setEvents]);
+  fetchEvents();
+}, [accessToken, setEvents]);
+
 
   const handleDelete = async (eventId) => {
     if (!accessToken) return;

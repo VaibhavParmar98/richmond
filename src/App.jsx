@@ -55,9 +55,9 @@ const App = () => {
          <Route
           path="/calendar"
           element={
-            <ProtectedRoute>
+            // <ProtectedRoute>
               <GoogleCalendar />
-            </ProtectedRoute>
+            // </ProtectedRoute>
           }
         />
       </Routes>
