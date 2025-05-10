@@ -109,7 +109,7 @@ const AboutUs = () => {
 
             <div className="flex gap-3 sm:gap-4 mt-6 sm:mt-8 text-base sm:text-base justify-center items-center md:justify-center md:items-center lg:justify-start lg:items-start xl:justify-start xl:items-start">
               <button
-                className="button hover:border  text-base hover:text-deepMaroon font-medium bg-deepGold hover:bg-black"
+                className="button hover:border  text-base hover:text-deepMaroon font-medium bg-white text-black hover:bg-black"
                 style={{ "--clr": "#AA7446" }}
               >
                 <span className="button__icon-wrapper hover:text-black text-deepMaroon">

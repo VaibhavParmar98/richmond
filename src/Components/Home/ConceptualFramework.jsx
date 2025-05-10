@@ -41,13 +41,13 @@ const fadeInUp = {
 
 const ConceptualFramework = () => {
   return (
-    <div className="bg-gray-200 text-deepMaroon py-16 px-4 sm:px-6 lg:px-8 font-marcellus">
+    <div className="bg-deepMaroon text-white py-16 px-4 sm:px-6 lg:px-8 font-marcellus">
         <div className="flex flex-col items-center gap-4 mb-10">
         <h2 className="text-2xl sm:text-3xl font-semibold text-center ">
             Conceptual Framework
           </h2>
           <p className="text-sm sm:text-base leading-6 text-center ">
-            Our work is grounded in the belief that local creativity drives cultural identity and community growth. <span className="text-burntCopper">This framework guides how we support artists and engage the public:</span>
+            Our work is grounded in the belief that local creativity drives cultural identity and community growth. <span >This framework guides how we support artists and engage the public:</span>
           </p>
         </div>
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-8 items-center">
@@ -57,7 +57,7 @@ const ConceptualFramework = () => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          src="https://iili.io/3OgspYQ.jpg"
+          src="https://iili.io/3k4BnOx.jpg"
           alt="Conceptual Visual"
           className="w-full lg:w-1/2 xl:h-[430px] lg:h-[430px] h-80 object-cover rounded-xl shadow-md"
         />
@@ -74,7 +74,7 @@ const ConceptualFramework = () => {
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.5 }}
                 transition={{ duration: 0.5, delay: idx * 0.2 }}
-                className="flex flex-col gap-1 bg-[#f9f4f2] p-4 rounded-lg shadow-sm border-l-4 border-burntCopper"
+                className="flex text-black flex-col gap-1 bg-white p-4 rounded-lg shadow-sm border-l-4 border-burntCopper"
               >
                 <h3 className="text-lg font-medium">{point.title}</h3>
                 <p className="text-sm">{point.desc}</p>
@@ -83,18 +83,19 @@ const ConceptualFramework = () => {
           </div>
         </div>
       </div>
-      <div className="ticker-container mt-5">
-  <div className="ticker flex">
-    <div className="flex min-w-max animate-ticker space-x-2">
-      {imageList.map((src, idx) => (
-        <img key={idx} src={src} alt={`News ${idx}`} className="object-cover w-40 h-40" />
-      ))}
-      {imageList.map((src, idx) => (
-        <img key={`copy-${idx}`} src={src} alt={`News ${idx}`} className="object-cover w-40 h-40" />
-      ))}
-    </div>
+      <div className="overflow-hidden w-full mt-12">
+  <div className="flex gap-3 w-max animate-[ticker_20s_linear_infinite]">
+    {[...imageList, ...imageList].map((src, idx) => (
+      <img
+        key={idx}
+        src={src}
+        alt={`News ${idx}`}
+        className="object-cover w-40 h-40 shrink-0"
+      />
+    ))}
   </div>
 </div>
+
 
 
     </div>

@@ -1,12 +1,16 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useContext } from "react";
 import { FaCaretRight } from "react-icons/fa6";
 import { MdOutlineKeyboardArrowDown, MdOutlineKeyboardArrowUp } from "react-icons/md";
 import { NavLink } from "react-router-dom";
+import { AuthContext } from "../../Context/AuthContext";
 
 const HeaderDesktop = () => {
   const [isSubmenuOpen, setIsSubmenuOpen] = useState(false);
   const [isSubmenuOpen2, setIsSubmenuOpen2] = useState(false);
   const [isSubmenuOpen3, setIsSubmenuOpen3] = useState(false);
+
+  const {user, logout} = useContext(AuthContext)
+
   const submenuRef = useRef(null);
   const submenuRef2 = useRef(null);
   const submenuRef3 = useRef(null);
@@ -33,6 +37,14 @@ const HeaderDesktop = () => {
     setIsSubmenuOpen2(submenu === "thingsToDo" ? !isSubmenuOpen2 : false);
     setIsSubmenuOpen3(submenu === "artistRegistry" ? !isSubmenuOpen3 : false);
   };
+
+
+const handleLogout = () => {
+    logout();
+    window.location.href = "/signup"; 
+  };
+
+
 
   return (
     <div className="bg-champagneBeige p-3 relative hidden md:block">
@@ -141,11 +153,21 @@ const HeaderDesktop = () => {
                 }`}
               >
                 <ul className="flex flex-col gap-2">
-                  <NavLink to='/signup'>
-                  <li className="py-1 px-2 hover:bg-gray-100 rounded flex gap-2 items-center">
-                    <FaCaretRight />Register
-                  </li>
-                  </NavLink>
+                  {user ? (
+    <li
+      onClick={handleLogout}
+      className="py-1 px-2 hover:bg-gray-100 rounded flex gap-2 items-center cursor-pointer"
+    >
+      <FaCaretRight />Logout
+    </li>
+  ) : (
+    <NavLink to='/signup'>
+      <li className="py-1 px-2 hover:bg-gray-100 rounded flex gap-2 items-center">
+        <FaCaretRight />Register
+      </li>
+    </NavLink>
+  )}
+
                   <NavLink to='/gallery'>
                   <li className="py-1 px-2 hover:bg-gray-100 rounded flex gap-2 items-center">
                     <FaCaretRight />Gallery
@@ -167,17 +189,24 @@ const HeaderDesktop = () => {
           <div className="flex w-full md:justify-end gap-4 text-sm font-marcellus">
   <button className="py-3 rounded-3xl px-4 bg-white cursor-pointer">Donations</button>
 
-  <a
-    href="https://calendar.google.com/calendar/u/0?cid=N2IxOTc3NjlkZjkwYjAzZjUwM2ZkZTdlZjQxYjBkM[...]DU2ODVlY2Q3ODk1MWViZTUzYkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t"
-    target="_blank"
-    rel="noopener noreferrer"
+  {user?.email === 'krunalpanchalkp2123@gmail.com' ? (
+  <NavLink
+    to="/calendar"
     className="flex gap-2 rounded-3xl items-center py-1 px-4 bg-white cursor-pointer"
   >
-    <span>
-      <img src="https://iili.io/3VR8DeS.png" alt="Calendar" className="w-5 h-5" />
-    </span>
+    <img src="https://iili.io/3VR8DeS.png" alt="Calendar" className="w-5 h-5" />
     Calendar
-  </a>
+  </NavLink>
+) : (
+  <button
+    disabled
+    className="flex gap-2 rounded-3xl items-center py-1 px-4 bg-white cursor-pointer"
+  >
+    <img src="https://iili.io/3VR8DeS.png" alt="Calendar" className="w-5 h-5" />
+    Calendar
+  </button>
+)}
+
 </div>
 
         </div>

@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState, useEffect, useContext } from "react";
 import { motion, useInView } from "framer-motion";
 import { HiOutlineArrowRightCircle } from "react-icons/hi2";
 import Team from "../Components/Home/Team";
@@ -6,6 +6,7 @@ import ContactUs from "../Components/ContactUs";
 import Slider from "../Components/Slider";
 import Started from "../Components/Home/Started";
 import Album from "../Components/Album";
+import { EventContext } from "../Context/EventContext"; 
 
 const EventItem = ({ date, title, time, index }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -46,7 +47,7 @@ const EventItem = ({ date, title, time, index }) => {
         className="focus:outline-none"
       >
         <span className="xl:mt-0 lg:mt-0 mt-2">
-          {isMobile || isHovered ? <span className="p-1 flex  text-[14px]  text-white bg-burntCopper rounded cursor-pointer">Book Now</span> : <HiOutlineArrowRightCircle className="text-2xl cursor-pointer" />}
+          {isMobile || isHovered ? <span className="p-1 flex text-[14px] text-white bg-burntCopper rounded cursor-pointer">Book Now</span> : <HiOutlineArrowRightCircle className="text-2xl cursor-pointer" />}
         </span>
       </button>
     </motion.div>
@@ -56,6 +57,16 @@ const EventItem = ({ date, title, time, index }) => {
 const Event = () => {
   const heroRef = useRef(null);
   const eventScheduleRef = useRef(null);
+  const { events } = useContext(EventContext);
+  console.log("page",events);
+  
+
+  const currentDate = new Date();
+const currentMonthYear = currentDate.toLocaleString("default", {
+  month: "long",
+  year: "numeric",
+});
+
 
   const heroInView = useInView(heroRef, { once: true, margin: "-50px" });
   const eventScheduleInView = useInView(eventScheduleRef, {
@@ -81,27 +92,22 @@ const Event = () => {
     }),
   };
 
-  const events1 = [
-    { date: "05 June", title: "ArtFusion Festival", time: "09:00am - 12:00am" },
-    { date: "10 June", title: "Canvas Chronicles", time: "10:00am - 01:00am" },
-    { date: "13 June", title: "Rhythms of Richmond", time: "09:00am - 03:00am" },
-    {
-      date: "18 June",
-      title: "Creative Sparks Showcase",
-      time: "09:30am - 02:30am",
-    },
-  ];
+  // Format events from context to match EventItem props
+  const formattedEvents = events.map((event) => {
+    const startDate = new Date(event.start);
+    const endDate = new Date(event.end);
+    const date = `${startDate.getDate()} ${startDate.toLocaleString("default", { month: "short" })}`;
+    const time = `${startDate.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })} - ${endDate.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}`;
+    return {
+      date,
+      title: event.title,
+      time,
+    };
+  });
 
-  const events2 = [
-    { date: "05 June", title: "Local Lens Film Fest", time: "09:00am - 12:00am" },
-    { date: "10 June", title: "Idea Ignite Workshops", time: "10:00am - 01:00am" },
-    { date: "13 June", title: "Storytelling Spotlight", time: "09:00am - 03:00am" },
-    {
-      date: "18 June",
-      title: "Creative Sparks Showcase",
-      time: "09:30am - 02:30am",
-    },
-  ];
+  // Split events into two groups for display (mimicking original structure)
+  const events1 = formattedEvents.slice(0, Math.ceil(formattedEvents.length / 2));
+  const events2 = formattedEvents.slice(Math.ceil(formattedEvents.length / 2));
 
   return (
     <div className="bg-white font-marcellus">
@@ -140,7 +146,7 @@ const Event = () => {
               variants={itemVariants}
               className="text-xs sm:text-sm uppercase text-center md:text-left"
             >
-              CALENDAR
+               CALENDAR
             </motion.p>
             <motion.h1
               custom={1}
@@ -170,15 +176,16 @@ const Event = () => {
 
         <div className="py-10 flex flex-col md:flex-row gap-6">
           <div className="w-full md:w-1/2">
-            <motion.p
-              custom={3}
-              initial="hidden"
-              animate={eventScheduleInView ? "visible" : "hidden"}
-              variants={itemVariants}
-              className="bg-deepMaroon p-4 text-white text-center w-full rounded-lg"
-            >
-              June 2025
-            </motion.p>
+           <motion.p
+  custom={3}
+  initial="hidden"
+  animate={eventScheduleInView ? "visible" : "hidden"}
+  variants={itemVariants}
+  className="bg-deepMaroon p-4 text-white text-center w-full rounded-lg"
+>
+  {events.length === 0 ? "Upcoming Events" : currentMonthYear}
+</motion.p>
+
             <div className="mt-10 flex flex-col gap-4">
               {events1.map((event, idx) => (
                 <EventItem
@@ -228,7 +235,8 @@ const Event = () => {
               variants={itemVariants}
               className="bg-deepMaroon p-4 text-white text-center w-full rounded-lg"
             >
-              June 2025
+                {events.length === 0 ? "Upcoming Events" : currentMonthYear}
+
             </motion.p>
             <div className="mt-10 flex flex-col gap-4">
               {events2.map((event, idx) => (

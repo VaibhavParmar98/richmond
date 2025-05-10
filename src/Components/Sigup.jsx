@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import { useInView, motion } from "framer-motion";
 import Help from "./Help";
 import Started from "./Home/Started";
+import OAuth from "./OAuth";
 
 const Signup = () => {
   const headingRef = useRef(null);
@@ -99,6 +100,9 @@ const Signup = () => {
                <button className="bg-burntCopper w-full hover:bg-black transition-all duration-500 cursor-pointer text-white p-3 rounded-full text-xs sm:text-sm md:text-sm  hover:bg-opacity-90">
               Sign up
             </button>
+</div>
+<div>
+  <OAuth/>
 </div>
 
                 </form>

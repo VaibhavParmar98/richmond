@@ -8,11 +8,13 @@ import Header1 from "./Components/Header/Header1";
 import HeaderMobile from "./Components/Header/Header2Mobile";
 import HeaderDesktop from "./Components/Header/Header2Desktop";
 import About from "./Pages/About";
-import Event from "./Pages/Event";
+import Event from "./Pages/Event"
 import ArtFusionFestival from "./Pages/ArtFusionFestival";
 import Gallery from "./Pages/Gallery";
 // import Faq from "./Pages/Faq";
 import Contact from "./Pages/Contact";
+import GoogleCalendar from "./Components/Calender";
+import ProtectedRoute from "./Components/ProtectedRoute";
 
 const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -49,6 +51,15 @@ const App = () => {
         <Route path="/gallery" element={<Gallery />} />
         {/* <Route path="/faq" element={<Faq />} /> */}
         <Route path="/contact" element={<Contact />} />
+        {/* <Route path="/calendar" element={<GoogleCalendar />} /> */}
+         <Route
+          path="/calendar"
+          element={
+            <ProtectedRoute>
+              <GoogleCalendar />
+            </ProtectedRoute>
+          }
+        />
       </Routes>
 
       <Footer />
