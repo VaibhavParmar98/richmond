@@ -20,9 +20,9 @@ const OAuth = () => {
           const accessToken = tokenResponse.access_token;
           login({ ...decoded }, accessToken); // store accessToken
           if (userEmail === 'krunalpanchalkp2123@gmail.com') {
-            navigate('/calendar');
-          } else {
             navigate('/event');
+          } else {
+            navigate('/');
           }
         },
       });

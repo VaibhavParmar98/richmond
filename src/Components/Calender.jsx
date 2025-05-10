@@ -6,6 +6,8 @@ import { useInView, motion } from 'framer-motion';
 const Calendar = () => {
   const { accessToken } = useContext(AuthContext);
   const { events, setEvents } = useContext(EventContext); 
+  console.log("calder state",events);
+  
 
   const heroRef = useRef(null);
   const aboutRef = useRef(null);
@@ -44,17 +46,18 @@ const Calendar = () => {
   };
 
 
- useEffect(() => {
-  if (!accessToken) return;
+useEffect(() => {
+  const fetchPublicEvents = async () => {
+    const calendarId = 'krunalpanchalkp2123@gmail.com'; // Replace with real public Calendar ID
+    const apiKey = 'AIzaSyBVCrXR5DgVtiAY4wT6EZic2xQmzVpjKEs'; // Replace with your actual API Key
 
-  const fetchEvents = async () => {
     try {
-      const res = await fetch('https://www.googleapis.com/calendar/v3/calendars/primary/events', {
-        headers: {
-          Authorization: `Bearer ${accessToken}`,
-        },
-      });
+      const res = await fetch(
+        `https://www.googleapis.com/calendar/v3/calendars/${calendarId}/events?key=${apiKey}`
+      );
       const data = await res.json();
+      console.log("calendar page",data);
+      
 
       if (data.items) {
         const formattedEvents = data.items.map((event) => ({
@@ -63,16 +66,17 @@ const Calendar = () => {
           start: event.start.dateTime || event.start.date,
           end: event.end.dateTime || event.end.date,
         }));
-        setEvents(formattedEvents); 
-        localStorage.setItem("events", JSON.stringify(formattedEvents)); // Save here
+        setEvents(formattedEvents);
+        localStorage.setItem('events', JSON.stringify(formattedEvents));
       }
     } catch (err) {
-      console.error('Failed to fetch events:', err);
+      console.error('Failed to fetch public events:', err);
     }
   };
 
-  fetchEvents();
-}, [accessToken, setEvents]);
+  fetchPublicEvents();
+}, [setEvents]);
+
 
 
   const handleDelete = async (eventId) => {
