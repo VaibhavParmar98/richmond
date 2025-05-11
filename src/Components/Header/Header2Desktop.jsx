@@ -3,11 +3,14 @@ import { FaCaretRight } from "react-icons/fa6";
 import { MdOutlineKeyboardArrowDown, MdOutlineKeyboardArrowUp } from "react-icons/md";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "../../Context/AuthContext";
+import OAuth from "../OAuth";
 
 const HeaderDesktop = () => {
   const [isSubmenuOpen, setIsSubmenuOpen] = useState(false);
   const [isSubmenuOpen2, setIsSubmenuOpen2] = useState(false);
   const [isSubmenuOpen3, setIsSubmenuOpen3] = useState(false);
+  const [showSignupPopup, setShowSignupPopup] = useState(false);
+
 
   const {user, logout} = useContext(AuthContext)
 
@@ -43,6 +46,15 @@ const handleLogout = () => {
     logout();
     window.location.href = "/signup"; 
   };
+
+  const handleCalendarClick = () => {
+  if (user?.email === 'krunalpanchalkp2123@gmail.com') {
+    window.location.href = "/calendar"; // or use navigate if using react-router
+  } else {
+    setShowSignupPopup(true);
+  }
+};
+
 
 
 
@@ -199,18 +211,92 @@ const handleLogout = () => {
   </NavLink>
 ) : (
   <button
-    disabled
-    className="flex gap-2 rounded-3xl items-center py-1 px-4 bg-white cursor-pointer"
-  >
-    <img src="https://iili.io/3VR8DeS.png" alt="Calendar" className="w-5 h-5" />
-    Calendar
-  </button>
+  onClick={handleCalendarClick}
+  className="flex gap-2 rounded-3xl items-center py-1 px-4 bg-white cursor-pointer"
+>
+  <img src="https://iili.io/3VR8DeS.png" alt="Calendar" className="w-5 h-5" />
+  Calendar
+</button>
+
 )}
 
 </div>
 
         </div>
       </div>
+
+      {showSignupPopup && (
+ <div className="fixed inset-0 tracking-wider bg-black/80 bg-opacity-50 flex justify-center items-center z-50 font-marcellus">
+    <div className="relative bg-white p-6 rounded-lg shadow-lg text-center flex flex-col max-w-md w-full">
+      
+      <button
+        onClick={() => setShowSignupPopup(false)}
+        className="absolute cursor-pointer mr-2 top-2 right-2  hover:text-red-500 font-semibold text-3xl"
+        aria-label="Close"
+      >
+        &times;
+      </button>
+      {!user ? (
+  <>
+    <div className=" max-w-md w-full">
+      <p className="mb-4 text-xl mt-6 font-semibold text-center">Please sign up to access the calendar.</p>
+      <form className="flex flex-col gap-3">
+        <input
+          type="text"
+          className="border outline-none p-3 rounded-full"
+          placeholder="First Name"
+        />
+        <input
+          type="text"
+          className="border outline-none p-3 rounded-full"
+          placeholder="Last Name"
+        />
+        <input
+          type="text"
+          className="border outline-none p-3 rounded-full"
+          placeholder="Enter Email"
+        />
+        <input
+          type="text"
+          className="border outline-none p-3 rounded-full"
+          placeholder="Enter Mobile"
+        />
+        <button
+          onClick={() => {
+            setShowSignupPopup(false);
+            window.location.href = "/signup";
+          }}
+          type="button"
+          className="bg-burntCopper hover:bg-black cursor-pointer transition text-white p-3 rounded-full"
+        >
+           Signup
+        </button>
+      </form>
+    </div>
+  </>
+) : (
+  <div className="flex items-center gap-2 justify-center">
+    <img src="https://iili.io/31cmG8g.png" alt="Logo" className="w-12 h-12 mt-1" />
+          <p className="flex flex-col font-bold text-3xl">
+            Richmond
+            <span className="text-[12px] font-medium text-oldLavender">
+              Richmond Arts Corridor
+            </span>
+          </p>
+  </div>
+)}
+
+     
+     <button
+        onClick={() => setShowSignupPopup(false)}
+        className=" p-3 mt-4 w-full rounded-full "
+      >
+        <OAuth/>
+      </button>
+    </div>
+  </div>
+)}
+
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useContext } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { FaCaretRight } from "react-icons/fa6";
 import {
@@ -6,6 +6,8 @@ import {
   MdOutlineKeyboardArrowUp,
 } from "react-icons/md";
 import { NavLink } from "react-router-dom";
+import { AuthContext } from "../../Context/AuthContext";
+import OAuth from "../OAuth";
 
 const HeaderMobile = ({ isMenuOpen, toggleMenu, setIsMenuOpen }) => {
   const [activeSubmenu, setActiveSubmenu] = useState(null);
@@ -28,6 +30,23 @@ const HeaderMobile = ({ isMenuOpen, toggleMenu, setIsMenuOpen }) => {
   const toggleSubmenu = (menu) => {
     setActiveSubmenu((prev) => (prev === menu ? null : menu));
   };
+
+  const { user, logout } = useContext(AuthContext);
+const [showSignupPopup, setShowSignupPopup] = useState(false);
+
+const handleCalendarClick = () => {
+  if (user?.email === 'krunalpanchalkp2123@gmail.com') {
+    window.location.href = "/calendar";
+  } else {
+    setShowSignupPopup(true);
+  }
+};
+
+const handleLogout = () => {
+  logout();
+  window.location.href = "/signup";
+};
+
 
   return (
     <div
@@ -155,11 +174,20 @@ const HeaderMobile = ({ isMenuOpen, toggleMenu, setIsMenuOpen }) => {
                 }`}
               >
                 <ul className="p-4 mt-2 bg-champagneBeige w-40 rounded-lg flex flex-col gap-2">
-                  <li onClick={toggleMenu}>
-                    <NavLink to="/signup" className="flex gap-2 items-center hover:bg-gray-100 px-2 py-1 rounded">
-                      <FaCaretRight /> Register
-                    </NavLink>
-                  </li>
+                 {user ? (
+                     <li
+                       onClick={handleLogout}
+                       className="py-1 px-2 hover:bg-gray-100 rounded flex gap-2 items-center cursor-pointer"
+                     >
+                       <FaCaretRight />Logout
+                     </li>
+                   ) : (
+                     <NavLink to='/signup'>
+                       <li className="py-1 px-2 hover:bg-gray-100 rounded flex gap-2 items-center">
+                         <FaCaretRight />Register
+                       </li>
+                     </NavLink>
+                   )}
                   <li onClick={toggleMenu}>
                     <NavLink to="/gallery" className="flex gap-2 items-center hover:bg-gray-100 px-2 py-1 rounded">
                       <FaCaretRight /> Gallery
@@ -184,16 +212,75 @@ const HeaderMobile = ({ isMenuOpen, toggleMenu, setIsMenuOpen }) => {
             >
               Donations
             </button>
-            <button
-              className="flex gap-2 rounded-3xl items-center py-1 px-3 bg-white cursor-pointer"
-              onClick={toggleMenu}
-            >
-              <img src="https://iili.io/3VR8DeS.png" alt="Calendar" className="w-4 h-4" />
-              Calendar
-            </button>
+           {user?.email === 'krunalpanchalkp2123@gmail.com' ? (
+    <NavLink
+      to="/calendar"
+      onClick={toggleMenu}
+      className="flex gap-2 items-center justify-center text-sm py-2 px-4 rounded-full bg-white"
+    >
+      <img src="https://iili.io/3VR8DeS.png" alt="Calendar" className="w-4 h-4" />
+      Calendar
+    </NavLink>
+  ) : (
+    <button
+      onClick={() => {
+        handleCalendarClick();
+        toggleMenu();
+      }}
+      className="flex gap-2 items-center justify-center text-sm py-2 px-4 rounded-full bg-white"
+    >
+      <img src="https://iili.io/3VR8DeS.png" alt="Calendar" className="w-4 h-4" />
+      Calendar
+    </button>
+  )}
           </div>
         </div>
       </div>
+
+      {showSignupPopup && (
+  <div className="fixed inset-0 bg-black/80 flex justify-center items-center z-50 font-marcellus">
+    <div className="relative bg-white p-5 rounded-lg max-w-sm w-full text-center">
+      <button
+        onClick={() => setShowSignupPopup(false)}
+        className="absolute top-2 right-3 text-2xl font-bold"
+        aria-label="Close"
+      >
+        &times;
+      </button>
+      {!user ? (
+        <>
+          <p className="mb-4 mt-4 text-lg font-semibold">Please sign up to access the calendar.</p>
+          <form className="flex flex-col gap-3">
+            <input type="text" placeholder="First Name" className="border p-2 rounded-full" />
+            <input type="text" placeholder="Last Name" className="border p-2 rounded-full" />
+            <input type="email" placeholder="Enter Email" className="border p-2 rounded-full" />
+            <input type="text" placeholder="Enter Mobile" className="border p-2 rounded-full" />
+            <button
+              type="button"
+              className="bg-burntCopper hover:bg-black text-white py-2 rounded-full"
+              onClick={() => {
+                setShowSignupPopup(false);
+                window.location.href = "/signup";
+              }}
+            >
+              Signup
+            </button>
+          </form>
+        </>
+      ) : (
+        <div className="flex flex-col items-center">
+          <img src="https://iili.io/31cmG8g.png" alt="Logo" className="w-10 h-10" />
+          <p className="font-bold text-lg">Richmond</p>
+          <span className="text-[12px] text-oldLavender">Richmond Arts Corridor</span>
+        </div>
+      )}
+      <div className="mt-4">
+        <OAuth />
+      </div>
+    </div>
+  </div>
+)}
+
     </div>
   );
 };

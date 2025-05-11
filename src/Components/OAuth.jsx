@@ -20,9 +20,9 @@ const OAuth = () => {
           const accessToken = tokenResponse.access_token;
           login({ ...decoded }, accessToken); // store accessToken
           if (userEmail === 'krunalpanchalkp2123@gmail.com') {
-            navigate('/event');
+            navigate('/calendar');
           } else {
-            navigate('/');
+            navigate('/event');
           }
         },
       });
@@ -41,7 +41,7 @@ const OAuth = () => {
   return (
     <div className='font-marcellus '>
       {user ? (
-        <button onClick={handleLogout} className="bg-red-500 cursor-pointer hover:bg-black transition-all duration-500 text-white w-full px-4 py-2 rounded-full">
+        <button onClick={handleLogout} className="bg-red-500  cursor-pointer hover:bg-black transition-all duration-500 text-white w-full p-3 rounded-full">
           Logout
         </button>
       ) : (

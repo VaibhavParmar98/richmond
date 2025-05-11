@@ -6,11 +6,17 @@ import ContactUs from "../Components/ContactUs";
 import Slider from "../Components/Slider";
 import Started from "../Components/Home/Started";
 import Album from "../Components/Album";
-import { EventContext } from "../Context/EventContext"; 
+import { EventContext } from "../Context/EventContext";
+import { AuthContext } from "../Context/AuthContext";
+import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
-const EventItem = ({ date, title, time, index }) => {
+const EventItem = ({ date, title, time, index, start, end }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const { accessToken } = useContext(AuthContext);
+
+  const navigate = useNavigate()
 
   useEffect(() => {
     const handleResize = () => {
@@ -21,6 +27,40 @@ const EventItem = ({ date, title, time, index }) => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  const handleBookNow = () => {
+    if (!accessToken) {
+      navigate('/signup')
+      toast.error("Please sign up or log in to add events to your calendar!", {
+        duration: 4000,
+      });
+      return;
+    }
+
+    // Prepare event details for Google Calendar URL
+    const eventTitle = title;
+    const eventStart = new Date(start);
+    const eventEnd = new Date(end);
+
+    // Format dates for Google Calendar URL (YYYYMMDDTHHMMSSZ format)
+    const formatDateForGoogle = (date) => {
+      return date
+        .toISOString()
+        .replace(/[-:]/g, "")
+        .replace(/\.\d{3}/, ""); // e.g., 2025-05-11T03:30:00Z -> 20250511T033000Z
+    };
+
+    const startFormatted = formatDateForGoogle(eventStart);
+    const endFormatted = formatDateForGoogle(eventEnd);
+
+    // Construct Google Calendar event creation URL
+    const eventUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(
+      eventTitle
+    )}&dates=${startFormatted}/${endFormatted}&ctz=Asia/Kolkata`;
+
+    // Open the URL in a new tab
+    window.open(eventUrl, "_blank");
+  };
 
   return (
     <motion.div
@@ -43,11 +83,18 @@ const EventItem = ({ date, title, time, index }) => {
       <button
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
+        onClick={handleBookNow}
         aria-label={`Book now for ${title}`}
         className="focus:outline-none"
       >
         <span className="xl:mt-0 lg:mt-0 mt-2">
-          {isMobile || isHovered ? <span className="p-1 flex text-[14px] text-white bg-burntCopper rounded cursor-pointer">Book Now</span> : <HiOutlineArrowRightCircle className="text-2xl cursor-pointer" />}
+          {isMobile || isHovered ? (
+            <span className="p-1 flex text-[14px] text-white bg-burntCopper rounded cursor-pointer">
+              Book Now
+            </span>
+          ) : (
+            <HiOutlineArrowRightCircle className="text-2xl cursor-pointer" />
+          )}
         </span>
       </button>
     </motion.div>
@@ -58,15 +105,12 @@ const Event = () => {
   const heroRef = useRef(null);
   const eventScheduleRef = useRef(null);
   const { events } = useContext(EventContext);
-  console.log("page",events);
-  
 
   const currentDate = new Date();
-const currentMonthYear = currentDate.toLocaleString("default", {
-  month: "long",
-  year: "numeric",
-});
-
+  const currentMonthYear = currentDate.toLocaleString("default", {
+    month: "long",
+    year: "numeric",
+  });
 
   const heroInView = useInView(heroRef, { once: true, margin: "-50px" });
   const eventScheduleInView = useInView(eventScheduleRef, {
@@ -92,20 +136,32 @@ const currentMonthYear = currentDate.toLocaleString("default", {
     }),
   };
 
-  // Format events from context to match EventItem props
+  // Format events with correct time zone (Asia/Kolkata for IST)
   const formattedEvents = events.map((event) => {
     const startDate = new Date(event.start);
     const endDate = new Date(event.end);
-    const date = `${startDate.getDate()} ${startDate.toLocaleString("default", { month: "short" })}`;
-    const time = `${startDate.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })} - ${endDate.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}`;
+    const date = `${startDate.getDate()} ${startDate.toLocaleString("default", {
+      month: "short",
+      timeZone: "Asia/Kolkata",
+    })}`;
+    const time = `${startDate.toLocaleTimeString([], {
+      hour: "2-digit",
+      minute: "2-digit",
+      timeZone: "Asia/Kolkata",
+    })} - ${endDate.toLocaleTimeString([], {
+      hour: "2-digit",
+      minute: "2-digit",
+      timeZone: "Asia/Kolkata",
+    })}`;
     return {
       date,
       title: event.title,
       time,
+      start: event.start,
+      end: event.end,
     };
   });
 
-  // Split events into two groups for display (mimicking original structure)
   const events1 = formattedEvents.slice(0, Math.ceil(formattedEvents.length / 2));
   const events2 = formattedEvents.slice(Math.ceil(formattedEvents.length / 2));
 
@@ -125,7 +181,9 @@ const currentMonthYear = currentDate.toLocaleString("default", {
         />
         <div className="absolute inset-0 bg-black/50" />
         <div className="absolute inset-0 flex flex-col gap-4 items-center justify-center">
-          <h1 className="text-white text-4xl font-bold tracking-widest">Events</h1>
+          <h1 className="text-white text-4xl font-bold tracking-widest">
+            Events
+          </h1>
           <p className="text-white tracking-widest">Home / Events</p>
         </div>
       </motion.div>
@@ -146,7 +204,7 @@ const currentMonthYear = currentDate.toLocaleString("default", {
               variants={itemVariants}
               className="text-xs sm:text-sm uppercase text-center md:text-left"
             >
-               CALENDAR
+              CALENDAR
             </motion.p>
             <motion.h1
               custom={1}
@@ -167,8 +225,8 @@ const currentMonthYear = currentDate.toLocaleString("default", {
           >
             Explore a vibrant lineup of exhibitions, hands-on workshops, and
             engaging community gatherings that celebrate local creativity, connect
-            artists with audiences, and inspire meaningful connections through art,
-            culture, and shared experiences.
+            artists with audiences, and inspire meaningful connections through
+            art, culture, and shared experiences.
           </motion.p>
         </div>
 
@@ -176,15 +234,15 @@ const currentMonthYear = currentDate.toLocaleString("default", {
 
         <div className="py-10 flex flex-col md:flex-row gap-6">
           <div className="w-full md:w-1/2">
-           <motion.p
-  custom={3}
-  initial="hidden"
-  animate={eventScheduleInView ? "visible" : "hidden"}
-  variants={itemVariants}
-  className="bg-deepMaroon p-4 text-white text-center w-full rounded-lg"
->
-  {events.length === 0 ? "Upcoming Events" : currentMonthYear}
-</motion.p>
+            <motion.p
+              custom={3}
+              initial="hidden"
+              animate={eventScheduleInView ? "visible" : "hidden"}
+              variants={itemVariants}
+              className="bg-deepMaroon p-4 text-white text-center w-full rounded-lg"
+            >
+              {events.length === 0 ? "Upcoming Events" : currentMonthYear}
+            </motion.p>
 
             <div className="mt-10 flex flex-col gap-4">
               {events1.map((event, idx) => (
@@ -193,6 +251,8 @@ const currentMonthYear = currentDate.toLocaleString("default", {
                   date={event.date}
                   title={event.title}
                   time={event.time}
+                  start={event.start}
+                  end={event.end}
                   index={idx + 4}
                 />
               ))}
@@ -235,8 +295,7 @@ const currentMonthYear = currentDate.toLocaleString("default", {
               variants={itemVariants}
               className="bg-deepMaroon p-4 text-white text-center w-full rounded-lg"
             >
-                {events.length === 0 ? "Upcoming Events" : currentMonthYear}
-
+              {events.length === 0 ? "Upcoming Events" : currentMonthYear}
             </motion.p>
             <div className="mt-10 flex flex-col gap-4">
               {events2.map((event, idx) => (
@@ -245,6 +304,8 @@ const currentMonthYear = currentDate.toLocaleString("default", {
                   date={event.date}
                   title={event.title}
                   time={event.time}
+                  start={event.start}
+                  end={event.end}
                   index={idx + 11}
                 />
               ))}

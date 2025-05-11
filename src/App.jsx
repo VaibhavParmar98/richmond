@@ -15,6 +15,7 @@ import Gallery from "./Pages/Gallery";
 import Contact from "./Pages/Contact";
 import GoogleCalendar from "./Components/Calender";
 import ProtectedRoute from "./Components/ProtectedRoute";
+import { Toaster } from 'react-hot-toast';
 
 const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -31,6 +32,7 @@ const App = () => {
 
   return (
     <BrowserRouter>
+    <Toaster position="top-right" reverseOrder={false} />
       <CustomCursor />
       <Header1 />
       <div ref={headerRef} className="relative z-20">
@@ -55,9 +57,9 @@ const App = () => {
          <Route
           path="/calendar"
           element={
-            // <ProtectedRoute>
+            <ProtectedRoute>
               <GoogleCalendar />
-            // </ProtectedRoute>
+            </ProtectedRoute>
           }
         />
       </Routes>

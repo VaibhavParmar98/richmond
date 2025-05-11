@@ -3,8 +3,10 @@ import { createContext, useEffect, useState } from "react";
 export const EventContext = createContext();
 
 export const EventProvider = ({ children }) => {
-  const [events, setEvents] = useState([]);
-  console.log("ev",events);
+  const [events, setEvents] = useState(() => {
+    const storedEvents = localStorage.getItem("events");
+    return storedEvents ? JSON.parse(storedEvents) : [];
+  });
   
 
   useEffect(() => {

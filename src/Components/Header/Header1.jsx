@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa6";
+import { AuthContext } from "../../Context/AuthContext";
 
 const Header1 = () => {
+
+  const {user} = useContext(AuthContext)
+
   return (
     <div className="bg-burntCopper p-3 text-white font-marcellus">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center text-xs gap-4">
@@ -9,9 +13,7 @@ const Header1 = () => {
           <p className="">Call us: +01 856 214 3699 | richmondarts@admin.com</p>
         </div>
 
-        <div className="text-center">
-          <p>Join Us Sunday @ 9:00 AM for Special Events!</p>
-        </div>
+       
 
         <div className="text-center md:text-right">
           <p className="flex items-center justify-center md:justify-end gap-2">
@@ -24,6 +26,10 @@ const Header1 = () => {
             </span>
           </p>
         </div>
+
+         {user ? <button className="mr-10 hover:bg-white hover:text-black px-3 py-1 cursor-pointer rounded" >Logout</button> : <div className="text-center">
+          <p>Join Us Sunday @ 9:00 AM for Special Events!</p>
+        </div>}
       </div>
     </div>
   );
