@@ -52,9 +52,15 @@ const handleLogout = () => {
 useEffect(() => {
   if (showSignupPopup && user) {
     setShowSignupPopup(false);
-    navigate('/event');
+
+    if (user.email === 'krunalpanchalkp2123@gmail.com') {
+      navigate('/calendar');
+    } else {
+      navigate('/event');
+    }
   }
 }, [showSignupPopup, user, navigate]);
+
 
   return (
     <div
