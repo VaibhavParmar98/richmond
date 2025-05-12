@@ -1,4 +1,3 @@
-// EventCreatePopup.js
 import React, { useState } from "react";
 
 const EventCreatePopup = ({ isOpen, onClose, onCreateEvent }) => {
@@ -21,7 +20,7 @@ const EventCreatePopup = ({ isOpen, onClose, onCreateEvent }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     onCreateEvent(eventDetails);
-    onClose(); // Close the popup after creating the event
+    onClose(); 
   };
 
   return (

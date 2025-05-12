@@ -48,8 +48,8 @@ const Calendar = () => {
 
 useEffect(() => {
   const fetchPublicEvents = async () => {
-    const calendarId = 'krunalpanchalkp2123@gmail.com'; // Replace with real public Calendar ID
-    const apiKey = 'AIzaSyBVCrXR5DgVtiAY4wT6EZic2xQmzVpjKEs'; // Replace with your actual API Key
+    const calendarId = 'designingroom1@gmail.com'; 
+    const apiKey = 'AIzaSyCEl86ahwkhSlgjfgNt3ovVpdyHrSZRkX0'; 
 
     try {
       const res = await fetch(

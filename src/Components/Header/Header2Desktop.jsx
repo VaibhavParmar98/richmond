@@ -50,7 +50,7 @@ const handleLogout = () => {
   };
 
   const handleCalendarClick = () => {
-  if (user?.email === 'krunalpanchalkp2123@gmail.com') {
+  if (user?.email === 'designingroom1@gmail.com') {
     navigate('/calendar')
   } else {
     setShowSignupPopup(true);
@@ -209,7 +209,7 @@ useEffect(() => {
           <div className="flex w-full md:justify-end gap-4 text-sm font-marcellus">
   <button className="py-3 rounded-3xl px-4 bg-white cursor-pointer">Donations</button>
 
-  {user?.email === 'krunalpanchalkp2123@gmail.com' ? (
+  {user?.email === 'designingroom1@gmail.com' ? (
   <NavLink
     to="/calendar"
     className="flex gap-2 rounded-3xl items-center py-1 px-4 bg-white cursor-pointer"

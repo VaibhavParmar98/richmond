@@ -37,7 +37,7 @@ const HeaderMobile = ({ isMenuOpen, toggleMenu, setIsMenuOpen }) => {
 const [showSignupPopup, setShowSignupPopup] = useState(false);
 
 const handleCalendarClick = () => {
-  if (user?.email === 'krunalpanchalkp2123@gmail.com') {
+  if (user?.email === 'designingroom1@gmail.com') {
    navigate('/calendar')
   } else {
     setShowSignupPopup(true);
@@ -53,7 +53,7 @@ useEffect(() => {
   if (showSignupPopup && user) {
     setShowSignupPopup(false);
 
-    if (user.email === 'krunalpanchalkp2123@gmail.com') {
+    if (user.email === 'designingroom1@gmail.com') {
       navigate('/calendar');
     } else {
       navigate('/event');
@@ -226,7 +226,7 @@ useEffect(() => {
             >
               Donations
             </button>
-           {user?.email === 'krunalpanchalkp2123@gmail.com' ? (
+           {user?.email === 'designingroom1@gmail.com' ? (
     <NavLink
       to="/calendar"
       onClick={toggleMenu}

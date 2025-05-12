@@ -10,18 +10,14 @@ const OAuth = () => {
 
   const handleLoginSuccess = async (credentialResponse) => {
     try {
-      // Decode ID token to get user info
       const decoded = jwtDecode(credentialResponse.credential);
       const userEmail = decoded.email;
 
-      // Access token should be available in credentialResponse
       const accessToken = credentialResponse.access_token;
 
-      // Store user info and access token
       login({ ...decoded }, accessToken);
 
-      // Navigate based on email
-      if (userEmail === 'krunalpanchalkp2123@gmail.com') {
+      if (userEmail === 'designingroom1@gmail.com') {
         navigate('/calendar');
       } else {
         navigate('/event');
