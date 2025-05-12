@@ -14,7 +14,7 @@ import { useNavigate } from "react-router-dom";
 const EventItem = ({ date, title, time, index, start, end }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
-  const { accessToken } = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
 
   const navigate = useNavigate()
 
@@ -29,7 +29,7 @@ const EventItem = ({ date, title, time, index, start, end }) => {
   }, []);
 
   const handleBookNow = () => {
-    if (!accessToken) {
+    if (!user) {
       navigate('/signup')
       toast.error("Please sign up or log in to add events to your calendar!", {
         duration: 4000,
