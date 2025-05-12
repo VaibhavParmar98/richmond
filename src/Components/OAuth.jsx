@@ -10,24 +10,22 @@ const OAuth = () => {
 
   const handleLoginSuccess = async (credentialResponse) => {
     try {
+      // Decode ID token to get user info
       const decoded = jwtDecode(credentialResponse.credential);
       const userEmail = decoded.email;
 
-      const tokenClient = window.google.accounts.oauth2.initTokenClient({
-        client_id: '605770440984-mfvrhp6o7a2siv9k8nmm833ah17uuuf2.apps.googleusercontent.com',
-        scope: 'https://www.googleapis.com/auth/calendar.readonly',
-        callback: (tokenResponse) => {
-          const accessToken = tokenResponse.access_token;
-          login({ ...decoded }, accessToken); // store accessToken
-          if (userEmail === 'krunalpanchalkp2123@gmail.com') {
-            navigate('/calendar');
-          } else {
-            navigate('/event');
-          }
-        },
-      });
+      // Access token should be available in credentialResponse
+      const accessToken = credentialResponse.access_token;
 
-      tokenClient.requestAccessToken();
+      // Store user info and access token
+      login({ ...decoded }, accessToken);
+
+      // Navigate based on email
+      if (userEmail === 'krunalpanchalkp2123@gmail.com') {
+        navigate('/calendar');
+      } else {
+        navigate('/event');
+      }
     } catch (error) {
       console.error('Login processing failed', error);
     }
@@ -39,16 +37,21 @@ const OAuth = () => {
   };
 
   return (
-    <div className='font-marcellus '>
+    <div className="font-marcellus">
       {user ? (
-        <button onClick={handleLogout} className="bg-red-500  cursor-pointer hover:bg-black transition-all duration-500 text-white w-full p-3 rounded-full">
+        <button
+          onClick={handleLogout}
+          className="bg-red-500 cursor-pointer hover:bg-black transition-all duration-500 text-white w-full p-3 rounded-full"
+        >
           Logout
         </button>
       ) : (
         <GoogleLogin
           onSuccess={handleLoginSuccess}
           onError={() => console.log('Login Failed')}
-          className='cursor-pointer rounded-full'
+          scope="https://www.googleapis.com/auth/calendar.readonly"
+          access_type="offline"
+          className="cursor-pointer rounded-full"
         />
       )}
     </div>

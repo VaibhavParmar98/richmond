@@ -90,7 +90,7 @@ const EventItem = ({ date, title, time, index, start, end }) => {
         <span className="xl:mt-0 lg:mt-0 mt-2">
           {isMobile || isHovered ? (
             <span className="p-1 flex text-[14px] text-white bg-burntCopper rounded cursor-pointer">
-              Book Now
+              ADD
             </span>
           ) : (
             <HiOutlineArrowRightCircle className="text-2xl cursor-pointer" />
