@@ -1,35 +1,47 @@
-import React, { useContext } from 'react';
-import { GoogleLogin } from '@react-oauth/google';
-import { jwtDecode } from 'jwt-decode';
-import { useNavigate } from 'react-router-dom';
-import { AuthContext } from '../Context/AuthContext';
+import React, { useContext } from "react";
+import { useGoogleLogin } from "@react-oauth/google";
+import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../Context/AuthContext";
 
 const OAuth = () => {
   const { login, logout, user } = useContext(AuthContext);
   const navigate = useNavigate();
 
-  const handleLoginSuccess = async (credentialResponse) => {
-    try {
-      const decoded = jwtDecode(credentialResponse.credential);
-      const userEmail = decoded.email;
+  const handleGoogleLogin = useGoogleLogin({
+    onSuccess: async (tokenResponse) => {
+      try {
+        const accessToken = tokenResponse.access_token;
 
-      const accessToken = credentialResponse.access_token;
+        const res = await fetch(
+          "https://www.googleapis.com/oauth2/v3/userinfo",
+          {
+            headers: {
+              Authorization: `Bearer ${accessToken}`,
+            },
+          }
+        );
 
-      login({ ...decoded }, accessToken);
+        const userInfo = await res.json();
 
-      if (userEmail === 'designingroom1@gmail.com') {
-        navigate('/calendar');
-      } else {
-        navigate('/event');
+        login(userInfo, accessToken);
+
+        if (userInfo.email === "designingroom1@gmail.com") {
+          navigate("/calendar");
+        } else {
+          navigate("/event");
+        }
+      } catch (error) {
+        console.error("Failed to fetch user info or process login:", error);
       }
-    } catch (error) {
-      console.error('Login processing failed', error);
-    }
-  };
+    },
+    onError: () => {
+      console.error("Google Login Failed");
+    },
+  });
 
   const handleLogout = () => {
     logout();
-    navigate('/signup');
+    navigate("/signup");
   };
 
   return (
@@ -42,13 +54,21 @@ const OAuth = () => {
           Logout
         </button>
       ) : (
-        <GoogleLogin
-          onSuccess={handleLoginSuccess}
-          onError={() => console.log('Login Failed')}
-          scope="https://www.googleapis.com/auth/calendar.readonly"
-          access_type="offline"
-          className="cursor-pointer rounded-full"
-        />
+        <button
+  onClick={(e) => {
+    e.preventDefault();
+    handleGoogleLogin();
+  }}
+  className="border cursor-pointer hover:bg-blue-600 hover:text-white border-black text-lg flex items-center justify-center gap-3 text-black tracking-wider w-full p-2 rounded-full transition duration-300"
+>
+  <img
+    src="https://iili.io/3S9ZHqG.png"
+    alt="Google logo"
+    className="w-6 h-6"
+  />
+  <span>Sign in with Google</span>
+</button>
+
       )}
     </div>
   );

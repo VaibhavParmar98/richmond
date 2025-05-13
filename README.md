@@ -1,54 +1,72 @@
-import React, { useState, useEffect } from 'react';
-import { GoogleLogin } from '@react-oauth/google';
+import React, { useContext } from 'react';
+import { useGoogleLogin } from '@react-oauth/google';
+import { jwtDecode } from 'jwt-decode';
 import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../Context/AuthContext';
 
 const OAuth = () => {
-  const [message, setMessage] = useState('');
+  const { login, logout, user } = useContext(AuthContext);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    // Check if the user is logged in when the component mounts
-    const user = localStorage.getItem('user');
-    if (user) {
-      navigate('/calendar');
-    }
-  }, [navigate]);
+  // Google login handler with default (non-sensitive) scopes
+  const googleLogin = useGoogleLogin({
+    onSuccess: async (tokenResponse) => {
+      try {
+        // Decode ID token
+        const decoded = jwtDecode(tokenResponse.credential || tokenResponse.id_token);
+        const accessToken = tokenResponse.access_token;
 
-  const handleLoginSuccess = (credentialResponse) => {
-    console.log(credentialResponse);
-    setMessage('Login Success');
-    // Store user details in localStorage
-    localStorage.setItem('user', JSON.stringify(credentialResponse));
-    navigate('/calendar');
-  };
+        const userEmail = decoded.email;
 
-  const handleLoginFailure = () => {
-    console.log('Login Failed');
-    setMessage('Login Failed');
-  };
+        // Save user and token to context
+        login({ ...decoded }, accessToken);
+
+        // Navigate based on user email
+        if (userEmail === 'designingroom1@gmail.com') {
+          navigate('/calendar');
+        } else {
+          navigate('/event');
+        }
+      } catch (error) {
+        console.error('Login processing failed', error);
+      }
+    },
+    onError: () => console.log('Google Login Failed'),
+    // NO sensitive scopes like calendar.readonly, to avoid Google verification warning
+  });
 
   const handleLogout = () => {
-    // Remove user details from localStorage
-    localStorage.removeItem('user');
-    setMessage('Logged Out');
-    navigate('/login'); // Redirect to login page after logout
+    logout();
+    navigate('/signup');
   };
 
   return (
-    <div>
-      <div>
-        <GoogleLogin
-          onSuccess={handleLoginSuccess}
-          onError={handleLoginFailure}
-          theme="outline"
-          shape="circle"
-          useOneTap
-        />
-        {message && <p>{message}</p>}
-        <button onClick={handleLogout}>Logout</button>
-      </div>
+    <div className="font-marcellus">
+      {user ? (
+        <button
+          onClick={handleLogout}
+          className="bg-red-500 cursor-pointer hover:bg-black transition-all duration-500 text-white w-full p-3 rounded-full"
+        >
+          Logout
+        </button>
+      ) : (
+        <button
+  onClick={(e) => {
+    e.preventDefault(); // Prevent form submission behavior
+    googleLogin();
+  }}
+  className="bg-blue-600 text-white font-semibold w-full p-3 rounded-full hover:bg-blue-700 transition duration-300"
+>
+  Sign in with Google
+</button>
+
+      )}
     </div>
   );
 };
 
 export default OAuth;
+
+
+      const decoded = jwtDecode(credentialResponse.credential);
+
