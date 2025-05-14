@@ -83,12 +83,13 @@ useEffect(() => {
     if (!accessToken) return;
 
     const isConfirmed = window.confirm('Are you sure you want to delete this event?');
+    const calendarId = 'designingroom1@gmail.com';
 
     if (!isConfirmed) return;
 
     try {
       const response = await fetch(
-        `https://www.googleapis.com/calendar/v3/calendars/primary/events/${eventId}`,
+        `https://www.googleapis.com/calendar/v3/calendars/${calendarId}/events/${eventId}`,
         {
           method: 'DELETE',
           headers: {
