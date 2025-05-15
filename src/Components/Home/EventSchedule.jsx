@@ -85,7 +85,7 @@ const EventSchedule = () => {
       <div className="px-6">
       <div className="container max-w-6xl mx-auto rounded-3xl font-marcellus px-6 bg-gray-100 py-6">
         <div className="hidden  md:block">
-          <div className="grid grid-cols-5 gap-4 text-sm font-medium text-gray-700 bg-gray-200 p-2 rounded-t-lg">
+          <div className="grid grid-cols-5 gap-4 text-sm tracking-wide text-black font-semibold bg-gray-200 p-2 rounded-t-lg">
             <div>Key Stakeholder Group</div>
             <div>Community Partner</div>
             <div>Date & Time</div>

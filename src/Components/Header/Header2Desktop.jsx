@@ -193,11 +193,9 @@ useEffect(() => {
                     <FaCaretRight />Gallery
                   </li>
                   </NavLink>
-                  <NavLink to='/faq'>
                   <li className="py-1 px-2 hover:bg-gray-100 rounded flex gap-2 items-center">
                     <FaCaretRight />FAQ
                   </li>
-                  </NavLink>
                 </ul>
               </div>
             </li>

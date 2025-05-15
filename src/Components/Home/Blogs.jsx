@@ -51,7 +51,7 @@ const Blogs = () => {
   };
 
   return (
-    <div className="py-12 sm:py-16 md:py-20 bg-white">
+    <div className="py-12 sm:py-16 md:pt-20 bg-white">
       <div className="max-w-6xl mx-auto font-marcellus px-4   lg:px-6 xl-px-0">
         <div className="flex flex-col md:flex-row md:justify-between justify-center items-center md:items-center gap-4 sm:gap-6">
           <motion.div

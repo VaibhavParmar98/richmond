@@ -37,7 +37,7 @@ const ContactUs = () => {
             <div className="flex flex-col lg:flex-row gap-6">
               <motion.div
                 ref={leftSectionRef}
-                className="bg-deepMaroon rounded-2xl py-10 md:py-20 px-6 md:px-10 flex flex-col justify-center items-center lg:items-start w-full"
+                className="bg-black rounded-2xl py-10 md:py-20 px-6 md:px-10 flex flex-col justify-center items-center lg:items-start w-full"
                 initial="hidden"
                 animate={leftInView ? "visible" : "hidden"}
                 variants={leftVariants}
@@ -78,23 +78,23 @@ const ContactUs = () => {
                   <input
                     type="text"
                     placeholder="Name"
-                    className="text-black bg-beiage p-3 pl-4 outline-none rounded-full w-full"
+                    className="text-black border bg-gray-100 p-3 pl-4 outline-none rounded-full w-full"
                   />
                   <input
                     type="text"
                     placeholder="Phone Number"
-                    className="text-black bg-beiage p-3 pl-4 outline-none rounded-full w-full"
+                    className="text-black border bg-gray-100 p-3 pl-4 outline-none rounded-full w-full"
                   />
                   <input
                     type="text"
                     placeholder="Enter Date"
-                    className="text-black bg-beiage p-3 pl-4 outline-none rounded-full w-full"
+                    className="text-black border bg-gray-100 p-3 pl-4 outline-none rounded-full w-full"
                   />
                   <textarea
                     placeholder="Message"
-                    className="text-black bg-beiage p-3 pl-4 outline-none rounded-2xl w-full h-32 resize-none"
+                    className="text-black border bg-gray-100 p-3 pl-4 outline-none rounded-2xl w-full h-32 resize-none"
                   />
-                  <button className="bg-burntCopper w-auto hover:bg-black transition-all duration-500 cursor-pointer text-white p-3 rounded-full text-xs sm:text-sm md:text-sm  hover:bg-opacity-90">
+                  <button className="bg-blue w-auto hover:bg-black transition-all duration-500 cursor-pointer text-white p-3 rounded-full text-xs sm:text-sm md:text-sm  hover:bg-opacity-90">
               Send Message
             </button>
                 </form>

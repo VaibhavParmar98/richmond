@@ -185,7 +185,9 @@ const Contact = () => {
           </motion.div>
 
           <Help />
+         <div className="mt-8">
           <Started />
+</div> 
         </div>
       </div>
     </>

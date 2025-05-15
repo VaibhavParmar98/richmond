@@ -32,10 +32,10 @@ const navItems = [
   { name: 'Contact', path: '/contact' },
   { name: 'Gallery', path: '/gallery' },
   { name: 'Faqs', path: '/faq' },
-  { name: 'Tickets', path: '/' },
-  { name: 'Blog', path: '/' },
+  { name: 'Tickets', path: '*' },
+  { name: 'Blog', path: '*' },
   { name: 'Artist', path: '/art' },
-  { name: 'Testimonials', path: '/' },
+  { name: 'Testimonials', path: '*' },
 ];
 
 const Footer = () => {
@@ -76,10 +76,10 @@ const Footer = () => {
                 {...scaleInStagger}
                 className="flex items-center gap-2 sm:gap-3 justify-center lg:justify-start xl:justify-start text-burntCopper text-lg sm:text-xl"
               >
-                <FaFacebook />
-                <FaInstagram />
-                <FaTwitter />
-                <FaYoutube />
+                <FaFacebook className="text-[#cacaca] cursor-pointer hover:text-blue"/>
+                <FaInstagram className="text-[#cacaca] cursor-pointer hover:text-blue"/>
+                <FaTwitter className="text-[#cacaca] cursor-pointer hover:text-blue"/>
+                <FaYoutube className="text-[#cacaca] cursor-pointer hover:text-blue"/>
               </motion.span>
             </div>
           </motion.div>

@@ -73,28 +73,28 @@ const About = () => {
   const chrucs = [
     {
       icon: (
-        <MdBrush className="text-3xl sm:text-3xl p-1.5 bg-burntCopper rounded-full text-white" />
+        <MdBrush className="text-3xl sm:text-3xl p-1.5 bg-burntCopper rounded-full border" />
       ),
       title: "Supporting Local Artists",
       desc: "We provide platforms for artists to showcase their creativity and connect with communities.",
     },
     {
       icon: (
-        <MdSchool className="text-3xl sm:text-3xl p-1.5 bg-burntCopper rounded-full text-white" />
+        <MdSchool className="text-3xl sm:text-3xl p-1.5 bg-burntCopper rounded-full border" />
       ),
       title: "Community Workshops",
       desc: "Engaging locals through hands-on workshops that promote learning and artistic exploration.",
     },
     {
       icon: (
-        <MdArtTrack className="text-3xl sm:text-3xl p-1.5 bg-burntCopper rounded-full text-white" />
+        <MdArtTrack className="text-3xl sm:text-3xl p-1.5 bg-burntCopper rounded-full border" />
       ),
       title: "Public Art Installations",
       desc: "Transforming public spaces with murals and installations that reflect Richmond’s culture.",
     },
     {
       icon: (
-        <MdEvent className="text-3xl sm:text-3xl p-1.5 bg-burntCopper rounded-full text-white" />
+        <MdEvent className="text-3xl sm:text-3xl p-1.5 bg-burntCopper rounded-full border" />
       ),
       title: "Cultural Events",
       desc: "Hosting events that celebrate diversity, creativity, and bring the community together.",
@@ -256,57 +256,62 @@ const About = () => {
             </p>
           </div>
           <div className="lg:flex lg:flex-row xl:flex-row xl:flex md:grid md:grid-cols-2 flex flex-col items-center justify-center lg:justify-between xl:justify-between lg:py-10 py-3 gap-2  mt-8 ">
-            {items.map((itm, idx) => (
-              <motion.div
-                key={idx}
-                onClick={() => setSelectedIndex(idx)}
-                custom={idx}
-                initial="hidden"
-                animate={empoweringInView ? "visible" : "hidden"}
-                variants={itemVariants}
-                className={`flex flex-col gap-3 sm:gap-4 cursor-pointer p-4 sm:py-8 w-full sm:w-56 md:w-60 h-auto min-h-56 sm:h-60 justify-center md:justify-start md:items-start items-center rounded-4xl transition-colors duration-300 max-md:w-full max-md:max-w-[300px] max-md:mb-4
-                  ${
-                    selectedIndex === idx
-                      ? "bg-black text-white"
-                      : "bg-offWhite text-black"
-                  }`}
-              >
-                <motion.span
-                  custom={idx}
-                  initial="hidden"
-                  animate={empoweringInView ? "visible" : "hidden"}
-                  variants={itemVariants}
-                  className={`text-3xl sm:text-3xl text-gradis ${
-                    selectedIndex === idx ? "text-white" : ""
-                  }`}
-                >
-                  {itm.icons}
-                </motion.span>
-                <motion.h1
-                  custom={idx}
-                  initial="hidden"
-                  animate={empoweringInView ? "visible" : "hidden"}
-                  variants={itemVariants}
-                  className={`text-base sm:text-lg text-center md:text-start ${
-                    selectedIndex === idx ? "text-white" : ""
-                  }`}
-                >
-                  {itm.title}
-                </motion.h1>
-                <motion.p
-                  custom={idx}
-                  initial="hidden"
-                  animate={empoweringInView ? "visible" : "hidden"}
-                  variants={itemVariants}
-                  className={`text-sm sm:text-[14px] leading-5 text-center md:text-start text-gradis ${
-                    selectedIndex === idx ? "text-white" : ""
-                  }`}
-                >
-                  {itm.desc}
-                </motion.p>
-              </motion.div>
-            ))}
-          </div>
+  {items.map((itm, idx) => {
+    const isSelected = selectedIndex === idx;
+    return (
+      <motion.div
+        key={idx}
+        onClick={() => setSelectedIndex(idx)}
+        custom={idx}
+        initial="hidden"
+        animate={empoweringInView ? "visible" : "hidden"}
+        variants={itemVariants}
+        className={`group flex flex-col gap-3 sm:gap-4 cursor-pointer p-4 sm:py-8 w-full sm:w-56 md:w-60 h-auto min-h-56 sm:h-60 justify-center md:justify-start md:items-start items-center rounded-4xl transition-colors duration-300 max-md:w-full max-md:max-w-[300px] max-md:mb-4
+          ${
+            isSelected
+              ? "bg-black text-white"
+              : "bg-offWhite text-black hover:bg-black hover:text-white"
+          }`}
+      >
+        <motion.span
+          custom={idx}
+          initial="hidden"
+          animate={empoweringInView ? "visible" : "hidden"}
+          variants={itemVariants}
+          className={`text-3xl sm:text-3xl text-gradis 
+            ${isSelected ? "text-white" : "group-hover:text-white"}`}
+        >
+          {itm.icons}
+        </motion.span>
+        <motion.h1
+          custom={idx}
+          initial="hidden"
+          animate={empoweringInView ? "visible" : "hidden"}
+          variants={itemVariants}
+          className={`text-base sm:text-lg text-center md:text-start 
+            ${isSelected ? "text-white" : "group-hover:text-white"}`}
+        >
+          {itm.title}
+        </motion.h1>
+        <motion.p
+          custom={idx}
+          initial="hidden"
+          animate={empoweringInView ? "visible" : "hidden"}
+          variants={itemVariants}
+          className={`text-sm sm:text-[14px] leading-5 text-center md:text-start text-gradis 
+            ${
+              isSelected
+                ? "text-white"
+                : "text-gray-700 group-hover:text-white"
+            }`}
+        >
+          {itm.desc}
+        </motion.p>
+      </motion.div>
+    );
+  })}
+</div>
+
         </motion.div>
 
         <motion.div
@@ -335,7 +340,7 @@ const About = () => {
                     variants={itemVariants}
                     className="flex gap-3 sm:gap-4"
                   >
-                    <span className="font-xl">{itm.icon}</span>
+                    <span className="font-xl text-black">{itm.icon}</span>
                     <div className="flex flex-col gap-1 sm:gap-2">
                       <h1 className="font-medium text-[18px] sm:text-[16px]">
                         {itm.title}
@@ -481,10 +486,14 @@ const About = () => {
         </motion.div>
 
         <div>
-          <Team />
+          <div className="mb-10">
+            <Team/>
+          </div>
           <ContactUs />
           <Slider />
-          <Started />
+         <div className="mt-7">
+           <Started />
+         </div>
         </div>
       </div>
     </>

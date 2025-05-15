@@ -112,8 +112,9 @@ const Signup = () => {
         </motion.div>
 
         <Help />
-        <Started />
-      </div>
+<div className="mt-8">
+          <Started />
+</div>      </div>
     </>
   );
 };

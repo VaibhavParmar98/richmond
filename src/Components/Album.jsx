@@ -294,7 +294,7 @@
                 <motion.button
                   key={index}
                   className={`w-8 cursor-pointer h-8 flex items-center justify-center rounded-full ${
-                    num === "01" ? "bg-burntCopper text-white" : ""
+                    num === "01" ? "bg-blue text-white" : ""
                   } md:w-8 md:h-8 max-md:w-10 max-md:h-10 max-md:text-[0.9rem] max-[480px]:w-9 max-[480px]:h-9 max-[480px]:text-[0.85rem] pagination-button`}
                   variants={fadeInUp}
                 >

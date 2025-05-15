@@ -60,7 +60,10 @@ const EventItem = ({ date, title, time, index, start, end }) => {
 
     // Open the URL in a new tab
     window.open(eventUrl, "_blank");
+    
   };
+
+  
 
   return (
     <motion.div
@@ -75,7 +78,7 @@ const EventItem = ({ date, title, time, index, start, end }) => {
           transition: { duration: 0.8, ease: "easeOut", delay: idx * 0.2 },
         }),
       }}
-      className="flex flex-col sm:flex-row justify-between items-center border p-4 rounded-lg bg-white hover:bg-[#F5F5DC] hover:text-black transition-colors"
+      className="flex flex-col sm:flex-row justify-between items-center border p-4 rounded-lg bg-white hover:bg-gray-200 hover:text-black transition-colors"
     >
       <p>{date}</p>
       <p>{title}</p>
@@ -316,10 +319,14 @@ const Event = () => {
 
       <div>
         <Album />
-        <Team />
+       <div className="mb-10">
+         <Team />
+       </div>
         <ContactUs />
         <Slider />
-        <Started />
+       <div className="mt-8">
+         <Started />
+       </div>
       </div>
     </div>
   );

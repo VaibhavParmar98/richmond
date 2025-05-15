@@ -62,7 +62,9 @@ const Gallery = () => {
         <Album />
         <ContactUs />
         <Slider />
-        <Started />
+      <div className="mt-8">
+          <Started />
+</div> 
       </motion.div>
     </div>
   );

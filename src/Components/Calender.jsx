@@ -57,16 +57,20 @@ useEffect(() => {
         `https://www.googleapis.com/calendar/v3/calendars/${calendarId}/events?key=${apiKey}`
       );
       const data = await res.json();
-      console.log("calendar page",data);
+      console.log("evenrt data",data);
+      console.log(data.accessRole);
+
+      
       
 
       if (data.items) {
-        const formattedEvents = data.items.map((event) => ({
-          id: event.id,
-          title: event.summary,
-          start: event.start.dateTime || event.start.date,
-          end: event.end.dateTime || event.end.date,
-        }));
+       const formattedEvents = data.items.map((event) => ({
+  id: event.id,
+  title: event.summary || "Untitled Event",
+  start: event.start.dateTime || event.start.date,
+  end: event.end.dateTime || event.end.date,
+}));
+
         setEvents(formattedEvents);
         localStorage.setItem('events', JSON.stringify(formattedEvents));
       }
@@ -115,6 +119,8 @@ useEffect(() => {
   // Function to open Google Calendar event creation page
   const handleCreateEvent = () => {
     const eventTitle = 'New Event';
+    console.log("ee",eventTitle);
+    
     const eventStart = new Date();
     const eventEnd = new Date(eventStart.getTime() + 60 * 60 * 1000); // 1 hour later
     const eventDescription = 'This is a test event';

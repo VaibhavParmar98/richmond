@@ -56,7 +56,7 @@ const Team = () => {
   };
 
   return (
-    <div className="py-20 bg-white">
+    <div className="pt-20  bg-white">
       <div className="max-w-6xl mx-auto font-marcellus px-4 sm:px-6 md:px-0">
         <div className="flex flex-col items-center mb-3 justify-center gap-4 sm:gap-6">
           <motion.div
@@ -84,7 +84,7 @@ const Team = () => {
         </div>
 
         {/* Mobile View - Slider */}
-        <div className="mt-6 md:hidden">
+        <div className="mt-6  md:hidden">
           <Slider {...settings}>
             {items.map((itm, idx) => (
               <div
@@ -126,7 +126,7 @@ const Team = () => {
         </div>
 
         {/* Desktop View - Grid */}
-        <div className="mt-6 hidden md:flex flex-wrap justify-center">
+        <div className="mt-6  hidden md:flex flex-wrap justify-center">
           {items.map((itm, idx) => (
             <div
               key={idx}

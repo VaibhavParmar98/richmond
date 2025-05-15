@@ -8,7 +8,7 @@ const Started = () => {
   const imageRef = useRef(null);
 
   return (
-    <div className="bg-white py-12 md:px-4 lg:px-0 xl:px-0 px-0 sm:py-16 md:py-20">
+    <div className="bg-white py-12 md:px-4 lg:px-0 xl:px-0 px-0 sm:py-16 md:pt-8 ">
       <di v className="relative max-w-full mx-4 sm:max-w-3xl md:max-w-3xl md:mx-auto bg-gray-100 shadow-lg rounded-lg font-marcellus flex flex-col md:flex-row md:justify-between overflow-hidden">
         <img
           src="https://iili.io/31cmNMN.png"

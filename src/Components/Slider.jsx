@@ -1,5 +1,4 @@
-import React, { useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import React from "react";
 
 const Slider = () => {
   const slides = [
@@ -11,45 +10,58 @@ const Slider = () => {
     { img: "https://iili.io/3VcFZlt.png" },
   ];
 
-  const sliderRef = useRef(null);
-  const isInView = useInView(sliderRef, { once: true, margin: "-50px" });
-
-  const slideVariants = {
-    hidden: { opacity: 0, x: 100 },
-    visible: (idx) => ({
-      opacity: 1,
-      x: 0,
-      transition: {
-        duration: 0.8,
-        ease: "easeOut",
-        delay: idx * 0.2,
-      },
-    }),
-  };
+  // Repeat slides to avoid gap at loop point
+  const allSlides = [...slides, ...slides];
 
   return (
-    <div className="bg-offWhite flex justify-center items-center">
+    <div
+      style={{
+        overflow: "hidden",
+        width: "100%",
+        padding: "20px 0",
+      }}
+      className="bg-offWhite "
+    >
       <div
-        ref={sliderRef}
-        className="flex gap-4 flex-wrap md:flex-nowrap justify-center items-center px-4"
+        style={{
+          display: "flex",
+          animation: "scroll 20s linear infinite",
+        }}
       >
-        {slides.map((itm, idx) => (
-          <motion.div
+        {allSlides.map((slide, idx) => (
+          <div
             key={idx}
-            custom={idx}
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
-            variants={slideVariants}
-            className="w-40 sm:w-48 md:w-auto"
+            style={{
+              flex: "0 0 auto",
+              width: "150px",
+              marginRight: "20px",
+            }}
           >
             <img
-              src={itm.img}
+              src={slide.img}
               alt={`slide-${idx}`}
-              className="w-full h-auto object-contain"
+              style={{
+                width: "100%",
+                height: "auto",
+              }}
             />
-          </motion.div>
+          </div>
         ))}
       </div>
+
+      {/* Inline Keyframes to Avoid Gap */}
+      <style>
+        {`
+          @keyframes scroll {
+            0% {
+              transform: translateX(0);
+            }
+            100% {
+              transform: translateX(-50%);
+            }
+          }
+        `}
+      </style>
     </div>
   );
 };
