@@ -60,7 +60,7 @@ const AboutUs = () => {
   const stat2InView = useInView(stat2Ref, { once: true });
 
   return (
-    <div className="bg-deepMaroon text-white">
+    <div className="bg-black text-white">
       <div className="max-w-7xl mx-auto font-marcellus py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-col lg:flex-row xl:flex-row gap-6 md:gap-10 lg:gap-20">
           <div className="w-full lg:w-1/2 xl:w-1/2 flex flex-col gap-4 sm:gap-6">
@@ -94,7 +94,7 @@ const AboutUs = () => {
                   transition={{ duration: 0.5, delay: idx * 0.2 }}
                   className="flex gap-3 sm:gap-4"
                 >
-                  <span className="font-xl">{itm.icon}</span>
+                  <span className="font-xl border rounded-full w-9 h-8">{itm.icon}</span>
                   <div className="flex flex-col gap-1 sm:gap-2">
                     <h1 className="font-medium text-[18px] sm:text-[16px]">
                       {itm.title}
@@ -109,10 +109,10 @@ const AboutUs = () => {
 
             <div className="flex gap-3 sm:gap-4 mt-6 sm:mt-8 text-base sm:text-base justify-center items-center md:justify-center md:items-center lg:justify-start lg:items-start xl:justify-start xl:items-start">
               <button
-                className="button hover:border  text-base hover:text-deepMaroon font-medium bg-white text-black hover:bg-black"
-                style={{ "--clr": "#AA7446" }}
+                className="button hover:border  text-base  font-medium bg-blue  hover:bg-black"
+                style={{ "--clr": "#00B3FF" }}
               >
-                <span className="button__icon-wrapper hover:text-black text-deepMaroon">
+                <span className="button__icon-wrapper ">
                   <svg
                     viewBox="0 0 14 15"
                     fill="none"
@@ -142,8 +142,8 @@ const AboutUs = () => {
               </button>
 
               <button
-                className="button text-base hover:border font-medium bg-burntCopper hover:bg-black"
-                style={{ "--clr": "#AA7446" }}
+                className="button text-base hover:border font-medium bg-pink hover:bg-black"
+                style={{ "--clr": "#E6007E" }}
               >
                 <span className="button__icon-wrapper">
                   <svg

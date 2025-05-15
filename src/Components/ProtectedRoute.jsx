@@ -9,7 +9,7 @@ const ProtectedRoute = ({ children }) => {
     return null;
   }
 
-  if (user.email !== 'designingroom1@gmail.com') {
+  if (user.email !== 'info@richmondrenaissance.org') {
     return <Navigate to="/" />;
   }
 

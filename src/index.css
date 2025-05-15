@@ -39,12 +39,12 @@ body {
   }
 
   .banner-slider .slick-dots li button:before {
-    color: white !important;
+    color: #999999 !important;
     opacity: 0.75;
   }
 
   .banner-slider .slick-dots li.slick-active button:before {
-    color: #AA7446 !important;
+    color: black !important;
     opacity: 1;
   }
 }
@@ -65,18 +65,17 @@ body {
   z-index: 40;
 }
 
-.slick-dots li button:before {
+/* .slick-dots li button:before {
   color: white; 
   font-size: 10px;
-}
+} */
 
 .custom-dots li button:before {
-  color: #AA7446 !important;
-  opacity: 1; 
+  color: #999999 !important;
 }
 
 .custom-dots li.slick-active button:before {
-  color: #AA7446 !important;
+  color: black !important;
 }
 
 
@@ -100,12 +99,12 @@ body {
   --color-caramelGold: #dba860;
   --color-offWhite: #f2f2f2;
   --color-deepMaroon: #2b0a0a;
-  --color-champagneBeige: #ecd3af;
+  --color-blue: #00B3FF;
   --color-vintageBronze: #a99c67;
   --color-mossyOlive: #b8aa70;
   --color-deepGold: #bd9800;
   --color-mustardBrown: #8b7107;
-  --color-burntCopper: #aa7446;
+  --color-pink: #E6007E;
   --color-oldLavender: #6f5a7d;
   --color-softCream: #f9f5ef;
   --color-gradis: #9a9a9a;

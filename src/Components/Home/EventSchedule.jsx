@@ -77,7 +77,7 @@ const EventSchedule = () => {
       initial={{ opacity: 0, y: 50 }}
       animate={isSectionInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
       transition={{ duration: 0.6, ease: [0.68, -0.55, 0.265, 1.55] }}
-      className="bg-champagneBeige py-10 flex items-center justify-center flex-col"
+      className="bg-white py-10 flex items-center justify-center flex-col"
     >
       <h2 className="text-4xl font-marcellus font-bold text-center mb-6">
         Event Schedule
@@ -160,8 +160,8 @@ const EventSchedule = () => {
             : { opacity: 0, scale: 0.8 }
         }
         transition={{ duration: 0.6, ease: [0.68, -0.55, 0.265, 1.55] }}
-        className="button my-10 px-6 py-3 font-marcellus hover:border font-medium text-white bg-burntCopper hover:bg-black hover:text-burntCopper"
-        style={{ "--clr": "#AA7446" }}
+        className="button my-10 px-6 py-3 font-marcellus hover:border font-medium  bg-blue hover:bg-black "
+        style={{ "--clr": "#00B3FF" }}
       >
         <span className="button__icon-wrapper">
           <svg

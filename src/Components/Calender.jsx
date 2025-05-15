@@ -2,6 +2,7 @@ import React, { useEffect, useContext, useRef } from 'react';
 import { AuthContext } from '../Context/AuthContext';
 import { EventContext } from '../Context/EventContext';
 import { useInView, motion } from 'framer-motion';
+import toast from 'react-hot-toast';
 
 const Calendar = () => {
   const { accessToken } = useContext(AuthContext);
@@ -48,8 +49,8 @@ const Calendar = () => {
 
 useEffect(() => {
   const fetchPublicEvents = async () => {
-    const calendarId = 'designingroom1@gmail.com'; 
-    const apiKey = 'AIzaSyCEl86ahwkhSlgjfgNt3ovVpdyHrSZRkX0'; 
+    const calendarId = 'info@richmondrenaissance.org'; 
+    const apiKey = 'AIzaSyAllY9HT6nBzjHouXJMLvs7iGfXOBmbzFk'; 
 
     try {
       const res = await fetch(
@@ -79,35 +80,37 @@ useEffect(() => {
 
 
 
-  const handleDelete = async (eventId) => {
-    if (!accessToken) return;
+ const handleDelete = async (eventId) => {
+  if (!accessToken) return;
 
-    const isConfirmed = window.confirm('Are you sure you want to delete this event?');
-    const calendarId = 'designingroom1@gmail.com';
+  const isConfirmed = window.confirm('Are you sure you want to delete this event?');
+  const calendarId = 'info@richmondrenaissance.org';
 
-    if (!isConfirmed) return;
+  if (!isConfirmed) return;
 
-    try {
-      const response = await fetch(
-        `https://www.googleapis.com/calendar/v3/calendars/${calendarId}/events/${eventId}`,
-        {
-          method: 'DELETE',
-          headers: {
-            Authorization: `Bearer ${accessToken}`,
-          },
-        }
-      );
-
-      if (response.ok) {
-        setEvents(events.filter((event) => event.id !== eventId)); // Update events in context
-        console.log('Event deleted successfully');
-      } else {
-        console.error('Failed to delete event');
+  try {
+    const response = await fetch(
+      `https://www.googleapis.com/calendar/v3/calendars/${calendarId}/events/${eventId}`,
+      {
+        method: 'DELETE',
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+        },
       }
-    } catch (err) {
-      console.error('Error deleting event:', err);
+    );
+
+    if (response.ok) {
+      setEvents(events.filter((event) => event.id !== eventId));
+      toast.success('Event deleted successfully!');
+    } else {
+      const errorData = await response.json();
+      console.error('Failed to delete event:', errorData);
     }
-  };
+  } catch (err) {
+    console.error('Error deleting event:', err);
+  }
+};
+
 
   // Function to open Google Calendar event creation page
   const handleCreateEvent = () => {
@@ -194,9 +197,9 @@ useEffect(() => {
 
                              whileInView={{ opacity: 1, scale: 1 }}
                              viewport={{ once: true, amount: 0.4 }}
-                             className="button border text-base flex items-center justify-center font-medium bg-burntCopper hover:bg-black mt-4"
+                             className="button border text-base flex items-center justify-center font-medium bg-blue hover:bg-black mt-4"
                              transition={{ duration: 0.6, ease: [0.34, 1.56, 0.64, 1] }}
-                             style={{ "--clr": "#AA7446" }}
+                             style={{ "--clr": "#00B3FF" }}
                            >
                              <span className="button__icon-wrapper">
                                <svg

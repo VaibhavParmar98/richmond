@@ -16,6 +16,8 @@ import Contact from "./Pages/Contact";
 import GoogleCalendar from "./Components/Calender";
 import ProtectedRoute from "./Components/ProtectedRoute";
 import { Toaster } from 'react-hot-toast';
+import PrivacyPolicy from "./Pages/PrivacyPolicy";
+import TermsOfService from "./Pages/TermsOfService";
 
 const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -53,6 +55,8 @@ const App = () => {
         <Route path="/gallery" element={<Gallery />} />
         {/* <Route path="/faq" element={<Faq />} /> */}
         <Route path="/contact" element={<Contact />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms" element={<TermsOfService />} />
         {/* <Route path="/calendar" element={<GoogleCalendar />} /> */}
          <Route
           path="/calendar"

@@ -6,48 +6,34 @@ import Slider from "react-slick";
 const Team = () => {
   const items = [
     {
-      img: "https://iili.io/31cm1F1.png",
+      img: "https://iili.io/3Ub300P.jpg",
       name: "Christopher Paul",
       position: "Founder & Creative Director",
-      social: [
-        { icon: <FaFacebook /> },
-        { icon: <FaInstagram /> },
-        { icon: <FaTwitter /> },
-        { icon: <FaYoutube /> },
-      ],
+      social: [<FaFacebook />, <FaInstagram />, <FaTwitter />, <FaYoutube />],
     },
     {
-      img: "https://iili.io/31cmV9a.png",
+      img: "https://iili.io/3Ub31g1.jpg",
       name: "Mark Hagne",
       position: "Community Manager",
-      social: [
-        { icon: <FaFacebook /> },
-        { icon: <FaInstagram /> },
-        { icon: <FaTwitter /> },
-        { icon: <FaYoutube /> },
-      ],
+      social: [<FaFacebook />, <FaInstagram />, <FaTwitter />, <FaYoutube />],
     },
     {
-      img: "https://iili.io/31cmEcF.png",
+      img: "https://iili.io/3Ub3wsp.png",
       name: "Michelle Parker",
       position: "Photographer",
-      social: [
-        { icon: <FaFacebook /> },
-        { icon: <FaInstagram /> },
-        { icon: <FaTwitter /> },
-        { icon: <FaYoutube /> },
-      ],
+      social: [<FaFacebook />, <FaInstagram />, <FaTwitter />, <FaYoutube />],
     },
     {
-      img: "https://iili.io/31cmWAJ.png",
+      img: "https://iili.io/3Ub3hzv.jpg",
       name: "Mia Chen",
       position: "Event Coordinator",
-      social: [
-        { icon: <FaFacebook /> },
-        { icon: <FaInstagram /> },
-        { icon: <FaTwitter /> },
-        { icon: <FaYoutube /> },
-      ],
+      social: [<FaFacebook />, <FaInstagram />, <FaTwitter />, <FaYoutube />],
+    },
+    {
+      img: "https://iili.io/3Ub3jXR.jpg",
+      name: "Mia Chen",
+      position: "Event Coordinator",
+      social: [<FaFacebook />, <FaInstagram />, <FaTwitter />, <FaYoutube />],
     },
   ];
 
@@ -72,25 +58,9 @@ const Team = () => {
   return (
     <div className="py-20 bg-white">
       <div className="max-w-6xl mx-auto font-marcellus px-4 sm:px-6 md:px-0">
-        <div className="flex flex-col
-        items-center mb-3
-         justify-center gap-4 sm:gap-6">
-          {/* <motion.div
-            className="flex flex-col gap-4 md:w-1/2 lg:w-1/2 xl:w-1/2 w-auto"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.5 }}
-            layout
-          >
-            <p className="text-sm text-center md:text-start ml-0 lg-ml-0 md:ml-4 xl-ml-0  ">CHURCH PASTORS</p>
-            <h1 className="text-3xl text-center md:text-start ml-0 lg-ml-0 md:ml-4 xl-ml-0">
-              Our Passionate Team Behind the Vision
-            </h1>
-          </motion.div> */}
+        <div className="flex flex-col items-center mb-3 justify-center gap-4 sm:gap-6">
           <motion.div
-            className="flex gap-3 mt-4 md:mt-0 md:w-1/2 lg:w-1/2 xl:w-1/2 w-auto"
+            className="flex gap-3 mt-4 md:mt-0 md:w-1/2 w-auto"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
@@ -98,21 +68,22 @@ const Team = () => {
             viewport={{ once: true, amount: 0.5 }}
             layout
           >
-            <div className="flex flex-col md:flex md:flex-row gap-6 md:gap-3 items-center justify-center">
+            <div className="flex flex-col md:flex-row gap-6 md:gap-3 items-center justify-center">
               <img
-                src="https://iili.io/31lflYQ.png"
+                src="https://iili.io/3gaGyF4.png"
                 alt=""
                 className="w-9 h-10 object-cover items-center justify-center"
               />
               <p className="text-[14px] leading-5 text-center md:text-start">
                 Get to Know Our Passionate Team Dedicated to Empowering Local
-                Artists, <br className=" hidden  xl:block" /> Showcasing Talent,
+                Artists, <br className="hidden xl:block" /> Showcasing Talent,
                 and Building a Thriving Creative Community Together.
               </p>
             </div>
           </motion.div>
         </div>
 
+        {/* Mobile View - Slider */}
         <div className="mt-6 md:hidden">
           <Slider {...settings}>
             {items.map((itm, idx) => (
@@ -123,7 +94,7 @@ const Team = () => {
                 <img
                   src={itm.img}
                   alt={itm.name}
-                  className="w-full max-w-48 sm:max-w-56 md:w-64 mx-auto"
+                  className="w-48 h-60 object-cover rounded-full mx-auto"
                 />
                 <h1 className="mt-4 text-xl text-black text-center">
                   {itm.name}
@@ -131,11 +102,11 @@ const Team = () => {
                 <p className="text-sm text-gray-500 text-center">
                   {itm.position}
                 </p>
-                <div className="flex gap-3 items-center justify-center text-xl sm:text-lg md:text-xl mt-2">
-                  {itm.social.map((s, i) => (
+                <div className="flex gap-3 items-center justify-center text-xl mt-2">
+                  {itm.social.map((icon, i) => (
                     <motion.span
                       key={i}
-                      className="social-icon mb-6"
+                      className="social-icon mb-6 text-[#cacaca] cursor-pointer hover:text-blue"
                       initial={{ opacity: 0, scale: 0.8 }}
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{
@@ -145,7 +116,7 @@ const Team = () => {
                       }}
                       layout
                     >
-                      {s.icon}
+                      {icon}
                     </motion.span>
                   ))}
                 </div>
@@ -154,6 +125,7 @@ const Team = () => {
           </Slider>
         </div>
 
+        {/* Desktop View - Grid */}
         <div className="mt-6 hidden md:flex flex-wrap justify-center">
           {items.map((itm, idx) => (
             <div
@@ -163,15 +135,15 @@ const Team = () => {
               <img
                 src={itm.img}
                 alt={itm.name}
-                className="w-full max-w-48 sm:max-w-56 md:w-64"
+                className="w-48 h-60 object-cover rounded-full"
               />
               <h1 className="mt-4 text-xl text-black">{itm.name}</h1>
               <p className="text-sm text-gray-500 mt-2">{itm.position}</p>
-              <div className="flex gap-3 items-center justify-center text-xl sm:text-lg md:text-xl mt-3">
-                {itm.social.map((s, i) => (
+              <div className="flex gap-3 items-center justify-center text-xl mt-3">
+                {itm.social.map((icon, i) => (
                   <motion.span
                     key={i}
-                    className="social-icon mb-6"
+                    className="social-icon mb-6 text-[#cacaca] cursor-pointer hover:text-blue"
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{
@@ -181,7 +153,7 @@ const Team = () => {
                     }}
                     layout
                   >
-                    {s.icon}
+                    {icon}
                   </motion.span>
                 ))}
               </div>

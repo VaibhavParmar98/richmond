@@ -28,7 +28,7 @@ const OurMinisters = () => {
   ];
 
   return (
-    <div className="bg-deepMaroon">
+    <div className="bg-black">
       <div className="max-w-6xl mx-auto py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8 flex flex-col items-center font-marcellus justify-center text-white">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -99,9 +99,9 @@ const OurMinisters = () => {
           initial={{ opacity: 0, scale: 0.8 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, amount: 0.4 }}
-          className="button text-base font-medium bg-burntCopper hover:bg-black mt-10"
+          className="button text-base font-medium bg-blue hover:bg-black mt-10"
           transition={{ duration: 0.6, ease: [0.34, 1.56, 0.64, 1] }}
-          style={{ "--clr": "#AA7446" }}
+          style={{ "--clr": "#00B3FF" }}
         >
           <span className="button__icon-wrapper">
             <svg

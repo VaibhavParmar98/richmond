@@ -10,7 +10,7 @@ const Hero = () => {
   return (
     <section className="relative overflow-hidden">
       <div className="absolute inset-0">
-        <div className="h-1/2 bg-champagneBeige" />
+        <div className="h-1/2 bg-white" />
         <div className="h-1/2 bg-white" />
       </div>
 
@@ -22,7 +22,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
           >
-            <h1 className="hero-heading text-3xl sm:text-4xl md:text-5xl font-semibold leading-tight text-deepMaroon">
+            <h1 className="hero-heading text-3xl sm:text-4xl md:text-5xl font-semibold leading-tight text-black">
               Empowering Local Artistry,
               <br className="md:block lg:hidden hidden" />
               One Creation At A Time
@@ -35,7 +35,7 @@ const Hero = () => {
             transition={{ duration: 0.5, ease: "easeInOut" }}
           >
             <h1 className="font-semibold text-[18px] sm:text-[16px]">Help Shape the Future of Local Art</h1>
-            <p className="text-deepMaroon text-[14px] leading-5 max-w-md">
+            <p className="text-[#3b3b3b] text-[14px] leading-5 mt-2 max-w-md">
             
             We're conducting a short survey to better understand how we can support and uplift our local artist community. Your feedback will guide our future events, workshops, and artist features.
             </p>
@@ -45,8 +45,8 @@ const Hero = () => {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={isButtonInView ? { opacity: 1, scale: 1 } : {}}
                 transition={{ duration: 0.6, ease: [0.68, -0.55, 0.265, 1.55] }}
-                className="button font-medium bg-deepMaroon hover:border hover:bg-black"
-                style={{ "--clr": "#2B0A0A" }}
+                className="button font-medium bg-[#00B3FF] hover:border hover:bg-black"
+                style={{ "--clr": "#00B3FF" }}
               >
                 <span className="button__icon-wrapper">
                   <svg
@@ -86,8 +86,8 @@ const Hero = () => {
                     duration: 0.6,
                     ease: [0.68, -0.55, 0.265, 1.55],
                   }}
-                  className="button font-medium hover:border bg-burntCopper hover:bg-black"
-                  style={{ "--clr": "#AA7446" }}
+                  className="button font-medium hover:border bg-pink hover:bg-black"
+                  style={{ "--clr": "#E6007E" }}
                 >
                   <span className="button__icon-wrapper">
                     <svg
@@ -128,10 +128,10 @@ const Hero = () => {
             transition={{ duration: 0.5, ease: "easeInOut" }}
           >
             <img
-              src="https://iili.io/31cmdan.png
+              src="https://iili.io/3gaM9cl.png
 "
               alt="Icon"
-              className="w-20 sm:w-24 md:w-28 mt-8 md:mt-10"
+              className="w-16 sm:w-16 md:w-16 mt-8 md:mt-20"
             />
           </motion.div>
         </div>
@@ -205,8 +205,8 @@ const Hero = () => {
                   discussing their works.
                 </motion.p>
                 <motion.button
-                  className="button text-base font-medium bg-deepMaroon hover:bg-black mt-3"
-                  style={{ "--clr": "#AA7446" }}
+                  className="button text-base font-medium bg-blue hover:bg-black mt-3"
+                  style={{ "--clr": "#00B3FF" }}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.4, ease: "easeInOut" }}

@@ -89,7 +89,7 @@ const EventItem = ({ date, title, time, index, start, end }) => {
       >
         <span className="xl:mt-0 lg:mt-0 mt-2">
           {isMobile || isHovered ? (
-            <span className="p-1 flex text-[14px] text-white bg-burntCopper rounded cursor-pointer">
+            <span className="p-1 flex text-[14px] text-white bg-blue rounded cursor-pointer">
               ADD
             </span>
           ) : (
@@ -239,7 +239,7 @@ const Event = () => {
               initial="hidden"
               animate={eventScheduleInView ? "visible" : "hidden"}
               variants={itemVariants}
-              className="bg-deepMaroon p-4 text-white text-center w-full rounded-lg"
+              className="bg-black p-4 text-white text-center w-full rounded-lg"
             >
               {events.length === 0 ? "Upcoming Events" : currentMonthYear}
             </motion.p>
@@ -293,7 +293,7 @@ const Event = () => {
               initial="hidden"
               animate={eventScheduleInView ? "visible" : "hidden"}
               variants={itemVariants}
-              className="bg-deepMaroon p-4 text-white text-center w-full rounded-lg"
+              className="bg-black p-4 text-white text-center w-full rounded-lg"
             >
               {events.length === 0 ? "Upcoming Events" : currentMonthYear}
             </motion.p>

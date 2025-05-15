@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const SuppoertLocla = () => {
   return (
-    <div className="bg-champagneBeige py-12 sm:py-16 md:py-20">
+    <div className="bg-white py-12 sm:py-16 md:py-20 text-black">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-6 flex flex-col items-center justify-center font-marcellus">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -106,8 +106,8 @@ const SuppoertLocla = () => {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, ease: [0.34, 1.56, 0.64, 1] }}
-          className="button font-medium hover:border bg-burntCopper hover:bg-black mt-10"
-          style={{ "--clr": "#AA7446" }}
+          className="button font-medium hover:border bg-blue hover:bg-black mt-10"
+          style={{ "--clr": "#00B3FF" }}
         >
           <span className="button__icon-wrapper">
             <svg

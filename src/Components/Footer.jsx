@@ -41,7 +41,7 @@ const navItems = [
 const Footer = () => {
   return (
     <>
-      <div className="bg-champagneBeige py-12 sm:py-16 md:py-20">
+      <div className="bg-white py-12 sm:py-16 md:py-20 border-t">
         <div className="max-w-full  sm:max-w-5xl md:max-w-6xl mx-auto px-4 sm:px-6 md:px-6 flex flex-col lg:flex-row xl:flex-row md:items-center md:justify-between gap-8 sm:gap-10">
           <motion.div
             {...fadeInUp(0)}
@@ -49,16 +49,16 @@ const Footer = () => {
           >
             <div className="flex gap-1 items-center justify-center lg:justify-start xl:ustify-start">
               <img
-                src="https://iili.io/3WNCYUg.png"
+                src="https://iili.io/3UDSgdg.png"
                 alt=""
-                className="w-8 sm:w-9 h-8 sm:h-9"
+                className="w-36  h-12 "
               />
-              <p className="flex flex-col font-bold text-lg sm:text-2xl">
+              {/* <p className="flex flex-col font-bold text-lg sm:text-2xl">
                 Richmond
                 <span className="text-[8px] sm:text-[9px] font-medium text-oldLavender">
                   Richmond Arts Corridor
                 </span>
-              </p>
+              </p> */}
             </div>
             <div className="flex flex-col gap-8 sm:gap-6 font-marcellus">
               <p className="text-[14px] leading-5 text-center lg:text-start xl:text-start">
@@ -128,18 +128,18 @@ const Footer = () => {
               <motion.input
                 {...fadeInUp(0.5)}
                 type="text"
-                className="p-3 bg-white text-burntCopper rounded-3xl"
+                className="p-3 bg-white text-burntCopper rounded-3xl border outline-none"
                 placeholder="Your Name"
               />
               <motion.input
                 {...fadeInUp(0.6)}
                 type="text"
-                className="p-3 bg-white text-burntCopper rounded-3xl"
+                className="p-3 bg-white text-burntCopper rounded-3xl border outline-none"
                 placeholder="Your Email"
               />
               <motion.button
                 {...fadeInUp(0.7)}
-                className="uppercase hover:bg-black transition-all duration-300 p-3 bg-burntCopper text-white rounded-3xl cursor-pointer"
+                className="uppercase hover:bg-black transition-all duration-300 p-3 bg-blue text-white rounded-3xl cursor-pointer"
               >
                 subscribe
               </motion.button>
@@ -151,7 +151,7 @@ const Footer = () => {
         {...fadeInUp(0.8)}
         className="text-center p-2 sm:p-3 bg-burntCopper text-white font-marcellus text-xs sm:text-sm md:text-sm"
       >
-        <p>Richmond Renaissance | © 2025 All rights reserved</p>
+        <p>Richmond Art Corridor | © 2025 All rights reserved</p>
       </motion.div>
     </>
   );

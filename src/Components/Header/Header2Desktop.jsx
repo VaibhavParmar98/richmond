@@ -50,7 +50,7 @@ const handleLogout = () => {
   };
 
   const handleCalendarClick = () => {
-  if (user?.email === 'designingroom1@gmail.com') {
+  if (user?.email === 'info@richmondrenaissance.org') {
     navigate('/calendar')
   } else {
     setShowSignupPopup(true);
@@ -67,16 +67,16 @@ useEffect(() => {
 
 
   return (
-    <div className="bg-champagneBeige p-3 relative hidden md:block">
+    <div className="bg-white p-3 relative hidden md:block">
       <div className="max-w-6xl mx-auto flex items-center xl:justify-between">
         <NavLink to="/" className="flex gap-1 items-center">
-          <img src="https://iili.io/31cmG8g.png" alt="Logo" className="w-9 h-9" />
-          <p className="flex flex-col font-bold text-xl">
+          <img src="https://iili.io/3UDSgdg.png" alt="Logo" className="w-40 h-12" />
+          {/* <p className="flex flex-col font-bold text-xl">
             Richmond
             <span className="text-[8px] font-medium text-oldLavender">
               Richmond Arts Corridor
             </span>
-          </p>
+          </p> */}
         </NavLink>
 
         <div className="flex xl:flex-row lg:flex-row md:flex-col md:ml-16 md:gap-4 lg:ml-12 items-center lg:gap-7 xl:gap-16">
@@ -96,7 +96,7 @@ useEffect(() => {
                 <MdOutlineKeyboardArrowDown className="text-lg" />
               )}
               <div
-                className={`absolute left-0 top-full mt-2 bg-champagneBeige p-4 w-auto shadow-lg rounded-lg z-20 transition-all duration-300 ease-in-out ${
+                className={`absolute left-0 top-full mt-2 bg-white p-4 w-auto shadow-lg rounded-lg z-20 transition-all duration-300 ease-in-out ${
                   isSubmenuOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2 pointer-events-none"
                 }`}
               >
@@ -135,7 +135,7 @@ useEffect(() => {
                 <MdOutlineKeyboardArrowDown className="text-lg" />
               )}
               <div
-                className={`absolute left-0 top-full mt-2 bg-champagneBeige p-4 w-40 shadow-lg rounded-lg z-20 transition-all duration-300 ease-in-out ${
+                className={`absolute left-0 top-full mt-2 bg-white p-4 w-40 shadow-lg rounded-lg z-20 transition-all duration-300 ease-in-out ${
                   isSubmenuOpen2 ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2 pointer-events-none"
                 }`}
               >
@@ -168,7 +168,7 @@ useEffect(() => {
                 <MdOutlineKeyboardArrowDown className="text-lg" />
               )}
               <div
-                className={`absolute left-0 top-full mt-2 bg-champagneBeige p-4 w-40 shadow-lg rounded-lg z-20 transition-all duration-300 ease-in-out ${
+                className={`absolute left-0 top-full mt-2 bg-white p-4 w-40 shadow-lg rounded-lg z-20 transition-all duration-300 ease-in-out ${
                   isSubmenuOpen3 ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2 pointer-events-none"
                 }`}
               >
@@ -207,12 +207,12 @@ useEffect(() => {
           </ul>
 
           <div className="flex w-full md:justify-end gap-4 text-sm font-marcellus">
-  <button className="py-3 rounded-3xl px-4 bg-white cursor-pointer">Donations</button>
+  <button className="py-3 rounded-3xl px-4 bg-white cursor-pointer border">Donations</button>
 
-  {user?.email === 'designingroom1@gmail.com' ? (
+  {user?.email === 'info@richmondrenaissance.org' ? (
   <NavLink
     to="/calendar"
-    className="flex gap-2 rounded-3xl items-center py-1 px-4 bg-white cursor-pointer"
+    className="flex gap-2 rounded-3xl items-center py-1 px-4 bg-white cursor-pointer border"
   >
     <img src="https://iili.io/3VR8DeS.png" alt="Calendar" className="w-5 h-5" />
     Calendar
@@ -220,7 +220,7 @@ useEffect(() => {
 ) : (
   <button
   onClick={handleCalendarClick}
-  className="flex gap-2 rounded-3xl items-center py-1 px-4 bg-white cursor-pointer"
+  className="flex gap-2 rounded-3xl items-center py-1 px-4 bg-white cursor-pointer border"
 >
   <img src="https://iili.io/3VR8DeS.png" alt="Calendar" className="w-5 h-5" />
   Calendar
@@ -258,7 +258,7 @@ useEffect(() => {
                     navigate('/signup');
                   }}
                   type="button"
-                  className="bg-burntCopper hover:bg-black transition text-white p-3 rounded-full"
+                  className="bg-blue hover:bg-black transition text-white p-3 rounded-full"
                 >
                   Signup
                 </button>

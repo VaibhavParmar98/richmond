@@ -10,7 +10,7 @@ import { AuthProvider } from "./Context/AuthContext.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <GoogleOAuthProvider clientId="847842722054-q6jbm1gkedk3fccbmah10asrsb5inijg.apps.googleusercontent.com">
+    <GoogleOAuthProvider clientId="890122912670-j5l540j43l8t3ui3ob3khpqmc2jugrr7.apps.googleusercontent.com">
       <AuthProvider>
         <EventProvider>
           <App />

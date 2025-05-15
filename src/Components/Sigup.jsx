@@ -97,7 +97,7 @@ const Signup = () => {
                     />
                   </div> */}
                <div className="flex items-center justify-center xl:justify-start lg:justify-start ">
-               <button className="bg-burntCopper w-full hover:bg-black transition-all duration-500 cursor-pointer text-white p-3 rounded-full text-xs sm:text-sm md:text-sm  hover:bg-opacity-90">
+               <button className="bg-blue  w-full hover:bg-black transition-all duration-500 cursor-pointer text-white p-3 rounded-full text-xs sm:text-sm md:text-sm  hover:bg-opacity-90">
               Sign up
             </button>
 </div>

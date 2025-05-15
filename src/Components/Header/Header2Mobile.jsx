@@ -37,7 +37,7 @@ const HeaderMobile = ({ isMenuOpen, toggleMenu, setIsMenuOpen }) => {
 const [showSignupPopup, setShowSignupPopup] = useState(false);
 
 const handleCalendarClick = () => {
-  if (user?.email === 'designingroom1@gmail.com') {
+  if (user?.email === 'info@richmondrenaissance.org') {
    navigate('/calendar')
   } else {
     setShowSignupPopup(true);
@@ -53,7 +53,7 @@ useEffect(() => {
   if (showSignupPopup && user) {
     setShowSignupPopup(false);
 
-    if (user.email === 'designingroom1@gmail.com') {
+    if (user.email === 'info@richmondrenaissance.org') {
       navigate('/calendar');
     } else {
       navigate('/event');
@@ -64,7 +64,7 @@ useEffect(() => {
 
   return (
     <div
-      className={`bg-champagneBeige p-3 relative md:hidden transition-all duration-300 ${
+      className={`bg-white p-3 relative md:hidden transition-all duration-300 ${
         isMenuOpen ? "rounded-b-3xl shadow-lg" : ""
       }`}
       ref={menuRef}
@@ -73,16 +73,16 @@ useEffect(() => {
         <div className="flex justify-between items-center w-full mt-2">
           <NavLink to="/" className="flex gap-1 items-center">
             <img
-              src="https://iili.io/31cmG8g.png"
+              src="https://iili.io/3UDSgdg.png"
               alt="Logo"
-              className="w-8 h-8"
+              className="w-32 h-10"
             />
-            <p className="flex flex-col font-bold text-lg">
+            {/* <p className="flex flex-col font-bold text-lg">
               Richmond
               <span className="text-[7px] font-medium text-oldLavender">
                 Richmond Arts Corridor
               </span>
-            </p>
+            </p> */}
           </NavLink>
           <button
             className="text-xl focus:outline-none"
@@ -95,7 +95,7 @@ useEffect(() => {
 
         {/* Mobile Menu Content */}
         <div
-          className={`flex flex-col w-full mt-4 bg-champagneBeige overflow-hidden transition-[max-height,opacity] duration-500 ease-in-out transform ${
+          className={`flex flex-col w-full mt-4  overflow-hidden transition-[max-height,opacity] duration-500 ease-in-out transform ${
             isMenuOpen
               ? "max-h-[600px] opacity-100 translate-y-0 scale-y-100"
               : "max-h-0 opacity-0 -translate-y-2 scale-y-95"
@@ -123,7 +123,7 @@ useEffect(() => {
                     : "max-h-0 opacity-0"
                 }`}
               >
-                <ul className="p-4 mt-2 bg-champagneBeige rounded-lg flex flex-col gap-2">
+                <ul className="p-4 mt-2  rounded-lg flex flex-col gap-2">
                   <li onClick={toggleMenu} className="flex items-center gap-2 hover:bg-gray-100 px-2 py-1 rounded"><FaCaretRight /> Richmond Renaissance</li>
                   <li onClick={toggleMenu} className="flex items-center gap-2 hover:bg-gray-100 px-2 py-1 rounded"><FaCaretRight /> Co-Founders and Steering Committee</li>
                   <li onClick={toggleMenu} className="flex items-center gap-2 hover:bg-gray-100 px-2 py-1 rounded"><FaCaretRight /> Anchor Organizations</li>
@@ -156,7 +156,7 @@ useEffect(() => {
                     : "max-h-0 opacity-0"
                 }`}
               >
-                <ul className="p-4 mt-2 bg-champagneBeige w-40 rounded-lg flex flex-col gap-2">
+                <ul className="p-4 mt-2  w-40 rounded-lg flex flex-col gap-2">
                   <li onClick={toggleMenu} className="flex items-center gap-2 hover:bg-gray-100 px-2 py-1 rounded"><FaCaretRight /> Food</li>
                   <li onClick={toggleMenu} className="flex items-center gap-2 hover:bg-gray-100 px-2 py-1 rounded"><FaCaretRight /> Services</li>
                   <li onClick={toggleMenu}>
@@ -187,7 +187,7 @@ useEffect(() => {
                     : "max-h-0 opacity-0"
                 }`}
               >
-                <ul className="p-4 mt-2 bg-champagneBeige w-40 rounded-lg flex flex-col gap-2">
+                <ul className="p-4 mt-2  w-40 rounded-lg flex flex-col gap-2">
                  {user ? (
                      <li
                        onClick={handleLogout}
@@ -221,16 +221,16 @@ useEffect(() => {
 
           <div className="flex gap-3 text-xs font-marcellus mt-4 text-[14px]">
             <button
-              className="py-3 rounded-3xl px-3 bg-white cursor-pointer"
+              className="py-3 rounded-3xl px-3 bg-white cursor-pointer border"
               onClick={toggleMenu}
             >
               Donations
             </button>
-           {user?.email === 'designingroom1@gmail.com' ? (
+           {user?.email === 'info@richmondrenaissance.org' ? (
     <NavLink
       to="/calendar"
       onClick={toggleMenu}
-      className="flex gap-2 items-center justify-center text-sm py-2 px-4 rounded-full bg-white"
+      className="flex gap-2 items-center justify-center text-sm py-2 px-4 rounded-full  border"
     >
       <img src="https://iili.io/3VR8DeS.png" alt="Calendar" className="w-4 h-4" />
       Calendar
@@ -241,7 +241,7 @@ useEffect(() => {
         handleCalendarClick();
         toggleMenu();
       }}
-      className="flex gap-2 items-center justify-center text-sm py-2 px-4 rounded-full bg-white"
+      className="flex gap-2 items-center justify-center text-sm py-2 px-4 rounded-full bg-white border"
     >
       <img src="https://iili.io/3VR8DeS.png" alt="Calendar" className="w-4 h-4" />
       Calendar
@@ -276,7 +276,7 @@ useEffect(() => {
                     navigate('/signup');
                   }}
                   type="button"
-                  className="bg-burntCopper hover:bg-black transition text-white p-3 rounded-full"
+                  className="bg-blue hover:bg-black transition text-white p-3 rounded-full"
                 >
                   Signup
                 </button>

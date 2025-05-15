@@ -199,9 +199,9 @@ const About = () => {
                      initial={{ opacity: 0, scale: 0.8 }}
                      whileInView={{ opacity: 1, scale: 1 }}
                      viewport={{ once: true, amount: 0.4 }}
-                     className="button border text-base flex items-center justify-center w-40 font-medium bg-burntCopper hover:bg-black mt-4"
+                     className="button border text-base flex items-center justify-center w-40 font-medium bg-blue hover:bg-black mt-4"
                      transition={{ duration: 0.6, ease: [0.34, 1.56, 0.64, 1] }}
-                     style={{ "--clr": "#AA7446" }}
+                     style={{ "--clr": "#00B3FF" }}
                    >
                      <span className="button__icon-wrapper">
                        <svg
@@ -267,7 +267,7 @@ const About = () => {
                 className={`flex flex-col gap-3 sm:gap-4 cursor-pointer p-4 sm:py-8 w-full sm:w-56 md:w-60 h-auto min-h-56 sm:h-60 justify-center md:justify-start md:items-start items-center rounded-4xl transition-colors duration-300 max-md:w-full max-md:max-w-[300px] max-md:mb-4
                   ${
                     selectedIndex === idx
-                      ? "bg-burntCopper text-white"
+                      ? "bg-black text-white"
                       : "bg-offWhite text-black"
                   }`}
               >
@@ -352,9 +352,9 @@ const About = () => {
                      initial={{ opacity: 0, scale: 0.8 }}
                      whileInView={{ opacity: 1, scale: 1 }}
                      viewport={{ once: true, amount: 0.4 }}
-                     className="button border text-base flex items-center justify-center w-40 font-medium bg-burntCopper hover:bg-black mt-4"
+                     className="button border text-base flex items-center justify-center w-40 font-medium bg-blue hover:bg-black mt-4"
                      transition={{ duration: 0.6, ease: [0.34, 1.56, 0.64, 1] }}
-                     style={{ "--clr": "#AA7446" }}
+                     style={{ "--clr": "#00B3FF" }}
                    >
                      <span className="button__icon-wrapper">
                        <svg
@@ -407,7 +407,7 @@ const About = () => {
           initial="hidden"
           animate={ministriesInView ? "visible" : "hidden"}
           variants={sectionVariants}
-          className="bg-deepMaroon py-20 md:px-6 px-0 xl:px-0"
+          className="bg-black py-20 md:px-6 px-0 xl:px-0"
         >
           <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center  gap-6 max-md:flex-col max-md:items-center max-md:text-center max-md:gap-8">
             <div className="flex flex-col gap-3 text-white text-center md:text-left">
@@ -418,8 +418,8 @@ const About = () => {
               </h1>
             </div>
             <button
-              className="button text-base hover:border font-medium md:mb-0 mb-4 bg-burntCopper hover:bg-black max-md:w-full max-md:max-w-[200px] max-md:mx-auto"
-              style={{ "--clr": "#AA7446" }}
+              className="button text-base hover:border font-medium md:mb-0 mb-4 bg-blue hover:bg-black max-md:w-full max-md:max-w-[200px] max-md:mx-auto"
+              style={{ "--clr": "#00B3FF" }}
             >
               <span className="button__icon-wrapper">
                 <svg

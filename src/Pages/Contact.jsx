@@ -153,7 +153,7 @@ const Contact = () => {
                         className="border p-3 pl-4  pr-10 rounded-full text-xs sm:text-sm md:text-sm w-full outline-none"
                       />
                     </motion.div>
-                    <button className="bg-burntCopper w-auto hover:bg-black transition-all duration-500 cursor-pointer text-white p-3 rounded-full text-xs sm:text-sm md:text-sm  hover:bg-opacity-90">
+                    <button className="bg-blue w-auto hover:bg-black transition-all duration-500 cursor-pointer text-white p-3 rounded-full text-xs sm:text-sm md:text-sm  hover:bg-opacity-90">
                       Send Message
                     </button>
                   </form>

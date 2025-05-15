@@ -8,6 +8,7 @@ const OAuth = () => {
   const navigate = useNavigate();
 
   const handleGoogleLogin = useGoogleLogin({
+    scope: "https://www.googleapis.com/auth/calendar",
     onSuccess: async (tokenResponse) => {
       try {
         const accessToken = tokenResponse.access_token;
@@ -25,7 +26,7 @@ const OAuth = () => {
 
         login(userInfo, accessToken);
 
-        if (userInfo.email === "designingroom1@gmail.com") {
+        if (userInfo.email === "info@richmondrenaissance.org") {
           navigate("/calendar");
         } else {
           navigate("/event");

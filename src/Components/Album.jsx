@@ -70,8 +70,8 @@
               borderRadius: "50%",
               background:
                 dot.props.className && dot.props.className.includes("slick-active")
-                  ? "#aa7446"
-                  : "#999",
+                  ? "black"
+                  : "#999999",
             },
           }),
         });
