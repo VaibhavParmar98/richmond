@@ -32,10 +32,10 @@ const navItems = [
   { name: 'Contact', path: '/contact' },
   { name: 'Gallery', path: '/gallery' },
   { name: 'Faqs', path: '/faq' },
-  { name: 'Tickets', path: '*' },
+  { name: 'Privacy & Policy', path: '/privacy-policy' },
   { name: 'Blog', path: '*' },
   { name: 'Artist', path: '/art' },
-  { name: 'Testimonials', path: '*' },
+  { name: 'Terms', path: '/terms' },
 ];
 
 const Footer = () => {
