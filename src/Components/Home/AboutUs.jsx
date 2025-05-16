@@ -60,7 +60,7 @@ const AboutUs = () => {
   const stat2InView = useInView(stat2Ref, { once: true });
 
   return (
-    <div className="bg-black text-white">
+    <div className="bg-black text-white" style={{ overflowX: 'hidden' }}>
       <div className="max-w-7xl mx-auto font-marcellus py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-col lg:flex-row xl:flex-row gap-6 md:gap-10 lg:gap-20">
           <div className="w-full lg:w-1/2 xl:w-1/2 flex flex-col gap-4 sm:gap-6">

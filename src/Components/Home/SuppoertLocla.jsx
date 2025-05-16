@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const SuppoertLocla = () => {
   return (
-    <div className="bg-white py-12 sm:py-16 md:py-20 text-black">
+    <div className="bg-white py-12 sm:py-16 md:py-20 text-black" style={{ overflowX: 'hidden' }}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-6 flex flex-col items-center justify-center font-marcellus">
         <motion.div
           initial={{ opacity: 0, y: 50 }}

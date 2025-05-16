@@ -41,7 +41,11 @@ const fadeInUp = {
 
 const ConceptualFramework = () => {
   return (
-    <div className="bg-black text-white py-16 px-4 sm:px-6 lg:px-8 font-marcellus">
+    <div
+  className="bg-black text-white py-16 px-4 sm:px-6 lg:px-8 font-marcellus"
+  style={{ overflowX: 'hidden' }}
+>
+
         <div className="flex flex-col items-center gap-4 mb-10">
         <h2 className="text-2xl sm:text-3xl font-semibold text-center ">
             Conceptual Framework

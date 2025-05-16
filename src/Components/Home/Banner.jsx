@@ -100,14 +100,15 @@ const Banner = () => {
   
 
   return (
-    <Slider {...settings} className="banner-slider w-full h-[50vh] sm:h-[60vh] md:h-[70vh] min-h-[350px] font-marcellus">
+    <Slider {...settings} className="banner-slider w-full h-[50vh] sm:h-[60vh] md:h-[70vh] min-h-[350px] font-marcellus" >
       <AnimatePresence>
         <motion.div
-          className="relative w-full h-[50vh] sm:h-[60vh] md:h-[70vh] min-h-[350px]"
+          className="relative w-full  h-[50vh] sm:h-[60vh] md:h-[70vh] min-h-[350px]"
           variants={slideVariants}
           initial="enter"
           animate="center"
           exit="exit"
+          style={{ overflowX: 'hidden' }}
         >
           <img
             src="https://iili.io/31cPcGa.jpg"

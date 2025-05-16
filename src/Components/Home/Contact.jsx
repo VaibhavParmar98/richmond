@@ -15,7 +15,7 @@ const Contact = () => {
   const formInView = useInView(formRef, { once: true, margin: "-100px" });
 
   return (
-    <div ref={sectionRef} className="bg-black flex items-center">
+    <div ref={sectionRef} className="bg-black flex items-center" style={{ overflowX: 'hidden' }}>
       <div className="max-w-6xl font-marcellus mx-auto px-4 sm:px-6 md:px-4 flex md:flex-col flex-col lg:flex-row xl:flex-row gap-6 sm:gap-8 md:gap-10 items-center justify-center w-full py-4 sm:py-16 md:py-0">
         <motion.div
           ref={imageRef}
@@ -118,7 +118,7 @@ const Contact = () => {
               </div>
             </div>
 
-            <button className="bg-burntCopper w-auto hover:bg-black transition-all duration-500 cursor-pointer text-white p-3 rounded-full text-xs sm:text-sm md:text-sm  hover:bg-opacity-90">
+            <button className="bg-blue w-auto hover:bg-black transition-all duration-500 cursor-pointer text-white p-3 rounded-full text-xs sm:text-sm md:text-sm  hover:bg-opacity-90">
               Send Message
             </button>
           </motion.form>

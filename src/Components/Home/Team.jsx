@@ -56,7 +56,7 @@ const Team = () => {
   };
 
   return (
-    <div className="pt-20  bg-white">
+    <div className="pt-20  bg-white" style={{ overflowX: 'hidden' }}>
       <div className="max-w-6xl mx-auto font-marcellus px-4 sm:px-6 md:px-0">
         <div className="flex flex-col items-center mb-3 justify-center gap-4 sm:gap-6">
           <motion.div

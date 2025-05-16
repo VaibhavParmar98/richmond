@@ -78,6 +78,7 @@ const EventSchedule = () => {
       animate={isSectionInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
       transition={{ duration: 0.6, ease: [0.68, -0.55, 0.265, 1.55] }}
       className="bg-white py-10 flex items-center justify-center flex-col"
+      style={{ overflowX: 'hidden' }}
     >
       <h2 className="text-4xl font-marcellus font-bold text-center mb-6">
         Event Schedule
