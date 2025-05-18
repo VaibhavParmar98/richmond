@@ -7,16 +7,10 @@ import Slider from "../Components/Slider";
 import Started from "../Components/Home/Started";
 import Album from "../Components/Album";
 import { EventContext } from "../Context/EventContext";
-import { AuthContext } from "../Context/AuthContext";
-import toast from "react-hot-toast";
-import { useNavigate } from "react-router-dom";
 
 const EventItem = ({ date, title, time, index, start, end }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
-  const { user } = useContext(AuthContext);
-
-  const navigate = useNavigate()
 
   useEffect(() => {
     const handleResize = () => {
@@ -28,42 +22,40 @@ const EventItem = ({ date, title, time, index, start, end }) => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const handleBookNow = () => {
-    if (!user) {
-      navigate('/signup')
-      toast.error("Please sign up or log in to add events to your calendar!", {
-        duration: 4000,
-      });
-      return;
-    }
-
-    // Prepare event details for Google Calendar URL
-    const eventTitle = title;
-    const eventStart = new Date(start);
-    const eventEnd = new Date(end);
-
-    // Format dates for Google Calendar URL (YYYYMMDDTHHMMSSZ format)
-    const formatDateForGoogle = (date) => {
-      return date
-        .toISOString()
-        .replace(/[-:]/g, "")
-        .replace(/\.\d{3}/, ""); // e.g., 2025-05-11T03:30:00Z -> 20250511T033000Z
-    };
-
-    const startFormatted = formatDateForGoogle(eventStart);
-    const endFormatted = formatDateForGoogle(eventEnd);
-
-    // Construct Google Calendar event creation URL
-    const eventUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(
-      eventTitle
-    )}&dates=${startFormatted}/${endFormatted}&ctz=Asia/Kolkata`;
-
-    // Open the URL in a new tab
-    window.open(eventUrl, "_blank");
-    
+  // Function to format dates for Google Calendar (YYYYMMDDTHHMMSSZ in UTC)
+  const formatGoogleCalendarDate = (date) => {
+    const d = new Date(date);
+    // Convert to UTC
+    const utcDate = new Date(
+      Date.UTC(
+        d.getUTCFullYear(),
+        d.getUTCMonth(),
+        d.getUTCDate(),
+        d.getUTCHours(),
+        d.getUTCMinutes(),
+        d.getUTCSeconds()
+      )
+    );
+    return utcDate.toISOString().replace(/[-:]/g, "").split(".")[0] + "Z";
   };
 
-  
+  // Construct Google Calendar event URL
+  const createGoogleCalendarUrl = () => {
+    const startDate = formatGoogleCalendarDate(start);
+    const endDate = formatGoogleCalendarDate(end);
+    const eventDetails = encodeURIComponent(
+      `Event: ${title}\nTime: ${time}\nDate: ${date}`
+    );
+    const eventTitle = encodeURIComponent(title);
+
+    return `https://www.google.com/calendar/render?action=TEMPLATE&text=${eventTitle}&dates=${startDate}/${endDate}&details=${eventDetails}&sprop=name:ArtEvent`;
+  };
+
+  // Handle button click
+  const handleAddToCalendar = () => {
+    // Open Google Calendar URL in a new tab
+    window.open(createGoogleCalendarUrl(), "_blank");
+  };
 
   return (
     <motion.div
@@ -86,8 +78,8 @@ const EventItem = ({ date, title, time, index, start, end }) => {
       <button
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
-        onClick={handleBookNow}
-        aria-label={`Book now for ${title}`}
+        onClick={handleAddToCalendar}
+        aria-label={`Add ${title} to Google Calendar`}
         className="focus:outline-none"
       >
         <span className="xl:mt-0 lg:mt-0 mt-2">
@@ -139,22 +131,22 @@ const Event = () => {
     }),
   };
 
-  // Format events with correct time zone (Asia/Kolkata for IST)
+  // Format events with correct time zone (America/Chicago for Texas)
   const formattedEvents = events.map((event) => {
     const startDate = new Date(event.start);
     const endDate = new Date(event.end);
     const date = `${startDate.getDate()} ${startDate.toLocaleString("default", {
       month: "short",
-      timeZone: "Asia/Kolkata",
+      timeZone: "America/Chicago",
     })}`;
     const time = `${startDate.toLocaleTimeString([], {
       hour: "2-digit",
       minute: "2-digit",
-      timeZone: "Asia/Kolkata",
+      timeZone: "America/Chicago",
     })} - ${endDate.toLocaleTimeString([], {
       hour: "2-digit",
       minute: "2-digit",
-      timeZone: "Asia/Kolkata",
+      timeZone: "America/Chicago",
     })}`;
     return {
       date,
@@ -319,14 +311,14 @@ const Event = () => {
 
       <div>
         <Album />
-       <div className="mb-10">
-         <Team />
-       </div>
+        <div className="mb-10">
+          <Team />
+        </div>
         <ContactUs />
         <Slider />
-       <div className="mt-8">
-         <Started />
-       </div>
+        <div className="mt-8">
+          <Started />
+        </div>
       </div>
     </div>
   );

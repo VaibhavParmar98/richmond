@@ -2,6 +2,8 @@ import React, { useContext } from "react";
 import { useGoogleLogin } from "@react-oauth/google";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../Context/AuthContext";
+import toast from 'react-hot-toast';
+
 
 const OAuth = () => {
   const { login, logout, user } = useContext(AuthContext);
@@ -10,34 +12,31 @@ const OAuth = () => {
   const handleGoogleLogin = useGoogleLogin({
     scope: "https://www.googleapis.com/auth/calendar",
     onSuccess: async (tokenResponse) => {
-      try {
-        const accessToken = tokenResponse.access_token;
+  try {
+    const accessToken = tokenResponse.access_token;
 
-        const res = await fetch(
-          "https://www.googleapis.com/oauth2/v3/userinfo",
-          {
-            headers: {
-              Authorization: `Bearer ${accessToken}`,
-            },
-          }
-        );
-
-        const userInfo = await res.json();
-
-        login(userInfo, accessToken);
-
-        if (userInfo.email === "info@richmondrenaissance.org") {
-          navigate("/calendar");
-        } else {
-          navigate("/event");
-        }
-      } catch (error) {
-        console.error("Failed to fetch user info or process login:", error);
+    const res = await fetch(
+      "https://www.googleapis.com/oauth2/v3/userinfo",
+      {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+        },
       }
-    },
-    onError: () => {
-      console.error("Google Login Failed");
-    },
+    );
+
+    const userInfo = await res.json();
+
+    if (userInfo.email === "info@richmondrenaissance.org") {
+      login(userInfo, accessToken);
+      navigate("/calendar");
+    } else {
+      toast.error("Access denied. Only the admin can sign in.");
+    }
+  } catch (error) {
+    console.error("Failed to fetch user info or process login:", error);
+  }
+},
+
   });
 
   const handleLogout = () => {

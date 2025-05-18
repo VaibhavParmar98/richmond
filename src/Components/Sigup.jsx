@@ -54,14 +54,10 @@ const Signup = () => {
             </div>
             <div className="w-full md:w-1/2 flex flex-col gap-3">
               <h1 className="text-3xl md:text-4xl text-center md:text-start">
-                Sign Up
+                Sign In
               </h1>
-              <p className="text-lg md:text-xl text-center md:text-start">
-                Already Have an Account ?
-                <span className="text-burntCopper hover:underline hover:text-deepMaroon cursor-pointer ml-1">
-                  Sign In
-                </span>
-              </p>
+                              <p className="text-red-600 xl:text-start lg:text-start md:text-start text-center">Only <strong>admin</strong> can sign in here. If you want to check events, please go to the <strong>Events</strong> page in the <strong>Things to Do</strong> menu.</p>
+
               <div className="mt-6">
                 <form className="flex flex-col gap-6 ">
                   <div className="flex  gap-5 xl:flex-row lg:flex-row md:flex-col flex-col">

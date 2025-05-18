@@ -232,7 +232,7 @@ useEffect(() => {
       </div>
 
      {showSignupPopup && !user && (
-        <div className="fixed inset-0 tracking-wider bg-black/80 bg-opacity-50 flex justify-center items-center z-50 font-marcellus">
+        <div className="fixed  inset-0 tracking-wider bg-black/80 bg-opacity-50 flex justify-center items-center z-50 font-marcellus">
           <div className="relative bg-white p-6 rounded-lg shadow-lg text-center flex flex-col max-w-md w-full">
             <button
               onClick={() => setShowSignupPopup(false)}
@@ -241,7 +241,7 @@ useEffect(() => {
             >
               &times;
             </button>
-            <div className="max-w-md w-full">
+            {/* <div className="max-w-md w-full">
               <p className="mb-4 text-xl mt-6 font-semibold text-center">
                 Please sign up to access the calendar.
               </p>
@@ -260,11 +260,13 @@ useEffect(() => {
                 >
                   Signup
                 </button>
-                <button onClick={() => setShowSignupPopup(false)} className="p-3 w-full rounded-full">
+               
+              </form>
+            </div> */}
+             <button onClick={() => setShowSignupPopup(false)} className="p-3 w-full rounded-full">
                   <OAuth />
                 </button>
-              </form>
-            </div>
+                <p className="text-red-600">Only <strong>admin</strong> can sign in here. If you want to check events, please go to the <strong>Events</strong> page in the <strong>Things to Do</strong> menu.</p>
           </div>
         </div>
       )}
